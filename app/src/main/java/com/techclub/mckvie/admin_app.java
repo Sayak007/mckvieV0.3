@@ -105,6 +105,8 @@ public class admin_app extends AppCompatActivity {
 
         });
 
+
+
         Insertmarks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,12 +159,13 @@ public class admin_app extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
+        FirebaseDatabase.getInstance().goOffline();
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
-
         return true;
     }
 }

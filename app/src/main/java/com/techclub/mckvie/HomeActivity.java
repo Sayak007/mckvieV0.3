@@ -1,31 +1,33 @@
 package com.techclub.mckvie;
 
-import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import androidx.annotation.NonNull;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import androidx.core.view.GravityCompat;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.Toolbar;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,21 +36,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.OnProgressListener;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,Tab1.OnFragmentInteractionListener,Tab2.OnFragmentInteractionListener,Tab3.OnFragmentInteractionListener {
 
@@ -60,7 +57,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private FirebaseAuth mAuth;
 
-    //ViewPager viewPager;
     View hView;
 
     @Override
@@ -72,19 +68,392 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         mAuth = FirebaseAuth.getInstance();
 
+        floating_button();
 
+        buttonTap();
+
+        NavigationView navigationView =  findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //viewPager = findViewById(R.id.viewPager);
+
+        //ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        //viewPager.setAdapter(viewPagerAdapter);
+
+        //Timer timer = new Timer();
+        //timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 4000);
+
+        final ImageView img_banner = findViewById(R.id.home_image);
+        final ImageView forward = findViewById(R.id.front_arrow);
+        final ImageView backward = findViewById(R.id.back_arrow);
+
+        new Runnable() {
+            int currentIndex = 1;
+            int updateInterval = 5000;
+
+            @Override
+            public void run() {
+
+                currentIndex += 1;
+                if(currentIndex > 5){
+                    currentIndex = 1;
+                }
+
+                forward.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        currentIndex += 1;
+
+                        if(currentIndex > 5){
+                            currentIndex = 1;
+                        }
+
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Banner/banner"+currentIndex);
+
+                        ref.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                String url = dataSnapshot.getValue(String.class);
+                                ImageViewAnimatedChange(HomeActivity.this, url, img_banner);
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                            }
+                        });
+                    }
+                });
+
+                backward.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        currentIndex -= 1;
+
+                        if(currentIndex == 0){
+                            currentIndex = 5;
+                        }
+
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Banner/banner"+currentIndex);
+
+                        ref.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                String url = dataSnapshot.getValue(String.class);
+                                ImageViewAnimatedChange(HomeActivity.this, url, img_banner);
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+                });
+
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Banner/banner"+currentIndex);
+
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String url = dataSnapshot.getValue(String.class);
+                        ImageViewAnimatedChange(HomeActivity.this, url, img_banner);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                img_banner.postDelayed(this, updateInterval);
+            }
+        }.run();
+
+        hView = navigationView.inflateHeaderView(R.layout.navigation_header);
+
+        textViewName = hView.findViewById(R.id.username);
+        textViewEmail = hView.findViewById(R.id.useremail);
+
+        if (mAuth.getCurrentUser() != null) {
+            FirebaseDatabase database1 = FirebaseDatabase.getInstance();
+            DatabaseReference ref1 = database1.getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+            ref1.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String name = dataSnapshot.child("name").getValue(String.class);
+                    String email = dataSnapshot.child("email").getValue(String.class);
+                    admin1 = dataSnapshot.child("admin").getValue(String.class);
+                    textViewName.setText(name);
+                    textViewEmail.setText(email);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+            navigationView.getMenu().clear();
+            navigationView.inflateMenu(R.menu.navigation_menu_logout);
+        }
+        else {
+
+            navigationView.getMenu().clear();
+            navigationView.inflateMenu(R.menu.navigation_menu_login);
+        }
+
+       // ImageView iv_youtube_thumnail = findViewById(R.id.img_thumnail);
+
+      /*  try {
+            String videoId = extractYoutubeId("https://www.youtube.com/watch?v=atmWWi5bIbg");
+            Log.e("VideoId is->", "" + videoId);
+            String img_url = "http://img.youtube.com/vi/" + videoId + "/0.jpg"; // this is link which will give u thumnail image of that video
+            Picasso.with(HomeActivity.this)
+                    .load(img_url)
+                    .into(iv_youtube_thumnail);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } */
+
+        FirebaseRecyclerAdapter<object, HomeActivity.NewsViewHolder> mPeopleRVAdapter2;
+        final TextView title = findViewById(R.id.textViewTitle);
+
+        mPeopleRVAdapter2 = mckvie_notices("Notices/all");
+        mPeopleRVAdapter2.startListening();
+        title.setText("NOTICES");
+
+        TabLayout tabLayout = findViewById(R.id.tablayout);
+        tabLayout.addTab(tabLayout.newTab().setText("Notices"));
+        tabLayout.addTab(tabLayout.newTab().setText("News"));
+        tabLayout.addTab(tabLayout.newTab().setText("Events"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                FirebaseRecyclerAdapter<object, HomeActivity.NewsViewHolder> mPeopleRVAdapter2;
+
+                if(tab.getPosition() == 1){
+                    mPeopleRVAdapter2 = mckvie_notices("Notices/News");
+                    mPeopleRVAdapter2.startListening();
+                    title.setText("NEWS");
+                }
+
+                if(tab.getPosition() == 0){
+                    mPeopleRVAdapter2 = mckvie_notices("Notices/all");
+                    mPeopleRVAdapter2.startListening();
+                    title.setText("NOTICES");
+                }
+
+                if(tab.getPosition() == 2){
+                    mPeopleRVAdapter2 = mckvie_notices("Notices/Events");
+                    mPeopleRVAdapter2.startListening();
+                    title.setText("EVENTS");
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
+
+    public static void ImageViewAnimatedChange(final Context c, final String url, final ImageView v) {
+        final Animation anim_out = AnimationUtils.loadAnimation(c, android.R.anim.fade_out);
+        final Animation anim_in  = AnimationUtils.loadAnimation(c, android.R.anim.fade_in);
+        anim_out.setAnimationListener(new Animation.AnimationListener()
+        {
+            @Override public void onAnimationStart(Animation animation) {}
+            @Override public void onAnimationRepeat(Animation animation) {}
+            @Override public void onAnimationEnd(Animation animation)
+            {
+                Picasso.with(c).load(url)
+                        .into(v);
+                anim_in.setAnimationListener(new Animation.AnimationListener() {
+                    @Override public void onAnimationStart(Animation animation) {}
+                    @Override public void onAnimationRepeat(Animation animation) {}
+                    @Override public void onAnimationEnd(Animation animation) {}
+                });
+                v.startAnimation(anim_in);
+            }
+        });
+        v.startAnimation(anim_out);
+    }
+
+    public FirebaseRecyclerAdapter<object, HomeActivity.NewsViewHolder> mckvie_notices(String dept_out) {
+
+        FirebaseRecyclerAdapter<object, HomeActivity.NewsViewHolder> mPeopleRVAdapter;
+
+        setTitle(dept_out);
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(dept_out);
+        mDatabase.keepSynced(true);
+        RecyclerView mPeopleRV = findViewById(R.id.myRecycleView1);
+        final ProgressBar mProgress = findViewById(R.id.progress_home);
+        mProgress.setVisibility(View.VISIBLE);
+
+        DatabaseReference personsRef = FirebaseDatabase.getInstance().getReference().child(dept_out);
+        Query personsQuery = personsRef.orderByKey();
+
+        mPeopleRV.hasFixedSize();
+        mPeopleRV.setLayoutManager(new LinearLayoutManager(this));
+
+
+
+        FirebaseRecyclerOptions personsOptions = new FirebaseRecyclerOptions.Builder<object>().setQuery(personsQuery, object.class).build();
+
+        mPeopleRVAdapter = new FirebaseRecyclerAdapter<object, HomeActivity.NewsViewHolder>(personsOptions) {
+            @Override
+            protected void onBindViewHolder(HomeActivity.NewsViewHolder holder, final int position, final object model) {
+                holder.setTitle(model.getTitle());
+                holder.setTime(model.getTime());
+
+                mProgress.setVisibility(View.INVISIBLE);
+
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final String url = model.getUrl();
+                        if(!url.equals("none")) {
+                            Intent intent = new Intent(HomeActivity.this, webview.class);
+                            intent.putExtra("id", url);
+                            startActivity(intent);
+                        }
+                    }
+                });
+
+                holder.setIsRecyclable(false);
+            }
+
+            @Override
+            public HomeActivity.NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+                View view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.home_row, parent, false);
+
+                return new HomeActivity.NewsViewHolder(view);
+            }
+        };
+
+        mPeopleRV.setAdapter(mPeopleRVAdapter);
+
+        return mPeopleRVAdapter;
+
+    }
+
+    public static class NewsViewHolder extends RecyclerView.ViewHolder{
+        View mView;
+        String date1;
+
+        public NewsViewHolder(View itemView){
+            super(itemView);
+            mView = itemView;
+        }
+        public void setTitle(String title){
+            TextView post_title = (TextView)mView.findViewById(R.id.post_title);
+            post_title.setText(title.substring(0,1).toUpperCase() + title.substring(1));
+        }
+
+        private void setTime(String time){
+            ImageView newLogo = mView.findViewById(R.id.new_logo);
+            date1 = time;
+
+            try {
+                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                Date post_date = format.parse(date1);
+                Calendar c = Calendar.getInstance();
+                c.setTime(post_date);
+                c.add(Calendar.DATE, 2);
+                Date futureDate = c.getTime();
+                Date currentDate = Calendar.getInstance().getTime();
+
+                if (!currentDate.after(futureDate)) {
+                    newLogo.setVisibility(View.VISIBLE);
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public void buttonTap() {
 
         TextView syllabus =findViewById(R.id.syllabus);
-        TextView noragging = findViewById(R.id.no_ragging);
         ImageView iv_play = findViewById(R.id.iv_play_pause);
-        TextView handbook = findViewById(R.id.handbook_rules);
         TextView know_mckvie = findViewById(R.id.know_mckvie);
-        TextView book = findViewById(R.id.book);
         TextView Contactus = findViewById(R.id.contact_us);
         TextView marks = findViewById(R.id.online_mark);
         TextView feed_back = findViewById(R.id.feedback);
         TextView attendance = findViewById(R.id.attendance);
 
+        attendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, webview.class);
+                intent.putExtra("id", "https://bit.ly/2JWAZpU");
+                startActivity(intent);
+            }
+        });
+
+        syllabus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, Syllabus.class));
+            }
+        });
+
+
+
+        iv_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, YoutubeActivity.class));
+            }
+        });
+
+        know_mckvie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, know_mckvie.class));
+            }
+        });
+        Contactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, contact_us.class));
+            }
+        });
+
+        marks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mAuth.getCurrentUser() != null) {
+                    startActivity(new Intent(HomeActivity.this, MarksActivity.class));
+                } else {
+                    Toast.makeText(HomeActivity.this, "Please Sign In First", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        feed_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, feedback.class));
+            }
+        });
+    }
+
+    public void floating_button() {
         //floating action button start
         final FloatingActionButton  fab_plus = findViewById(R.id.fab_plus);
         final FloatingActionButton  fab_call = findViewById(R.id.fab_call);
@@ -120,7 +489,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-        //floating action button end
+        //floating action button en
 
         //chat start
         fab_message.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +504,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 if(mAuth.getCurrentUser() != null) {
-                    finish();
                     Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                     startActivity(intent);
                 }
@@ -153,144 +521,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+    }
 
-        //viewPager = findViewById(R.id.viewPager);
-
-        //ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        //viewPager.setAdapter(viewPagerAdapter);
-
-        //Timer timer = new Timer();
-        //timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 4000);
-
-        final ImageView img_banner = findViewById(R.id.home_image);
-
-
-
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Banner");
-
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String url = dataSnapshot.getValue(String.class);
-                Picasso.with(HomeActivity.this).load(url)
-                        .into(img_banner);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        attendance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, webview.class);
-                intent.putExtra("id", "https://bit.ly/2JWAZpU");
-                startActivity(intent);
-            }
-        });
-
-        syllabus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, Syllabus.class));
-            }
-        });
-
-        noragging.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, NoRagging.class));
-            }
-        });
-
-        iv_play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, YoutubeActivity.class));
-            }
-        });
-
-        handbook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                Uri uri = Uri.parse("http://www.mckvie.edu.in/site/assets/files/1310/handbook_corrected.pdf");
-                DownloadManager.Request request = new DownloadManager.Request(uri);
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                downloadManager.enqueue(request);
-                Toast.makeText(HomeActivity.this, "Downloading", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        book.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, books_journals.class));
-            }
-        });
-
-        know_mckvie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, know_mckvie.class));
-            }
-        });
-        Contactus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, contact_us.class));
-            }
-        });
-
-        marks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(mAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(HomeActivity.this, MarksActivity.class));
-                } else {
-                    Toast.makeText(HomeActivity.this, "Please Sign In First", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-        feed_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, feedback.class));
-            }
-        });
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        hView = navigationView.inflateHeaderView(R.layout.navigation_header);
-
-        textViewName = hView.findViewById(R.id.username);
-        textViewEmail = hView.findViewById(R.id.useremail);
+    @Override
+    public void onResume(){
+        super.onResume();
 
         if (mAuth.getCurrentUser() != null) {
-            FirebaseDatabase database1 = FirebaseDatabase.getInstance();
-            DatabaseReference ref1 = database1.getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-            ref1.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    String name = dataSnapshot.child("name").getValue(String.class);
-                    String email = dataSnapshot.child("email").getValue(String.class);
-                    admin1 = dataSnapshot.child("admin").getValue(String.class);
-                    textViewName.setText(name);
-                    textViewEmail.setText(email);
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
 
             try {
-                File f = new File("/data/user/0/com.techclub.mckvie/app_imageDir", FirebaseAuth.getInstance().getCurrentUser().getUid()+".jpg");
+                File f = new File("/data/user/0/com.techclub.mckvie/app_imageDir", "profile_pic.jpg");
                 Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
                 ImageView img = hView.findViewById(R.id.profile_image);
                 img.setImageBitmap(b);
@@ -304,122 +544,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             textViewName.setText("Welcome to the Official App of");
             textViewEmail.setText("MCKV Institute of Engineering");
         }
-
-
-
-        ImageView iv_youtube_thumnail = findViewById(R.id.img_thumnail);
-
-        try {
-            String videoId = extractYoutubeId("https://www.youtube.com/watch?v=atmWWi5bIbg");
-            Log.e("VideoId is->", "" + videoId);
-            String img_url = "http://img.youtube.com/vi/" + videoId + "/0.jpg"; // this is link which will give u thumnail image of that video
-            Picasso.with(HomeActivity.this)
-                    .load(img_url)
-                    .into(iv_youtube_thumnail);
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        TabLayout tabLayout = findViewById(R.id.tablayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Notices"));
-        tabLayout.addTab(tabLayout.newTab().setText("News"));
-        tabLayout.addTab(tabLayout.newTab().setText("Events"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-
-        final ViewPager viewPager =  findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-
     }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-
-        NavigationView navigationView;
-
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        if (mAuth.getCurrentUser() != null) {
-
-            try {
-                File f = new File("/data/user/0/com.techclub.mckvie/app_imageDir", FirebaseAuth.getInstance().getCurrentUser().getUid()+".jpg");
-                Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
-                ImageView img = (ImageView)hView.findViewById(R.id.profile_image);
-                img.setImageBitmap(b);
-            }
-            catch (FileNotFoundException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        else {
-            textViewName.setText("Welcome to the Official App of");
-            textViewEmail.setText("MCKV Institute of Engineering");
-        }
-
-
-
-
-    }
-
-    public String extractYoutubeId(String url) throws MalformedURLException {
-        String query = new URL(url).getQuery();
-        String[] param = query.split("&");
-        String id = null;
-        for (String row : param) {
-            String[] param1 = row.split("=");
-            if (param1[0].equals("v")) {
-                id = param1[1];
-            }
-        }
-        return id;
-    }
-
-    /*public class MyTimerTask extends TimerTask {
-
-        @Override
-        public void run(){
-
-            HomeActivity.this.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if(viewPager.getCurrentItem()==0){
-                        viewPager.setCurrentItem(1);
-                    } else if (viewPager.getCurrentItem()==1){
-                        viewPager.setCurrentItem(2);
-                    }else if (viewPager.getCurrentItem()==2){
-                        viewPager.setCurrentItem(3);
-                    }else{
-                        viewPager.setCurrentItem(0);
-                    }
-                }
-            });
-        }
-    }*/
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -529,15 +654,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onStart() {
         super.onStart();
 
-        NavigationView navigationView =  findViewById(R.id.nav_view);
 
-        if(mAuth.getCurrentUser() == null) {
-            navigationView.getMenu().clear();
-            navigationView.inflateMenu(R.menu.navigation_menu_login);
-        } else {
-            navigationView.getMenu().clear();
-            navigationView.inflateMenu(R.menu.navigation_menu_logout);
-        }
+
+
     }
 
     @Override
@@ -548,6 +667,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Intent homeIntent = new Intent(Intent.ACTION_MAIN);
             homeIntent.addCategory(Intent.CATEGORY_HOME);
             homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish();
             startActivity(homeIntent);
         }
     }

@@ -159,13 +159,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void saveToInternalStorage(Bitmap bitmapImage){
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        File mypath = new File(directory,FirebaseAuth.getInstance().getCurrentUser().getUid()+".jpg");
+        File mypath = new File(directory,"profile_pic.jpg");
 
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
 
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            bitmapImage.compress(Bitmap.CompressFormat.JPEG, 50, fos);
 
         } catch (Exception e) {
             e.printStackTrace();

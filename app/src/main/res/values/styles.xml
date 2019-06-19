@@ -5,7 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">#669999</item>
-        <item name="android:windowBackground">@drawable/activity_background</item>
+        <item name="android:windowBackground">@drawable/background2_min</item>
     </style>
 
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">

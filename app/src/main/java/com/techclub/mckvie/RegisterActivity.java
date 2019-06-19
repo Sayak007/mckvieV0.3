@@ -1,7 +1,6 @@
 package com.techclub.mckvie;
 
 import android.content.Intent;
-import androidx.annotation.NonNull;
 import com.google.android.material.textfield.TextInputLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -85,11 +84,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         TextInputLayout editTextEmail = findViewById(R.id.edit_text_email);
         TextInputLayout editTextPassword = findViewById(R.id.edit_text_password);
         TextInputLayout editTextId = findViewById(R.id.edit_text_id);
+        TextInputLayout editTextConfirmPassword = findViewById(R.id.edit_text_confirm_password);
+        TextInputLayout editTextRoll = findViewById(R.id.edit_text_roll);
+        TextInputLayout editTextBatch = findViewById(R.id.edit_text_year);
+        TextInputLayout editTextPhn = findViewById(R.id.edit_text_phn);
 
         final String name = editTextName.getEditText().getText().toString().trim();
         final String email = editTextEmail.getEditText().getText().toString().trim();
         final String password = editTextPassword.getEditText().getText().toString().trim();
         final String id = editTextId.getEditText().getText().toString().trim();
+        final String roll = editTextRoll.getEditText().getText().toString().trim();
+        final String phn = editTextPhn.getEditText().getText().toString().trim();
+        final String year = editTextBatch.getEditText().getText().toString().trim();
+        final String confirm_pass = editTextConfirmPassword.getEditText().getText().toString().trim();
         final String admin = "false";
 
         if (name.isEmpty()) {
@@ -129,6 +136,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             editTextPassword.setError(null);
         }
 
+        if(!password.equals(confirm_pass)) {
+            editTextConfirmPassword.setError("Password doesn't Match");
+            return;
+        } else {
+            editTextConfirmPassword.setError(null);
+        }
+
         if (id.isEmpty()) {
             editTextId.setError(getString(R.string.input_error_phone));
             return;
@@ -143,12 +157,54 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             editTextId.setError(null);
         }
 
+        if (roll.isEmpty()) {
+            editTextRoll.setError("Roll No. is required");
+            return;
+        } else {
+            editTextRoll.setError(null);
+        }
+
+        if (roll.length() != 2) {
+            editTextRoll.setError("Enter valid Roll No.");
+            return;
+        } else {
+            editTextRoll.setError(null);
+        }
+
+        if (year.isEmpty()) {
+            editTextBatch.setError("Batch Year is required");
+            return;
+        } else {
+            editTextBatch.setError(null);
+        }
+
+        if (year.length() != 4) {
+            editTextBatch.setError("Invalid Input");
+            return;
+        } else {
+            editTextBatch.setError(null);
+        }
+
+        if (phn.isEmpty()) {
+            editTextPhn.setError("Phone No. is required");
+            return;
+        } else {
+            editTextPhn.setError(null);
+        }
+
+        if (phn.length() != 10) {
+            editTextPhn.setError("Invalid Phone No.");
+            return;
+        } else {
+            editTextPhn.setError(null);
+        }
+
 
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
 
@@ -157,14 +213,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                     email,
                                     id,
                                     admin,
-                                    dept
+                                    dept,
+                                    roll,
+                                    phn,
+                                    year
                             );
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
-                                public void onComplete(@NonNull Task<Void> task) {
+                                public void onComplete(Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         progressBar.setVisibility(View.GONE);
                                         Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
@@ -172,7 +231,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         startActivity(intent);
                                     } else {
-                                        //display a failure message
+                                        Toast.makeText(RegisterActivity.this, "Oops, something seem to have went wrong", Toast.LENGTH_LONG).show();
+
                                     }
                                 }
                             });

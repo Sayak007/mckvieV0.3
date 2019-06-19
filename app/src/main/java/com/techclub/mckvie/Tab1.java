@@ -94,7 +94,6 @@ public class Tab1 extends Fragment {
         View mView;
         String date1;
 
-
         private NewsViewHolder(View itemView){
             super(itemView);
             mView = itemView;

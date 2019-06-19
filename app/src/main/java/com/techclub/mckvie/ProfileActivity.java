@@ -6,13 +6,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -52,14 +49,16 @@ public class ProfileActivity extends AppCompatActivity {
 
         ImageView btnSelectImage = (ImageView) findViewById(R.id.btn_image);
         ImageView mImageView = (ImageView) findViewById(R.id.imageView);
-        TextView textView = (TextView) findViewById(R.id.testTextVIew);
+        final TextView textView = (TextView) findViewById(R.id.testTextVIew);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         final TextView textViewname = (TextView) findViewById(R.id.textView94);
         final TextView textViewemail = (TextView) findViewById(R.id.textView96);
         final TextView textViewuid = (TextView) findViewById(R.id.textView98);
-        final TextView textViewdept = (TextView) findViewById(R.id.textView101);
+        final TextView textViewdept = (TextView) findViewById(R.id.textView6);
+        final TextView textViewroll = findViewById(R.id.textView7);
+        final TextView textViewyear = findViewById(R.id.textView9);
+        final TextView textViewphn = findViewById(R.id.textView11);
 
-        Button button = (Button) findViewById(R.id.button);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -81,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
 
         try {
-            File f=new File("/data/user/0/com.techclub.mckvie/app_imageDir", FirebaseAuth.getInstance().getCurrentUser().getUid()+".jpg");
+            File f = new File("/data/user/0/com.techclub.mckvie/app_imageDir", "profile_pic.jpg");
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
             mImageView.setImageBitmap(b);
             progressBar.setVisibility(View.GONE);
@@ -99,30 +98,29 @@ public class ProfileActivity extends AppCompatActivity {
 
             ref1.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                public void onDataChange(DataSnapshot dataSnapshot) {
                     String name = dataSnapshot.child("name").getValue(String.class);
                     String email = dataSnapshot.child("email").getValue(String.class);
                     String uid = dataSnapshot.child("id").getValue(String.class);
                     String dept = dataSnapshot.child("dept").getValue(String.class);
+                    String phn = dataSnapshot.child("phn").getValue(String.class);
+                    String roll = dataSnapshot.child("roll").getValue(String.class);
+                    String batch = dataSnapshot.child("batch").getValue(String.class);
                     textViewname.setText(name);
                     textViewemail.setText(email);
                     textViewuid.setText(uid);
                     textViewdept.setText(dept);
+                    textViewphn.setText(phn);
+                    textViewroll.setText(roll);
+                    textViewyear.setText(batch);
                 }
 
                 @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+                public void onCancelled(DatabaseError databaseError) {
 
                 }
             });
         }
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ProfileActivity.this, "Hoyni Ekhono -_-", Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
 
@@ -156,7 +154,7 @@ public class ProfileActivity extends AppCompatActivity {
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
-                            public void onFailure(@NonNull Exception exception) {
+                            public void onFailure(Exception exception) {
                                 Toast.makeText(ProfileActivity.this, exception.getMessage(), Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
@@ -181,12 +179,12 @@ public class ProfileActivity extends AppCompatActivity {
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
 
-        File mypath=new File(directory,FirebaseAuth.getInstance().getCurrentUser().getUid()+".jpg");
+        File mypath = new File(directory,"profile_pic.jpg");
 
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            bitmapImage.compress(Bitmap.CompressFormat.JPEG, 50, fos);
             loadImageFromStorage(directory.getAbsolutePath());
         } catch (Exception e) {
             e.printStackTrace();
@@ -203,7 +201,7 @@ public class ProfileActivity extends AppCompatActivity {
     {
 
         try {
-            File f=new File(path, FirebaseAuth.getInstance().getCurrentUser().getUid()+".jpg");
+            File f = new File("/data/user/0/com.techclub.mckvie/app_imageDir", "profile_pic.jpg");
             Log.v("pathos",path);
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
             ImageView img=(ImageView)findViewById(R.id.imageView);
