@@ -102,6 +102,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         String msg = "Subsription failed";
                                         Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
                                     }
+                                    else{
+                                    }
                                 }
                             });
 

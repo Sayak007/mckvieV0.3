@@ -4,4 +4,10 @@
     >
     <item android:title="Sign Out" app:showAsAction="never"
         android:id="@+id/menu_sign_out"/>
+
+    <item android:title="Enable Notification" app:showAsAction="never"
+        android:id="@+id/not_enab"/>
+
+    <item android:title="Disable Notification" app:showAsAction="never"
+    android:id="@+id/not_disab"/>
 </menu>

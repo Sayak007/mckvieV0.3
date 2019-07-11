@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,12 @@
         android:roundIcon="@drawable/mckvlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service android:name=".FCMService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -39,6 +46,9 @@
             android:theme="@style/HomeTheme" />
         <activity
             android:name=".ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".info"
             android:screenOrientation="portrait" />
         <activity
             android:name=".admin_app"

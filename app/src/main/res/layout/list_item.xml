@@ -1,118 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:id="@+id/message_user"
-        android:textStyle="normal|bold"
-        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/prof1"
+        android:layout_toRightOf="@id/prof1"
+        android:textColor="#FFFFFF"
+        android:textStyle="normal|bold"
+        android:textAllCaps="true"
+        android:textSize="15dp"/>
 
     <TextView
-        android:layout_alignParentBottom="@+id/message_user"
-        android:layout_alignParentEnd="true"
         android:id="@+id/message_user2"
-        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_toStartOf="@+id/prof2"
+        android:layout_toLeftOf="@id/prof2"
+        android:textColor="#FFFFFF"
+        android:textStyle="normal|bold"
+        android:textAllCaps="true"
+        android:textSize="15dp"/>
 
-    <com.github.library.bubbleview.BubbleTextView
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_below="@id/message_user"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#000000"
-        android:textSize="18sp"
+    <TextView
         android:id="@+id/message_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:padding="10dp"
-        android:clickable="true"
+        android:layout_below="@+id/message_time"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
         android:autoLink="all"
-        android:textIsSelectable="true"
-        app:arrowWidth="8dp"
-        app:angle="8dp"
-        app:arrowHeight="10dp"
-        app:arrowPosition="14dp"
-        app:arrowLocation="left"
-        app:bubbleColor="#D6DCDA"
-        app:arrowCenter="true"
-        />
-
-    <com.github.library.bubbleview.BubbleImageView
-        android:id="@+id/chat_image1"
-        android:layout_width="98dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/message_time"
-        android:layout_below="@+id/message_user"
-        android:layout_marginTop="-1dp"
-        android:layout_marginBottom="-1dp"
-        android:autoLink="all"/>
-
-    <com.github.library.bubbleview.BubbleImageView
-        android:id="@+id/chat_image2"
-        android:layout_width="98dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/message_time"
-        android:layout_below="@+id/message_user"
-        android:layout_marginTop="-1dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="-1dp" />
-
-    <com.github.library.bubbleview.BubbleTextView
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/message_user"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#000000"
+        android:textIsSelectable="true"
         android:textSize="18sp"
-        android:layout_marginLeft="5dp"
+        android:visibility="invisible"
+        android:background="@drawable/bg_speech_bubble_incoming"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp" />
+
+    <TextView
         android:id="@+id/message_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:clickable="true"
+        android:layout_below="@+id/message_time2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
         android:autoLink="all"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#000000"
         android:textIsSelectable="true"
-        app:arrowWidth="8dp"
-        app:angle="8dp"
-        app:arrowHeight="10dp"
-        app:arrowPosition="14dp"
+        android:textSize="18sp"
         android:visibility="invisible"
-        app:arrowLocation="right"
-        app:bubbleColor="#B2F1DA"
-        app:arrowCenter="true"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/bg_speech_bubble_outgoing"
         />
 
     <TextView
         android:id="@+id/message_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/message_text"
-        android:layout_alignParentStart="true"
+        android:layout_below="@+id/message_user"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-3dp"
+        android:layout_toEndOf="@+id/prof1"
+        android:text="TextView"
         android:textColor="#FFF"
-        android:visibility="invisible"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="1dp"
-        android:text="TextView" />
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/message_time2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/message_user2"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/prof2"
+        android:text="TextView"
         android:textColor="#FFF"
-        android:layout_below="@+id/message_text2"
-        android:visibility="invisible"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/prof1"
+        android:layout_width="36dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/chatothers_24dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/prof2"
+        android:layout_width="36dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="2dp"
-        android:text="TextView" />
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/ic_person_blue_24dp"
+        android:visibility="invisible" />
 
 </RelativeLayout>

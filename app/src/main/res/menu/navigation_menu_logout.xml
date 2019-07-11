@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/item_0"
+        android:title="Location and Information">
+        <menu android:checkableBehavior="single">
+            <item android:id="@+id/location"
+                android:title="Location"
+                android:icon="@drawable/locate"
+                android:visible="true"/>
+
+            <item android:id="@+id/info"
+                android:title="Information"
+                android:icon="@mipmap/baseline_info_black_18dp"
+                android:visible="true"/>
+
+        </menu>
+    </item>
+
     <item android:id="@+id/navi_item1"
         android:title="Update">
         <menu android:checkableBehavior="single">
@@ -63,5 +79,9 @@
         <item android:id="@+id/share"
             android:title="Share App"
             android:icon="@mipmap/baseline_share_black_18dp"/>
+        <item android:id="@+id/null1"
+            android:title=""
+
+            />
     </group>
 </menu>

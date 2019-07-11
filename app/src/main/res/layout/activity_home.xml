@@ -168,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:maxLines="2"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:textStyle="italic"
@@ -233,7 +233,7 @@
                     android:elevation="6dp"
                     android:src="@drawable/ic_action_email"
                     android:visibility="invisible"
-                    app:backgroundTint="#92DBFF" />
+                    app:backgroundTint="#98DE34" />
 
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -248,7 +248,7 @@
                     android:elevation="6dp"
                     android:src="@drawable/ic_action_message"
                     android:visibility="invisible"
-                    app:backgroundTint="#92DBFF" />
+                    app:backgroundTint="#98DE34" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fab_call"
@@ -262,7 +262,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:visibility="invisible"
-                    app:backgroundTint="#92DBFF"
+                    app:backgroundTint="#98DE34"
                     app:pressedTranslationZ="12dp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -273,10 +273,10 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="45dp"
                     android:elevation="6dp"
-                    android:src="@drawable/ic_action_plus"
+                    android:src="@drawable/ic_add_circle_black_24dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    app:backgroundTint="#F27676"
+                    app:backgroundTint="#FF1111"
                     app:pressedTranslationZ="12dp" />
 
                 <!--android:background="#4db6ac" green
@@ -286,7 +286,7 @@
                     android:id="@+id/tablayout"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:background="#004EC5"
+                    android:background="#453075"
                     android:layout_alignParentBottom="true"
                     app:tabTextColor="#ffffff"
                     app:tabIndicatorColor="#ffffff"
@@ -307,7 +307,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:layout_gravity="start"
-        android:background="#dbdbdb"
+        android:background="#DFFF98"
         app:itemTextAppearance="@style/TextAppearance.AppCompat.Body2"
         app:menu="@menu/navigation_menu_login">
 

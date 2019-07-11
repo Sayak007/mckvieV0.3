@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.Toolbar;
@@ -74,6 +76,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView =  findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
         //viewPager = findViewById(R.id.viewPager);
 
@@ -581,6 +585,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     Toast.makeText(HomeActivity.this, "Logged Out!", Toast.LENGTH_SHORT).show();
                 }
 
+                break;
+            case R.id.location:
+                Uri mapUri = Uri.parse("geo:0,0?q=22.619659, 88.347703(MCKV Institute Of Engineering)");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+                break;
+            case R.id.info:
+                myIntent = new Intent(HomeActivity.this,info.class);
+                myIntent.putExtra("flag", 0);
+                startActivity(myIntent);
                 break;
 
             case R.id.notices:

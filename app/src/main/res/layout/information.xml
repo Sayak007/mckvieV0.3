@@ -1,0 +1,226 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/activity_background"
+    android:layout_height="match_parent"
+    tools:context=".info">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/navigation_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageview4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/aboutcollege"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="ABOUT"
+                android:textColor="#669999"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="1dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="For more than 18 years, MCKVIE has been known for its spirit of excellence that transforms students into intellectuals, where faculty work with the students to engineer solutions and encourage exploration across disciplines. Critical thinking and networking is the main focus – on campus, off campus and after graduation."
+                android:textSize="15dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="200dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp">
+
+                <ImageView
+                    android:id="@+id/im1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:src="@drawable/im1"/>
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toEndOf="@+id/im1"
+                    android:layout_toRightOf="@+id/im1"
+                    android:text="VISITING MCKVIE"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView13"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toEndOf="@+id/im1"
+                    android:layout_toRightOf="@+id/im1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="MCKVIE is often described as one of the most beautiful campuses in West Bengal. Come see for yourself." />
+
+                <TextView
+                    android:id="@+id/visit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toEndOf="@+id/im1"
+                    android:paddingLeft="10dp"
+                    android:text="Visit Us"
+                    android:textColor="@color/design_default_color_primary" />
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/im1"
+                    android:id="@+id/im2"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/chairman"/>
+
+                <TextView
+                    android:id="@+id/textView103"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/im1"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:layout_toEndOf="@+id/im2"
+                    android:text="CHAIRMAN's ADDRESS"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView116"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView103"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toEndOf="@+id/im2"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="10dp"
+                    android:text="MCKVIE is a community whose members benefit from lifelong connections to their college and to one another." />
+
+                <TextView
+                    android:id="@+id/chairman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView116"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toEndOf="@+id/im2"
+                    android:text="Read the Chairman's Address"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/design_default_color_primary" />
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/im2"
+                    android:id="@+id/im3"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/infoim3"/>
+
+                <TextView
+                    android:id="@+id/textView150"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/im2"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/im3"
+                    android:paddingLeft="10dp"
+                    android:text="CAMPUS NEWS"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView151"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView150"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toEndOf="@+id/im2"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="10dp"
+                    android:text="The communications division works hard to keep you informed about the latest news and happenings." />
+
+                <TextView
+                    android:id="@+id/campusnews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView151"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/im2"
+                    android:paddingLeft="10dp"
+                    android:text="Read more about campus news"
+                    android:textColor="@color/design_default_color_primary" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

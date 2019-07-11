@@ -17,4 +17,6 @@ public class User {
         this.phn = phn;
         this.year = year;
     }
+
+    public String getName() {return name;}
 }
