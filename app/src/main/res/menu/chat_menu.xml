@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-    <item android:title="Sign Out" app:showAsAction="never"
-        android:id="@+id/menu_sign_out"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Change Wallpaper" app:showAsAction="never"
+        android:id="@+id/wall"/>
 
     <item android:title="Enable Notification" app:showAsAction="never"
         android:id="@+id/not_enab"/>
 
     <item android:title="Disable Notification" app:showAsAction="never"
     android:id="@+id/not_disab"/>
+
+    <item android:title="Sign Out" app:showAsAction="never"
+        android:id="@+id/menu_sign_out"/>
 </menu>

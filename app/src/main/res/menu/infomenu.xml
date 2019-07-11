@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/one"
+        android:title="Know Mckvie"/>
+
+    <item
+        android:id="@+id/two"
+        android:title="Administration"/>
+
+    <item
+        android:id="@+id/three"
+        android:title="Affiliations and Accreditations"/>
+
+    <item
+        android:id="@+id/four"
+        android:title="Chairman's Address"/>
+    <item
+        android:id="@+id/five"
+        android:title="Director's Address"/>
+    <item
+        android:id="@+id/six"
+        android:title="Principal's Address"/>
+    <item
+        android:id="@+id/seven"
+        android:title="The Trust"/>
+    <item
+        android:id="@+id/eight"
+        android:title="Governing Body"/>
+    <item
+        android:id="@+id/nine"
+        android:title="Vision and Mission"/>
+    <item
+        android:id="@+id/ten"
+        android:title="Quality Policy"/>
+    <item
+        android:id="@+id/eleven"
+        android:title="Holiday List"/>
+
+</menu>

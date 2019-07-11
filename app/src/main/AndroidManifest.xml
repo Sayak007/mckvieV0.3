@@ -51,6 +51,9 @@
             android:name=".info"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".wallchat"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".admin_app"
             android:screenOrientation="portrait" />
         <activity

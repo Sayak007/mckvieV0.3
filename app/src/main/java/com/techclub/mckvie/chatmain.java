@@ -181,6 +181,9 @@ public class chatmain extends AppCompatActivity {
                 Toast.makeText(chatmain.this, "Notification Disabled!", Toast.LENGTH_SHORT).show();
             }
         }
+        if(item.getItemId()==R.id.wall){
+            startActivity(new Intent(chatmain.this,wallchat.class));
+        }
         switch (item.getItemId()) {
             case android.R.id.home:
                 // API 5+ solution

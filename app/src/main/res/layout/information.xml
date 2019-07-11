@@ -36,29 +36,67 @@
                 android:background="@drawable/aboutcollege"
                 android:padding="5dp"/>
 
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="ABOUT"
-                android:textColor="#669999"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="1dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="188dp">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="For more than 18 years, MCKVIE has been known for its spirit of excellence that transforms students into intellectuals, where faculty work with the students to engineer solutions and encourage exploration across disciplines. Critical thinking and networking is the main focus – on campus, off campus and after graduation."
-                android:textSize="15dp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="200dp" />
+                <TextView
+                    android:id="@+id/abt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:padding="10dp"
+                    android:text="ABOUT"
+                    android:textColor="#669999"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:background="#DDFF91"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="1dp"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/abt"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="For more than 18 years, MCKVIE has been known for its spirit of excellence that transforms students into intellectuals, where faculty work with the students to engineer solutions and encourage exploration across disciplines. Critical thinking and networking is the main focus – on campus, off campus and after graduation."
+                    android:textSize="15dp"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="200dp" />
+
+                <TextView
+                    android:id="@+id/gal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toEndOf="@+id/abt"
+                    android:focusable="true"
+                    android:padding="10dp"
+                    android:text="GALLERY"
+                    android:textColor="#669999"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/more"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="63dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_toEndOf="@+id/gal"
+                    android:src="@drawable/ic_view_headline_black_24dp" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
