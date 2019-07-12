@@ -70,7 +70,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".chatmain"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".NoticeActivity"
             android:screenOrientation="portrait" />
