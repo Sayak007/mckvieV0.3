@@ -20,12 +20,15 @@
         android:roundIcon="@drawable/mckvlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PlacementActivity"></activity>
+        <activity android:name=".AdmissionActivity" />
 
         <service android:name=".FCMService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -70,8 +73,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".chatmain"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".NoticeActivity"
             android:screenOrientation="portrait" />
