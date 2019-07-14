@@ -91,6 +91,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         final ImageView forward = findViewById(R.id.front_arrow);
         final ImageView backward = findViewById(R.id.back_arrow);
 
+
         new Runnable() {
             int currentIndex = 1;
             int updateInterval = 5000;
@@ -646,6 +647,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT,shareSubject);
                 startActivity(Intent.createChooser(sharingIntent,"Share Using"));
                 break;
+
+            case R.id.about_us:
+                myIntent = new Intent(HomeActivity.this, about_us.class);
+                myIntent.putExtra("flag", 5);
+                startActivity(myIntent);
+                break;
+
         }
         return true;
     }
