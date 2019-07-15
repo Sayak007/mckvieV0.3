@@ -669,8 +669,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(myIntent);
                 break;
 
-            case R.id.events:
-                myIntent = new Intent(HomeActivity.this, NoticeActivity.class);
+            case R.id.help:
+                myIntent = new Intent(HomeActivity.this, help_feedback.class);
                 myIntent.putExtra("flag", 4);
                 startActivity(myIntent);
                 break;

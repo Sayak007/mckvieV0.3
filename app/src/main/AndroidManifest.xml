@@ -63,6 +63,9 @@
             android:name=".Syllabus"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".help_feedback"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".NoRagging"
             android:screenOrientation="portrait" />
         <activity
