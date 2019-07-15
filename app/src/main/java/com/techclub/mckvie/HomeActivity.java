@@ -191,7 +191,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             });
 
             navigationView.getMenu().clear();
-            navigationView.inflateMenu(R.menu.navigation_menu_logout);
+            navigationView.inflateMenu(R.menu.navigation_menu_login);
         }
         else {
 
@@ -257,6 +257,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     Intent myIntent = new Intent(HomeActivity.this, ProfileActivity.class);
                     startActivity(myIntent);
                 } else {
+                    finish();
                     Intent myIntent = new Intent(HomeActivity.this, LoginActivity.class);
                     startActivity(myIntent);
                 }
@@ -264,6 +265,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
         final ImageView logoutButton = hView.findViewById(R.id.logout_image);
+        final Button signin = hView.findViewById(R.id.sign_in_1);
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -277,16 +279,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     textViewName.setText("Welcome to the Official App of");
                     textViewEmail.setText("MCKV Institute of Engineering");
 
-                    navigationView.getMenu().clear();
-                    navigationView.inflateMenu(R.menu.navigation_menu_login);
                     profile.setImageBitmap(profilePic);
                     Toast.makeText(HomeActivity.this, "Logged Out!", Toast.LENGTH_SHORT).show();
                     logoutButton.setVisibility(View.GONE);
+                    signin.setVisibility(View.VISIBLE);
                 }
             }
         });
 
-        Button signin = hView.findViewById(R.id.sign_in_1);
+
 
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -549,8 +550,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fab_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MarksActivity.class);
-                startActivity(intent);
+                if(mAuth.getCurrentUser() == null) {
+                    Intent myIntent = new Intent(HomeActivity.this,LoginActivity.class);
+                    startActivity(myIntent);
+                }
+                else {
+                    if(admin1.equals("true")) {
+                        Intent myIntent = new Intent(HomeActivity.this, admin_app.class);
+                        startActivity((myIntent));
+                    }
+                    else {
+                        Toast.makeText(HomeActivity.this, "Administrator Rights Required", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
     }
@@ -598,11 +610,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
 
-            case R.id.nav_signin:
-                myIntent = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(myIntent);
-                break;
-
             case R.id.admission:
                 myIntent = new Intent(HomeActivity.this, AdmissionActivity.class);
                 startActivity(myIntent);
@@ -615,25 +622,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
 
-            case R.id.nav_account:
-                myIntent = new Intent(HomeActivity.this, ProfileActivity.class);
-                startActivity(myIntent);
-                break;
-
-            case R.id.nav_signout:
-                FirebaseAuth.getInstance().signOut();
-                if(mAuth.getCurrentUser() == null){
-                    textViewName.setText("Welcome to the Official App of");
-                    textViewEmail.setText("MCKV Institute of Engineering");
-
-                    navigationView.getMenu().clear();
-                    navigationView.inflateMenu(R.menu.navigation_menu_login);
-                    ImageView img = findViewById(R.id.profile_image);
-                    img.setImageBitmap(profilePic);
-                    Toast.makeText(HomeActivity.this, "Logged Out!", Toast.LENGTH_SHORT).show();
-                }
-
-                break;
             case R.id.location:
                 Uri mapUri = Uri.parse("geo:0,0?q=22.619659, 88.347703(MCKV Institute Of Engineering)");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapUri);
@@ -645,7 +633,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 myIntent.putExtra("flag", 0);
                 startActivity(myIntent);
                 break;
-            case R.id.academics:
+            case R.id.academic:
                 myIntent = new Intent(HomeActivity.this,academics.class);
                 myIntent.putExtra("flag", 0);
                 startActivity(myIntent);
@@ -658,9 +646,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.dept_notices:
-                myIntent = new Intent(HomeActivity.this, NoticeActivity.class);
-                myIntent.putExtra("flag", 1);
-                startActivity(myIntent);
+                if(mAuth.getCurrentUser() == null) {
+                    Toast.makeText(HomeActivity.this, "Please Sign In first", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    myIntent = new Intent(HomeActivity.this, NoticeActivity.class);
+                    myIntent.putExtra("flag", 1);
+                    startActivity(myIntent);
+                }
+
                 break;
 
             case R.id.news:
@@ -675,7 +669,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(myIntent);
                 break;
 
-            case R.id.admin:
+            /*case R.id.admin:
                 if(mAuth.getCurrentUser() == null) {
                     myIntent = new Intent(HomeActivity.this,LoginActivity.class);
                     startActivity(myIntent);
@@ -689,7 +683,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         Toast.makeText(HomeActivity.this, "Administrator Rights Required", Toast.LENGTH_SHORT).show();
                     }
                 }
-                break;
+                break;*/
             case R.id.share:
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");

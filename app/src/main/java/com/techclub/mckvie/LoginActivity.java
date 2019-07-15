@@ -201,9 +201,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-    }
 }

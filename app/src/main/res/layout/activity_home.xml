@@ -231,7 +231,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:elevation="6dp"
-                    android:src="@drawable/ic_action_email"
+                    android:src="@mipmap/admin_1246350"
                     android:visibility="invisible"
                     app:backgroundTint="#98DE34" />
 

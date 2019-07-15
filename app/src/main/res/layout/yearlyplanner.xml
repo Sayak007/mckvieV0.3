@@ -20,9 +20,11 @@
         android:layout_below="@+id/toolbar"
         android:text="YEARLY PLANNER"
         android:textColor="#000"
+        android:fontFamily="sans-serif-condensed-light"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:padding="15dp"/>
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"/>
 
     <TextView
         android:id="@+id/tv1"
@@ -32,6 +34,8 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="20dp"
         android:textSize="15dp"
+        android:paddingEnd="16dp"
+        android:layout_marginRight="8dp"
         android:textColor="#0061FF"
         android:layout_toEndOf="@+id/imageView4" />
 
@@ -63,6 +67,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="13dp"
         android:textSize="15dp"
+        android:paddingEnd="16dp"
         android:textColor="#0061FF"
         android:layout_toEndOf="@+id/imageView5" />
 

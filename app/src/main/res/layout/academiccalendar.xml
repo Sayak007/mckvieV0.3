@@ -18,7 +18,7 @@
         android:layout_height="35dp"
         android:layout_below="@+id/textView108"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="15dp"
         app:srcCompat="@drawable/pdfim" />
 
@@ -33,20 +33,23 @@
         android:text="ACADEMIC CALENDAR"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:padding="15dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:paddingVertical="10dp"
+        android:paddingLeft="24dp"
         android:textColor="#000"/>
 
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
         android:layout_below="@+id/textView108"
         android:layout_marginStart="1dp"
         android:layout_marginTop="15dp"
         android:layout_toEndOf="@+id/imageView6"
         android:textColor="#0061FF"
-        android:textSize="15sp"
-        android:paddingRight="10dp"/>
+        android:layout_marginEnd="8dp"
+        android:textSize="15sp" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -54,7 +57,7 @@
         android:layout_height="35dp"
         android:layout_below="@+id/imageView6"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="7dp"
         app:srcCompat="@drawable/pdfim" />
 
@@ -63,11 +66,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView7"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="2dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/imageView7"
-        android:textColor="#0061FF"
-        android:paddingRight="10dp"/>
+        android:layout_marginEnd="8dp"
+        android:textColor="#0061FF" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -75,7 +79,7 @@
         android:layout_height="35dp"
         android:layout_below="@+id/imageView7"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="7dp"
         app:srcCompat="@drawable/pdfim" />
 
@@ -87,9 +91,10 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/imageView8"
+        android:layout_marginRight="8dp"
         android:textColor="#0061FF"
         android:textSize="15sp"
-        android:paddingRight="10dp"/>
+        android:layout_marginEnd="8dp" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -97,7 +102,7 @@
         android:layout_height="35dp"
         android:layout_below="@+id/imageView8"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="7dp"
         app:srcCompat="@drawable/pdfim" />
 
@@ -106,12 +111,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView9"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/imageView9"
         android:textColor="#0061FF"
-        android:textSize="15sp"
-        android:paddingRight="10dp"/>
+        android:textSize="14sp"/>
 
     <ImageView
         android:id="@+id/imageView10"
@@ -119,7 +124,7 @@
         android:layout_height="35dp"
         android:layout_below="@+id/imageView9"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="7dp"
         app:srcCompat="@drawable/pdfim" />
 
@@ -127,12 +132,12 @@
         android:id="@+id/tv5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView9"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="7dp"
+        android:layout_alignTop="@+id/imageView10"
+        android:layout_marginTop="0dp"
+        android:paddingStart="0dp"
+        android:layout_marginRight="8dp"
         android:layout_toEndOf="@+id/imageView10"
         android:textColor="#0061FF"
-        android:textSize="15sp"
-        android:paddingRight="10dp"/>
+        android:textSize="14sp" />
 
 </RelativeLayout>

@@ -57,24 +57,23 @@
 
         <ImageView
             android:id="@+id/logout_image"
-            android:layout_width="39dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="16dp"
-            android:onClick="logoutButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="12dp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/logout_1" />
+            app:srcCompat="@mipmap/logout_2" />
 
         <Button
             android:id="@+id/sign_in_1"
-            android:layout_width="84dp"
+            android:layout_width="93dp"
             android:layout_height="43dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="16dp"
-            android:text="SIGN IN"
             android:clickable="true"
+            android:text="SIGN IN"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

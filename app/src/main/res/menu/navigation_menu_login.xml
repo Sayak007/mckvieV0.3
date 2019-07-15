@@ -2,37 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/item_0"
-        android:title="Location and Information">
-        <menu android:checkableBehavior="single">
-            <item android:id="@+id/location"
-                android:title="Location"
-                android:icon="@drawable/locate"
-                android:visible="true"/>
-
-            <item android:id="@+id/info"
-            android:title="Information"
-            android:icon="@mipmap/baseline_info_black_18dp"
-            android:visible="true"/>
-
-            <item android:id="@+id/academics"
-                android:title="Academics"
-                android:icon="@drawable/ic_school_black_24dp"
-                android:visible="true"/>
-
-            <item android:id="@+id/admission"
-                android:title="Admission"
-                android:icon="@drawable/ic_thumb_up_black_24dp"
-                android:visible="true"/>
-
-            <item android:id="@+id/placement"
-                android:title="Placement"
-                android:icon="@drawable/ic_business_center_black_24dp"
-                android:visible="true"/>
-
-        </menu>
-    </item>
-
     <item android:id="@+id/navi_item1"
           android:title="Update">
 
@@ -52,28 +21,40 @@
                 android:title="Events"
                 android:icon="@mipmap/arrow2"
                 android:visible="true"/>
+
+            <item android:id="@+id/dept_notices"
+                android:title="Department Notice"
+                android:icon="@mipmap/arrow2"
+                android:visible="true"/>
         </menu>
     </item>
 
-
-    <item android:id="@+id/navi_item2"
-          android:title="Information">
-
+    <item android:id="@+id/item_0"
+        android:title="Location and Information">
         <menu android:checkableBehavior="single">
-
-            <item android:id="@+id/nav_signin"
-                android:title="Sign In"
-                android:icon="@mipmap/side_login_512"
+            <item android:id="@+id/academic"
+                android:title="Academics"
+                android:icon="@drawable/ic_school_black_24dp"
                 android:visible="true"/>
 
-            <item android:id = "@+id/nav_account"
-                android:title = "My Account"
-                android:icon="@mipmap/baseline_account_circle_black_18dp"
-                android:visible="false"/>
+            <item android:id="@+id/admission"
+                android:title="Admission"
+                android:icon="@drawable/ic_thumb_up_black_24dp"
+                android:visible="true"/>
 
-            <item android:id="@+id/admin"
-                android:title="Admin"
-                android:icon="@mipmap/admin_1246350"/>
+            <item android:id="@+id/placement"
+                android:title="Placement"
+                android:icon="@drawable/ic_business_center_black_24dp"
+                android:visible="true"/>
+            <item android:id="@+id/location"
+                android:title="Location"
+                android:icon="@drawable/locate"
+                android:visible="true"/>
+
+            <item android:id="@+id/info"
+                android:title="About"
+                android:icon="@mipmap/baseline_info_black_18dp"
+                android:visible="true"/>
 
         </menu>
     </item>
