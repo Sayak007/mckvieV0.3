@@ -48,32 +48,7 @@ public class info extends AppCompatActivity {
         TextView Chairman = (TextView)findViewById(R.id.chairman);
         TextView campusnews = (TextView) findViewById(R.id.campusnews);
         final ImageView more = (ImageView) findViewById(R.id.more);
-        final TextView gallery = (TextView)findViewById(R.id.gal);
         final TextView about = (TextView)findViewById(R.id.abt);
-
-        gallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(info.this, gallery);
-                //Inflating the Popup using xml file
-                popup.getMenuInflater()
-                        .inflate(R.menu.infogal, popup.getMenu());
-
-                //registering popup with OnMenuItemClickListener
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
-                        Toast.makeText(
-                                info.this,
-                                "You Clicked : " + item.getTitle(),
-                                Toast.LENGTH_SHORT
-                        ).show();
-                        return true;
-                    }
-                });
-
-                popup.show();
-            }
-        });
 
 
         visit.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +69,12 @@ public class info extends AppCompatActivity {
                 //registering popup with OnMenuItemClickListener
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
+
+                        switch (item.getItemId()) {
+                            case R.id.one:
+                                startActivity(new Intent(info.this, know_mckvie.class));
+                                break;
+                        }
                         Toast.makeText(
                                 info.this,
                                 "You Clicked : " + item.getTitle(),

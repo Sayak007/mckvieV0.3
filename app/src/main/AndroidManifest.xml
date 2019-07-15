@@ -77,6 +77,24 @@
             android:name=".chatmain"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".academics"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".yearlyPlanner"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".academiccalendar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".labsandfacilities"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".depsandprogs"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".NoticeActivity"
             android:screenOrientation="portrait" />
         <activity

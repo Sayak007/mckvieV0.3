@@ -26,6 +26,7 @@
             android:layout_marginBottom="8dp"
             android:src="@drawable/logo"
             app:civ_border_color="#FF000000"
+            android:clickable="true"
             app:layout_constraintBottom_toTopOf="@+id/username"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -73,6 +74,7 @@
             android:layout_marginTop="36dp"
             android:layout_marginEnd="16dp"
             android:text="SIGN IN"
+            android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

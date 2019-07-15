@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/acadone"
+        android:title="Syllabus"/>
+
+    <item
+        android:id="@+id/acadtwo"
+        android:title="Academic Calendar"/>
+
+    <item
+        android:id="@+id/acadthree"
+        android:title="Yearly Planner"/>
+
+    <item
+        android:id="@+id/acadfour"
+        android:title="Departments and Programs"/>
+    <item
+        android:id="@+id/acadfive"
+        android:title="Labs and Facilities"/>
+    <item
+        android:id="@+id/acadsix"
+        android:title="Toppers"/>
+    <item
+        android:id="@+id/acadseven"
+        android:title="Publication"/>
+    <item
+        android:id="@+id/acadeight"
+        android:title="Head Of the Departments"/>
+
+</menu>

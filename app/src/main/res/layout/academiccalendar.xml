@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/navigation_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView108"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/pdfim" />
+
+    <TextView
+        android:id="@+id/textView108"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:text="ACADEMIC CALENDAR"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView108"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/imageView6"
+        android:textColor="#0061FF"
+        android:textSize="15sp"
+        android:paddingRight="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/imageView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        app:srcCompat="@drawable/pdfim" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/imageView7"
+        android:textColor="#0061FF"
+        android:paddingRight="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/imageView7"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        app:srcCompat="@drawable/pdfim" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView8"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/imageView8"
+        android:textColor="#0061FF"
+        android:textSize="15sp"
+        android:paddingRight="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/imageView8"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        app:srcCompat="@drawable/pdfim" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView9"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/imageView9"
+        android:textColor="#0061FF"
+        android:textSize="15sp"
+        android:paddingRight="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/imageView9"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="7dp"
+        app:srcCompat="@drawable/pdfim" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView9"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="7dp"
+        android:layout_toEndOf="@+id/imageView10"
+        android:textColor="#0061FF"
+        android:textSize="15sp"
+        android:paddingRight="10dp"/>
+
+</RelativeLayout>
