@@ -15,6 +15,16 @@
                 android:icon="@mipmap/baseline_info_black_18dp"
                 android:visible="true"/>
 
+            <item android:id="@+id/admission"
+                android:title="Admission"
+                android:icon="@mipmap/baseline_info_black_18dp"
+                android:visible="true"/>
+
+            <item android:id="@+id/placement"
+                android:title="Placement"
+                android:icon="@mipmap/baseline_info_black_18dp"
+                android:visible="true"/>
+
         </menu>
     </item>
 

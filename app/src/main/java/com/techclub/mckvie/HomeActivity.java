@@ -28,6 +28,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -74,18 +75,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         buttonTap();
 
-        NavigationView navigationView =  findViewById(R.id.nav_view);
+        final NavigationView navigationView =  findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-        //viewPager = findViewById(R.id.viewPager);
-
-        //ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        //viewPager.setAdapter(viewPagerAdapter);
-
-        //Timer timer = new Timer();
-        //timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 4000);
 
         final ImageView img_banner = findViewById(R.id.home_image);
         final ImageView forward = findViewById(R.id.front_arrow);
@@ -208,20 +199,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             navigationView.inflateMenu(R.menu.navigation_menu_login);
         }
 
-       // ImageView iv_youtube_thumnail = findViewById(R.id.img_thumnail);
-
-      /*  try {
-            String videoId = extractYoutubeId("https://www.youtube.com/watch?v=atmWWi5bIbg");
-            Log.e("VideoId is->", "" + videoId);
-            String img_url = "http://img.youtube.com/vi/" + videoId + "/0.jpg"; // this is link which will give u thumnail image of that video
-            Picasso.with(HomeActivity.this)
-                    .load(img_url)
-                    .into(iv_youtube_thumnail);
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } */
-
         FirebaseRecyclerAdapter<object, HomeActivity.NewsViewHolder> mPeopleRVAdapter2;
         final TextView title = findViewById(R.id.textViewTitle);
 
@@ -270,6 +247,55 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+
+        ImageView profile = findViewById(R.id.profile_image);
+
+        /*profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mAuth.getCurrentUser()!=null){
+                    Intent myIntent = new Intent(HomeActivity.this, ProfileActivity.class);
+                    startActivity(myIntent);
+                } else {
+                    Intent myIntent = new Intent(HomeActivity.this, LoginActivity.class);
+                    startActivity(myIntent);
+                }
+            }
+        });
+
+        final ImageView logoutButton = findViewById(R.id.logout_image);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ImageView profile = findViewById(R.id.profile_image);
+                Bitmap profilePic = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+
+                FirebaseAuth.getInstance().signOut();
+                if(mAuth.getCurrentUser() == null){
+                    textViewName.setText("Welcome to the Official App of");
+                    textViewEmail.setText("MCKV Institute of Engineering");
+
+                    navigationView.getMenu().clear();
+                    navigationView.inflateMenu(R.menu.navigation_menu_login);
+                    profile.setImageBitmap(profilePic);
+                    Toast.makeText(HomeActivity.this, "Logged Out!", Toast.LENGTH_SHORT).show();
+                    logoutButton.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        Button signin = findViewById(R.id.sign_in_1);
+
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(HomeActivity.this, LoginActivity.class);
+                startActivity(myIntent);
+            }
+        });*/
+
     }
 
     public static void ImageViewAnimatedChange(final Context c, final String url, final ImageView v) {
@@ -532,6 +558,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public void onResume(){
         super.onResume();
 
+        //ImageView logoutButton = findViewById(R.id.logout_image);
+        //Button signin = findViewById(R.id.sign_in_1);
+
         if (mAuth.getCurrentUser() != null) {
 
             try {
@@ -544,10 +573,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             {
                 e.printStackTrace();
             }
+
+            //signin.setVisibility(View.GONE);
+            //logoutButton.setVisibility(View.VISIBLE);
         }
         else {
             textViewName.setText("Welcome to the Official App of");
             textViewEmail.setText("MCKV Institute of Engineering");
+
+            //signin.setVisibility(View.VISIBLE);
+            //logoutButton.setVisibility(View.GONE);
         }
     }
 
@@ -564,6 +599,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_signin:
                 myIntent = new Intent(HomeActivity.this, LoginActivity.class);
+                startActivity(myIntent);
+
+                break;
+
+            case R.id.admission:
+                myIntent = new Intent(HomeActivity.this, AdmissionActivity.class);
+                startActivity(myIntent);
+
+                break;
+
+            case R.id.placement:
+                myIntent = new Intent(HomeActivity.this, PlacementActivity.class);
                 startActivity(myIntent);
 
                 break;

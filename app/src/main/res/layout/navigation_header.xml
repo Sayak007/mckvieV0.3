@@ -54,6 +54,28 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <ImageView
+            android:id="@+id/logout_image"
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="logoutButton"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/logout_1" />
+
+        <Button
+            android:id="@+id/sign_in_1"
+            android:layout_width="84dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="16dp"
+            android:text="SIGN IN"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
