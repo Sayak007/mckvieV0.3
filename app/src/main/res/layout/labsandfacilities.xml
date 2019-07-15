@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/navigation_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/backim"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/labsandfacilities_large"/>
+
+                <TextView
+                    android:id="@+id/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/backim"
+                    android:layout_marginTop="0dp"
+                    android:padding="10dp"
+                    android:text="LABS AND FACILITIES"
+                    android:textColor="#669999"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="The laboratories at MCKVIE have been specifically designed and equipped with most modern instruments to facilitate academic learning, research and development. Out students are doers not spectators, drivers not passengers. Our learn by doing approach makes us what we are."
+                    android:textColor="#000" />
+
+                <ImageView
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/tv1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/virtual_tour" />
+
+                <TextView
+                    android:id="@+id/desc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/video"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="You can know more about our labs:"
+                    android:textColor="#000"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/auel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc1"
+                    android:text="⦿ Automobile Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/basicl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/auel"
+                    android:text="⦿ Basic Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/compl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/basicl"
+                    android:text="⦿ Computer Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/ecel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/compl"
+                    android:text="⦿ Electronics and Communication Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/mel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ecel"
+                    android:text="⦿ Mechanical Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/itl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mel"
+                    android:text="⦿ IT Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/eel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/itl"
+                    android:text="⦿ Electrical Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/hssl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/eel"
+                    android:text="⦿ HSS Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/mcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hssl"
+                    android:text="⦿ MCA Labs"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/desc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mcal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Our Library:"
+                    android:textColor="#000"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/libral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc2"
+                    android:text="⦿ Library"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="#0061FF"/>
+
+                <TextView
+                    android:id="@+id/desc3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/libral"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Our Hostel Facilties:"
+                    android:textColor="#000"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hostel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginBottom="11dp"
+                    android:layout_toRightOf="@id/desc3"
+                    android:paddingLeft="10dp"
+                    android:text="Click here"
+                    android:textColor="#0061FF"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

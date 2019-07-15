@@ -11,18 +11,23 @@
                 android:visible="true"/>
 
             <item android:id="@+id/info"
-                android:title="Information"
-                android:icon="@mipmap/baseline_info_black_18dp"
+            android:title="Information"
+            android:icon="@mipmap/baseline_info_black_18dp"
+            android:visible="true"/>
+
+            <item android:id="@+id/academics"
+                android:title="Academics"
+                android:icon="@drawable/ic_school_black_24dp"
                 android:visible="true"/>
 
             <item android:id="@+id/admission"
                 android:title="Admission"
-                android:icon="@mipmap/baseline_info_black_18dp"
+                android:icon="@drawable/ic_thumb_up_black_24dp"
                 android:visible="true"/>
 
             <item android:id="@+id/placement"
                 android:title="Placement"
-                android:icon="@mipmap/baseline_info_black_18dp"
+                android:icon="@drawable/ic_business_center_black_24dp"
                 android:visible="true"/>
 
         </menu>

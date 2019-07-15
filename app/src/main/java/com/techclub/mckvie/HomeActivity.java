@@ -247,9 +247,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        ImageView profile = findViewById(R.id.profile_image);
+       ImageView profile = hView.findViewById (R.id.profile_image) ;
 
-        /*profile.setOnClickListener(new View.OnClickListener() {
+        profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(mAuth.getCurrentUser()!=null){
@@ -262,7 +262,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        final ImageView logoutButton = findViewById(R.id.logout_image);
+        final ImageView logoutButton = hView.findViewById(R.id.logout_image);
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -285,7 +285,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        Button signin = findViewById(R.id.sign_in_1);
+        Button signin = hView.findViewById(R.id.sign_in_1);
 
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -293,7 +293,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Intent myIntent = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(myIntent);
             }
-        });*/
+        });
 
     }
 
@@ -416,6 +416,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
 
     }
+
 
     public void buttonTap() {
 
@@ -557,8 +558,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public void onResume(){
         super.onResume();
 
-        //ImageView logoutButton = findViewById(R.id.logout_image);
-        //Button signin = findViewById(R.id.sign_in_1);
+        ImageView logoutButton = hView.findViewById(R.id.logout_image);
+        Button signin = hView.findViewById(R.id.sign_in_1);
 
         if (mAuth.getCurrentUser() != null) {
 
@@ -573,15 +574,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 e.printStackTrace();
             }
 
-            //signin.setVisibility(View.GONE);
-            //logoutButton.setVisibility(View.VISIBLE);
+            signin.setVisibility(View.GONE);
+            logoutButton.setVisibility(View.VISIBLE);
         }
         else {
             textViewName.setText("Welcome to the Official App of");
             textViewEmail.setText("MCKV Institute of Engineering");
 
-            //signin.setVisibility(View.VISIBLE);
-            //logoutButton.setVisibility(View.GONE);
+            signin.setVisibility(View.VISIBLE);
+            logoutButton.setVisibility(View.GONE);
         }
     }
 
@@ -599,7 +600,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_signin:
                 myIntent = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(myIntent);
-
                 break;
 
             case R.id.admission:
@@ -641,6 +641,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.info:
                 myIntent = new Intent(HomeActivity.this,info.class);
+                myIntent.putExtra("flag", 0);
+                startActivity(myIntent);
+                break;
+            case R.id.academics:
+                myIntent = new Intent(HomeActivity.this,academics.class);
                 myIntent.putExtra("flag", 0);
                 startActivity(myIntent);
                 break;
