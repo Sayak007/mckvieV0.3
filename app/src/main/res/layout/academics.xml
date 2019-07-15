@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/activity_background"
     android:layout_height="match_parent"
     tools:context=".info">
 
@@ -76,11 +75,8 @@
                     android:layout_height="47dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="168dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="5dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_toEndOf="@+id/acd"
                     android:src="@drawable/ic_view_headline_black_24dp" />
             </RelativeLayout>
 
@@ -89,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:paddingLeft="10dp"
+                android:paddingLeft="5dp"
                 android:paddingBottom="10dp">
 
                 <ImageView
@@ -112,9 +108,10 @@
                     android:layout_marginEnd="0dp"
                     android:layout_toEndOf="@+id/im1"
                     android:layout_toRightOf="@+id/im1"
-                    android:paddingLeft="10dp"
-                    android:text="DEPARTMENTS AND PROGRAMMES"
-                    android:textSize="22sp"
+                    android:paddingLeft="5dp"
+                    android:text="DEPARTMENTS AND PROGRAMS"
+                    android:textColor="#000"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -129,9 +126,9 @@
                     android:layout_marginEnd="0dp"
                     android:layout_toEndOf="@+id/im1"
                     android:layout_toRightOf="@+id/im1"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="5dp"
                     android:paddingTop="5dp"
-                    android:paddingRight="10dp"
+                    android:paddingRight="5dp"
                     android:text="MCKVIE offers a plethora of undergraduate and post graduate courses in Engineering including MCA. Choose whichever you like." />
 
                 <TextView
@@ -163,9 +160,10 @@
                     android:layout_marginStart="2dp"
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@+id/im2"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="5dp"
                     android:text="LABS AND FACILITIES"
-                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -176,9 +174,9 @@
                     android:layout_marginStart="1dp"
                     android:layout_marginTop="3dp"
                     android:layout_toEndOf="@+id/im2"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="5dp"
                     android:paddingTop="5dp"
-                    android:paddingRight="10dp"
+                    android:paddingRight="5dp"
                     android:text="MCKVIE has state of the art laboratories with latest equipments and resources to help you learn by doing." />
 
                 <TextView
@@ -210,9 +208,10 @@
                     android:layout_marginStart="2dp"
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@+id/im3"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="5dp"
                     android:text="CAMPUS NEWS"
-                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -223,9 +222,9 @@
                     android:layout_marginStart="1dp"
                     android:layout_marginTop="4dp"
                     android:layout_toEndOf="@+id/im2"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="5dp"
                     android:paddingTop="5dp"
-                    android:paddingRight="10dp"
+                    android:paddingRight="5dp"
                     android:text="The communications division works hard to keep you informed about the latest news and happenings." />
 
                 <TextView
