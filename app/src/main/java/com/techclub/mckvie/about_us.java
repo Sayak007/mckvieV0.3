@@ -9,29 +9,28 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import java.lang.reflect.Field;
 import java.security.PrivateKey;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class about_us extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_us);
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        androidx.appcompat.widget.Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("");
-        toolbar.setSubtitle("");*/
+        toolbar.setSubtitle("");
+
         TextView h = (TextView) findViewById(R.id.h);
         TextView hh = (TextView) findViewById(R.id.hh);
         TextView hhh = (TextView) findViewById(R.id.hhh);
@@ -91,9 +90,13 @@ public class about_us extends AppCompatActivity {
                 startActivity(chooser);
             }
         }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 
-
-        }
+}
 
 
 
