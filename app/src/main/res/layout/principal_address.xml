@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".know_mckvie">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/navigation_action" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_marginTop="55dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Principal's Address : -"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:fontFamily="@font/coustard"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/principal_address"/>
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:text="From the time immemorial 'the wheel of fire' at the centre of our being has been turning impersonally and inflaming our otherwise indolent spirit and bursting forth into creativity. The wheel and the fire are the greatest technological discovery of Human being which is important and have relevance even today. Wheel to transmit motion from one part to another in Engineering and fire to captivate energy, without energy nothing works.
+
+The continuous up gradation of facilities at MCKVIE, coupled with highly qualified and experienced faculty, has brought the Institute to the forefront in the educational scenario in the State of West Bengal.
+
+To attain harmony in multiplicity is a great challenging task in order to make an effective contribution to the society at large. Then only, the various knowledge domains can be cross-fertilized to produce yet another neo-knowledge base.
+
+To enhance academic excellence, all our students are member of the Rotaract Club in addition to one or more of six Professional Bodies which helps the students to broaden their knowledge in their field of work and networking with the professionals in their domain.
+
+Our students are always encouraged to participate in various National and International competitions. They have won many awards and accolades from these events. We are proud that our students stand tall in knowledge and application in today’s challenging world.
+
+Our Training and placement cell is acting continuously as an interface between the institute and the industry for job opportunities for the students. This cell administered by a team of personnel works round the year for creating placement facilities through in campus, off campus and pooled campus interviews for eligible students.
+
+Continuous development, continuous evolution and up gradation is the Mantra of today to survive in this world.
+
+I wish all the supports from all our stake holders as well as the honorary ambassadors i.e., the Alumni of the college.
+
+Welcome you all to MCKV Institute of Engineering and my very best wishes to the aspirant engineers. I am hopeful that the coming years of your study at our Institute will prove to be the most fruitful and glorious part of your career.\n"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-Prof. B. Chattopadhyay"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

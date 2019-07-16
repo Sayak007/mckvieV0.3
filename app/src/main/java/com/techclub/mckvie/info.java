@@ -57,6 +57,12 @@ public class info extends AppCompatActivity {
                 startActivity(new Intent(info.this,visit.class));
             }
         });
+        Chairman.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(info.this,chairman_address.class));
+            }
+        });
 
         more.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +83,22 @@ public class info extends AppCompatActivity {
                             case R.id.two:
                                 startActivity(new Intent(info.this, administration.class));
                                 break;
+                            case R.id.four:
+                                startActivity(new Intent(info.this, chairman_address.class));
+                                break;
+                            case R.id.five:
+                                startActivity(new Intent(info.this,director_address.class));
+                                break;
+                            case R.id.six:
+                                startActivity(new Intent(info.this,principal_address.class));
+                                break;
+                            case R.id.seven:
+                                startActivity(new Intent(info.this,trust.class));
+                                break;
+                            case R.id.eight:
+                                startActivity(new Intent(info.this,governing_body.class));
+                                break;
+
 
                         }
 

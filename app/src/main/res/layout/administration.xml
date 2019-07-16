@@ -42,10 +42,11 @@
             android:id="@+id/chairman"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            app:srcCompat="@drawable/chairman"
+            android:background="@drawable/chairman"
             tools:layout_editor_absoluteX="-34dp"
             tools:layout_editor_absoluteY="0dp" />
         <TextView
+            android:id="@+id/admin1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mr. S S Kejriwal(Chairman)"
@@ -62,8 +63,9 @@
                 android:id="@+id/managing_trustee"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                app:srcCompat="@drawable/kk_sir_2"/>
+                android:background="@drawable/kk_sir_2"/>
             <TextView
+                android:id="@+id/admin2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mr. Kishan Kejriwal(Managing Trustee)"
@@ -80,8 +82,9 @@
                     android:id="@+id/director"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    app:srcCompat="@drawable/parasar3"/>
+                    android:background="@drawable/parasar3"/>
                 <TextView
+                    android:id="@+id/admin3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Parasar Bandyopadhyay(Director)"
@@ -98,8 +101,9 @@
                     android:id="@+id/principal"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    app:srcCompat="@drawable/buddhu_4"/>
+                    android:background="@drawable/buddhu_4"/>
                 <TextView
+                    android:id="@+id/admin4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) B. Chattopadhyay(Principal and Dean(Academics))"
@@ -116,8 +120,9 @@
                     android:id="@+id/dean1"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    app:srcCompat="@drawable/debapriya_de_5"/>
+                    android:background="@drawable/debapriya_de_5"/>
                 <TextView
+                    android:id="@+id/admin5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Debapriya De(Dean (Research and Consultancy))"
@@ -134,8 +139,9 @@
                     android:id="@+id/dean2"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    app:srcCompat="@drawable/arun_kr_jalan6"/>
+                    android:background="@drawable/arun_kr_jalan6"/>
                 <TextView
+                    android:id="@+id/admin6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Arun Kumar Jalan(Dean (Student Affairs))"
@@ -152,8 +158,9 @@
                     android:id="@+id/registrar"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    app:srcCompat="@drawable/registrar7"/>
+                    android:background="@drawable/registrar7"/>
                 <TextView
+                    android:id="@+id/admin7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Ananta Kumar Das(Registrar)"

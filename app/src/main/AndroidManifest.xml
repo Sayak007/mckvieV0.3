@@ -113,7 +113,22 @@
             android:name=".know_mckvie"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".chairman_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".director_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".principal_address"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".feedback"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".governing_body"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".trust"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AdminMarksActivity"
