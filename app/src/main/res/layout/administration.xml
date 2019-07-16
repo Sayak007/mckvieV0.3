@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".know_mckvie">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/navigation_action" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_marginTop="55dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Administration:-"
+                android:paddingBottom="15dp"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/chairman"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:srcCompat="@drawable/chairman"
+            tools:layout_editor_absoluteX="-34dp"
+            tools:layout_editor_absoluteY="0dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mr. S S Kejriwal(Chairman)"
+            android:paddingTop="25dp"
+            android:paddingLeft="10dp"/>
+    </LinearLayout>
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:id="@+id/ll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/managing_trustee"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/kk_sir_2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mr. Kishan Kejriwal(Managing Trustee)"
+                android:paddingTop="25dp"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:id="@+id/ll3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/director"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/parasar3"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prof. (Dr.) Parasar Bandyopadhyay(Director)"
+                    android:paddingTop="25dp"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:id="@+id/ll4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/principal"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/buddhu_4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prof. (Dr.) B. Chattopadhyay(Principal and Dean(Academics))"
+                    android:paddingTop="25dp"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:id="@+id/ll5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/dean1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/debapriya_de_5"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prof. (Dr.) Debapriya De(Dean (Research and Consultancy))"
+                    android:paddingTop="25dp"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:id="@+id/ll6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/dean2"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/arun_kr_jalan6"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prof. (Dr.) Arun Kumar Jalan(Dean (Student Affairs))"
+                    android:paddingTop="25dp"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:id="@+id/ll7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/registrar"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/registrar7"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prof. (Dr.) Ananta Kumar Das(Registrar)"
+                    android:paddingTop="25dp"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

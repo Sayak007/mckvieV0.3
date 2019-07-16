@@ -74,7 +74,12 @@ public class info extends AppCompatActivity {
                             case R.id.one:
                                 startActivity(new Intent(info.this, know_mckvie.class));
                                 break;
+                            case R.id.two:
+                                startActivity(new Intent(info.this, administration.class));
+                                break;
+
                         }
+
                         Toast.makeText(
                                 info.this,
                                 "You Clicked : " + item.getTitle(),

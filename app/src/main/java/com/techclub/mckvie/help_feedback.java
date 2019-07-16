@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.techclub.mckvie.R;
 
@@ -17,13 +18,14 @@ public class help_feedback extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.help_feedback);
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("");
-        toolbar.setSubtitle("");*/
+        toolbar.setSubtitle("");
         TextView hlpfdbk = (TextView) findViewById(R.id.hlpfdbk);
         hlpfdbk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,5 +34,10 @@ public class help_feedback extends AppCompatActivity {
                 startActivity(brow);
             }
         });
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }
