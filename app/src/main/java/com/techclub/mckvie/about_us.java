@@ -3,12 +3,15 @@ package com.techclub.mckvie;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import java.lang.reflect.Field;
 import java.security.PrivateKey;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +40,7 @@ public class about_us extends AppCompatActivity {
         TextView emaill = (TextView) findViewById(R.id.emaill);
         ImageView fb = (ImageView) findViewById(R.id.fb_icon);
         ImageView twitter = (ImageView) findViewById(R.id.twitter_icon);
+        final TextView devs =(TextView)findViewById(R.id.devs);
 
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +54,28 @@ public class about_us extends AppCompatActivity {
             public void onClick(View v) {
                 Intent brow = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com"));
                 startActivity(brow);
+            }
+        });
+
+        devs.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(about_us.this, devs);
+                //Inflating the Popup using xml file
+                popup.getMenuInflater()
+                        .inflate(R.menu.developers, popup.getMenu());
+
+                Object menuHelper;
+                Class[] argTypes;
+                try {
+                    Field fMenuHelper = PopupMenu.class.getDeclaredField("mPopup");
+                    fMenuHelper.setAccessible(true);
+                    menuHelper = fMenuHelper.get(popup);
+                    argTypes = new Class[] { boolean.class };
+                    menuHelper.getClass().getDeclaredMethod("setForceShowIcon", argTypes).invoke(menuHelper, true);
+                } catch (Exception e) {
+                }
+                popup.show();
             }
         });
     }

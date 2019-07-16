@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/one"
+        android:title="SAYAK DAS"
+        android:icon="@drawable/sayak"/>
+
+    <item
+        android:id="@+id/two"
+        android:title="HRIDDHI MONDAL"
+        android:icon="@drawable/hriddhi"/>
+
+    <item
+        android:id="@+id/three"
+        android:title="NIRVIK RANJAN DAS"
+        android:icon="@drawable/nirvik"/>
+
+    <item
+        android:id="@+id/four"
+        android:title="SOUMIK KUMAR BASU"
+        android:icon="@drawable/soumik"/>
+    <item
+        android:id="@+id/five"
+        android:title="RIDDHINATH GANGULY"
+        android:icon="@drawable/riddhinath"/>
+
+</menu>

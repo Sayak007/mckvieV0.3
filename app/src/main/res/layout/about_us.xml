@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/coustard"
-                android:text="ABOUT US :-"
+                android:text="ABOUT US "
                 android:textSize="50sp" />
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/coustard"
-                android:text="Follow us on :-"
+                android:text="Follow us on :"
                 android:textSize="30sp" />
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="CONTACT US ON :-"
+                android:text="CONTACT US ON :"
                 android:textSize="30sp"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="194dp" />
@@ -137,8 +137,18 @@
                 android:id="@+id/developers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Developed by-: (2017 Batch)\nSayak Das\nHriddhi Mondal\nRiddhinath Ganguly\nNirvik Ranjan Das\nSoumik Kumar Basu"
-                android:textStyle="bold"/>
+                android:text="Developed By :"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/devs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BTECH CSE 2017-2021 BATCH   ▼"
+                android:textColor="#0000cd"
+                android:textSize="20sp" />
 
 
         </LinearLayout>

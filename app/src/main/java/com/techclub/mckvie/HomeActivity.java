@@ -664,9 +664,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.help:
-                myIntent = new Intent(HomeActivity.this, help_feedback.class);
-                myIntent.putExtra("flag", 4);
-                startActivity(myIntent);
+                Intent brow = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/pxxjiYtZQKKzp9zy7"));
+                brow.putExtra("flag",5);
+                startActivity(brow);
                 break;
 
             /*case R.id.admin:
