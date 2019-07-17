@@ -3,6 +3,7 @@ package com.techclub.mckvie;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import androidx.annotation.NonNull;
@@ -196,6 +197,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.signinbtn:
 
                 userLogin();
+
+                final SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
+                final SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt("background_resource", R.drawable.walldef);
+                editor.apply();
 
                 break;
         }

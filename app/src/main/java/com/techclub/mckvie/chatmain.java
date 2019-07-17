@@ -42,6 +42,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -209,12 +210,8 @@ public class chatmain extends AppCompatActivity {
 
         View myview = (RelativeLayout)findViewById(R.id.activity_chat);
         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
-        int bg = sharedPref.getInt("background_resource",2); // the second parameter will be fallback if the preference is not found
-        if(bg!=2) {
-            myview.setBackgroundResource(bg);
-        }else{
-            myview.setBackgroundResource(R.drawable.chatback);
-        }
+        int bg = sharedPref.getInt("background_resource",R.drawable.walldef); // the second parameter will be fallback if the preference is not found
+        myview.setBackgroundResource(bg);
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("chats");
@@ -274,7 +271,8 @@ public class chatmain extends AppCompatActivity {
 
                 CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
-                        .setAspectRatio(1, 1)
+                        .setMinCropResultSize(40,40)
+                        .setMaxCropResultSize(10000,10000)
                         .start(chatmain.this);
                 att.setVisibility(View.GONE);
                 flag = 0;
@@ -384,6 +382,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -426,6 +427,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -488,6 +492,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -531,6 +538,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -585,6 +595,7 @@ public class chatmain extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     @Override
@@ -647,4 +658,6 @@ public class chatmain extends AppCompatActivity {
             }
         }
     };
+
+
 }
