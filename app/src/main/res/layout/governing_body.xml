@@ -11,19 +11,20 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/navigation_action" />
-
     <ScrollView
         android:id="@+id/scrollView2"
+        android:layout_marginTop="55dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
 
-        <LinearLayout
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -133,7 +134,7 @@
                         android:layout_weight="1"
                         android:gravity="left"
                         android:paddingTop="5dp"
-                        android:text="Prof.(Dr.)Sajal Dasgupta\nEx-DTE and Vice Chancellor,University \nof Engineering and\nManagement\nUnniversity Area, Plot\nNo.III - B/5, New\nTown Action Area - III\nKolkata - 700156"
+                        android:text="Prof.(Dr.)Sajal Dasgupta\nEx-DTE and Vice Chancellor,University \nof Engineering and\nManagement\nUniversity Area, Plot\nNo.III - B/5, New\nTown Action Area - III\nKolkata - 700156"
                         android:textStyle="bold" />
 
                     <TextView
