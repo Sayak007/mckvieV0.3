@@ -127,19 +127,9 @@
 
 
             <ImageView
-                android:id="@+id/camera"
-                android:layout_width="62dp"
-                android:layout_height="61dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="95dp"
-                android:layout_marginEnd="100dp"
-                android:layout_toLeftOf="@id/documents"
-                android:background="@drawable/gallery" />
-
-            <ImageView
                 android:id="@+id/documents"
-                android:layout_width="62dp"
-                android:layout_height="59dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="95dp"
                 android:background="@drawable/documents" />
@@ -152,7 +142,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="107dp"
-                android:layout_marginTop="-2dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginBottom="4dp"
                 android:text="Gallery"
                 android:textAlignment="center" />
@@ -170,6 +160,16 @@
                 android:layout_marginBottom="3dp"
                 android:text="Documents"
                 android:textAlignment="center" />
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="115dp"
+                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/gallery" />
         </RelativeLayout>
 
     </RelativeLayout>

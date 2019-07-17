@@ -25,13 +25,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Administration:-"
                 android:paddingBottom="15dp"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                android:text="Administration:"
+                android:textSize="40dp"
+                android:textStyle="bold" />
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"

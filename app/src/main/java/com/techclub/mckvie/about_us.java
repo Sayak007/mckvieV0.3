@@ -1,9 +1,12 @@
 package com.techclub.mckvie;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -11,12 +14,12 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
-import java.security.PrivateKey;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class about_us extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,9 @@ public class about_us extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("");
         toolbar.setSubtitle("");
+
+
+
 
         TextView h = (TextView) findViewById(R.id.h);
         TextView hh = (TextView) findViewById(R.id.hh);
@@ -74,6 +80,45 @@ public class about_us extends AppCompatActivity {
                     menuHelper.getClass().getDeclaredMethod("setForceShowIcon", argTypes).invoke(menuHelper, true);
                 } catch (Exception e) {
                 }
+
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.done:
+                                final Dialog myDialog = new Dialog(about_us.this);
+                                myDialog.setContentView(R.layout.devsprofilesayak);
+                                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog.show();
+                                break;
+                            case R.id.dtwo:
+                                final Dialog myDialog1 = new Dialog(about_us.this);
+                                myDialog1.setContentView(R.layout.devsprofilehriddhi);
+                                myDialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog1.show();
+                                break;
+                            case R.id.dthree:
+                                final Dialog myDialog2 = new Dialog(about_us.this);
+                                myDialog2.setContentView(R.layout.devsprofilenirvik);
+                                myDialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog2.show();
+                                break;
+                            case R.id.dfour:
+                                final Dialog myDialog3 = new Dialog(about_us.this);
+                                myDialog3.setContentView(R.layout.devsprofilesoumik);
+                                myDialog3.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog3.show();
+                                break;
+                            case R.id.dfive:
+                                final Dialog myDialog4 = new Dialog(about_us.this);
+                                myDialog4.setContentView(R.layout.devsprofileriddhinath);
+                                myDialog4.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog4.show();
+                                break;
+
+                        }
+                        return true;
+                    }
+                });
                 popup.show();
             }
         });

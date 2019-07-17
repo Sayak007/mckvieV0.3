@@ -2,26 +2,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/one"
+        android:id="@+id/done"
         android:title="SAYAK DAS"
         android:icon="@drawable/sayak"/>
 
     <item
-        android:id="@+id/two"
+        android:id="@+id/dtwo"
         android:title="HRIDDHI MONDAL"
         android:icon="@drawable/hriddhi"/>
 
     <item
-        android:id="@+id/three"
+        android:id="@+id/dthree"
         android:title="NIRVIK RANJAN DAS"
         android:icon="@drawable/nirvik"/>
 
     <item
-        android:id="@+id/four"
+        android:id="@+id/dfour"
         android:title="SOUMIK KUMAR BASU"
         android:icon="@drawable/soumik"/>
     <item
-        android:id="@+id/five"
+        android:id="@+id/dfive"
         android:title="RIDDHINATH GANGULY"
         android:icon="@drawable/riddhinath"/>
 
