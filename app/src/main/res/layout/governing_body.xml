@@ -19,8 +19,9 @@
         android:layout_marginHorizontal="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +31,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coustard"
                 android:text="Governing Body :-"
                 android:textSize="35dp"
                 android:textStyle="bold" />
@@ -41,7 +41,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="Details of the Members of the Governing Body :-\n\nChairpersons :-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -56,7 +56,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/tableheader"
                         android:gravity="center"
                         android:text="Name"
                         android:textStyle="bold" />
@@ -66,7 +65,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/tableheader"
                         android:gravity="center"
                         android:text="Portfolio in G.B."
                         android:textStyle="bold" />
@@ -76,13 +74,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/tableheader"
                         android:gravity="center"
                         android:text="Nominated By"
                         android:textStyle="bold" />
 
 
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
 
                 <TableRow>
@@ -92,7 +94,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:layout_marginBottom="1dp"
-                        android:background="@drawable/tableheader"
                         android:layout_weight="1"
                         android:text="Sri Shyam Sunder Kejriwal\nChairman\nKISWOK INDUSTRIES\n(P)Ltd., 11, Brabourne Road,\nKolkata - 700001\n"
                         android:textStyle="bold" />
@@ -102,7 +103,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="1dp"
                         android:layout_marginBottom="1dp"
-                        android:background="@drawable/tablecells"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Chairman " />
@@ -112,13 +112,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="1dp"
                         android:layout_marginBottom="1dp"
-                        android:background="@drawable/tablecells"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Emeritus" />
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -126,7 +129,6 @@
                         android:layout_width="183dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/tableheader"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:gravity="left"
@@ -138,7 +140,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="1dp"
-                        android:background="@drawable/tablecells"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:gravity="center"
@@ -146,6 +147,11 @@
 
 
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
 
 
@@ -153,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Member of the Trust / Society / Management :-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -196,6 +202,10 @@
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -230,6 +240,11 @@
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
+
                 <TableRow>
 
                     <TextView
@@ -260,6 +275,11 @@
                         android:text="Trust" />
 
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -293,6 +313,11 @@
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
+
                 <TableRow>
 
                     <TextView
@@ -324,13 +349,18 @@
                         android:text="Trust" />
 
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nominees of the AICTE / UGC :-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -373,6 +403,10 @@
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -409,6 +443,11 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector �
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
+
                 <TableRow>
 
                     <TextView
@@ -440,13 +479,17 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector �
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nominees of the State Government:-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -489,6 +532,10 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector �
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -499,10 +546,7 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector �
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
 
-                        android:text="Mr. Pronobesh Das\n
-Director of Technical Education\n
-Govt. of West Bengal,\nBikash \nBhavan (10th Floor),\nEast Block, Salt Lake
-\nKolkata – 700 091."
+                        android:text="Mr. Pronobesh Das\nDirector of Technical Education\nGovt. of West Bengal,\nBikash \nBhavan (10th Floor),\nEast Block, Salt Lake\nKolkata – 700 091."
                         android:textStyle="bold" />
 
                     <TextView
@@ -526,6 +570,11 @@ Govt. of West Bengal,\nBikash \nBhavan (10th Floor),\nEast Block, Salt Lake
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
+
                 <TableRow>
 
                     <TextView
@@ -534,9 +583,7 @@ Govt. of West Bengal,\nBikash \nBhavan (10th Floor),\nEast Block, Salt Lake
                         android:layout_marginHorizontal="1dp"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="Mrs. Sima Ghosh\n
-Assistant Professor,\nDepartment of Information Technology\n
-Govt. College of Engg. and Textile Technology,\nSerampore,\nHooghly – 712202."
+                        android:text="Mrs. Sima Ghosh\nAssistant Professor,\nDepartment of Information Technology\nGovt. College of Engg. and Textile Technology,\nSerampore,\nHooghly – 712202."
                         android:textStyle="bold" />
 
                     <TextView
@@ -559,13 +606,17 @@ Govt. College of Engg. and Textile Technology,\nSerampore,\nHooghly – 712202."
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="One Nominee of the University to which the Institution is affiliated:-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -608,6 +659,10 @@ Govt. College of Engg. and Textile Technology,\nSerampore,\nHooghly – 712202."
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -618,15 +673,7 @@ Govt. College of Engg. and Textile Technology,\nSerampore,\nHooghly – 712202."
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
 
-                        android:text="Mr. Bivash Mallick\n
-
-Assistant Professor\n
-
-Department of Industrial Engineering and Management\n
-
-Maulana Abul Kalam Azad University of Technology\n
-
-BF-142,\nSector – I, Salt Lake City,\nKolkata 700 064"
+                        android:text="Mr. Bivash Mallick\nAssistant Professor\nDepartment of Industrial Engineering and Management\nMaulana Abul Kalam Azad University of Technology\nBF-142,\nSector – I, Salt Lake City,\nKolkata 700 064"
                         android:textStyle="bold" />
 
                     <TextView
@@ -650,13 +697,17 @@ BF-142,\nSector – I, Salt Lake City,\nKolkata 700 064"
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Educationists/Technologist/Industrialists:-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -699,6 +750,10 @@ BF-142,\nSector – I, Salt Lake City,\nKolkata 700 064"
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -709,11 +764,7 @@ BF-142,\nSector – I, Salt Lake City,\nKolkata 700 064"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
 
-                        android:text="Prof. R.C. Bhattacharya\n
-Vice-Chairman – Globsyn Business School\nand\n
-Director – Globsyn Technologies Ltd.\nGlobsyn Crystals,
-1st Floor,\nXI - 11 and 12 Block – EP,\nSector - V,\n
-Salt Lake Electronics Complex,\nKolkata – 700 091."
+                        android:text="Prof. R.C. Bhattacharya\nVice-Chairman – Globsyn Business School\nand\nDirector – Globsyn Technologies Ltd.\nGlobsyn Crystals,1st Floor,\nXI - 11 and 12 Block – EP,\nSector - V,\nSalt Lake Electronics Complex,\nKolkata – 700 091."
                         android:textStyle="bold" />
 
                     <TextView
@@ -737,6 +788,11 @@ Salt Lake Electronics Complex,\nKolkata – 700 091."
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
+
                 <TableRow>
 
                     <TextView
@@ -745,11 +801,7 @@ Salt Lake Electronics Complex,\nKolkata – 700 091."
                         android:layout_marginHorizontal="1dp"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="Dr. Tapan Kr. Ghoshal\n
-Hon. Emeritus Professor\n
-Electrical Engineering Department,\nJupiter Building,\n
-Jadavpur University\n
-Kolkata-700032."
+                        android:text="Dr. Tapan Kr. Ghoshal\nHon. Emeritus Professor\nElectrical Engineering Department,\nJupiter Building,\nJadavpur University\nKolkata-700032."
                         android:textStyle="bold" />
 
                     <TextView
@@ -759,7 +811,7 @@ Kolkata-700032."
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Member(Educationalist)" />
+                        android:text="Member\n(Educationalist)" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -772,6 +824,11 @@ Kolkata-700032."
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
+
                 <TableRow>
 
                     <TextView
@@ -781,8 +838,7 @@ Kolkata-700032."
                         android:layout_marginBottom="1dp"
 
                         android:layout_weight="1"
-                        android:text="Prof. (Dr) Parasar Bandyopadhyay
-Director\nMCKV Institute of Engineering"
+                        android:text="Prof. (Dr) Parasar Bandyopadhyay\nDirector\nMCKV Institute of Engineering"
                         android:textStyle="bold" />
 
                     <TextView
@@ -792,9 +848,7 @@ Director\nMCKV Institute of Engineering"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Member\n(Educationist)
-
-" />
+                        android:text="Member\n(Educationist)" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -807,6 +861,11 @@ Director\nMCKV Institute of Engineering"
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
+
                 <TableRow>
 
                     <TextView
@@ -816,9 +875,7 @@ Director\nMCKV Institute of Engineering"
                         android:layout_marginBottom="1dp"
 
                         android:layout_weight="1"
-                        android:text="Prof. B. B. Paira
-                        \nAcademic Advisor\n Maulana Abul Kalam Azad University of Technology,\n
-                        W.B."
+                        android:text="Prof. B. B. Paira\nAcademic Advisor\n Maulana Abul Kalam Azad University of Technology,\nW.B."
                         android:textStyle="bold" />
 
                     <TextView
@@ -828,9 +885,7 @@ Director\nMCKV Institute of Engineering"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Member\n(Educationist)
-
-" />
+                        android:text="Member\n(Educationist)" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -842,13 +897,18 @@ Director\nMCKV Institute of Engineering"
                         android:text="Chairman" />
 
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Two Faculty Members of the Institution:-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -891,6 +951,10 @@ Director\nMCKV Institute of Engineering"
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -901,8 +965,7 @@ Director\nMCKV Institute of Engineering"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
 
-                        android:text="Prof. (Dr.)  Arun Kumar Jalan\n
-Dean\nStudents Affairs and Professor,\nDepartment of  Basic Science"
+                        android:text="Prof. (Dr.)  Arun Kumar Jalan\nDean\nStudents Affairs and Professor,\nDepartment of  Basic Science"
                         android:textStyle="bold" />
 
                     <TextView
@@ -925,6 +988,11 @@ Dean\nStudents Affairs and Professor,\nDepartment of  Basic Science"
                         android:text="Principal" />
 
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
@@ -956,13 +1024,18 @@ Dean\nStudents Affairs and Professor,\nDepartment of  Basic Science"
                         android:text="Principal" />
 
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Head of the Institution, Ex-Officio:-"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TableLayout
@@ -974,7 +1047,7 @@ Dean\nStudents Affairs and Professor,\nDepartment of  Basic Science"
                 <TableRow>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="139dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
 
@@ -1005,16 +1078,19 @@ Dean\nStudents Affairs and Professor,\nDepartment of  Basic Science"
 
                 </TableRow>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
 
                 <TableRow>
 
                     <TextView
-                        android:layout_width="202dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-
                         android:text="Prof. Buddhadeb Chattopadhyay\nPrincipal"
                         android:textStyle="bold" />
 
@@ -1028,6 +1104,11 @@ Dean\nStudents Affairs and Professor,\nDepartment of  Basic Science"
                         android:gravity="center"
                         android:text="Member Secretary" />
                 </TableRow>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:background="#000000" />
             </TableLayout>
         </LinearLayout>
     </ScrollView>
