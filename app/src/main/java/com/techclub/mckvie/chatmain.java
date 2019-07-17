@@ -42,6 +42,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -271,7 +272,7 @@ public class chatmain extends AppCompatActivity {
                 CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setMinCropResultSize(40,40)
-                        .setMaxCropResultSize(1920,1080)
+                        .setMaxCropResultSize(10000,10000)
                         .start(chatmain.this);
                 att.setVisibility(View.GONE);
                 flag = 0;
@@ -381,6 +382,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -423,6 +427,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -485,6 +492,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -528,6 +538,9 @@ public class chatmain extends AppCompatActivity {
                                         DownloadManager.Request request = new DownloadManager.Request(uri);
                                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                                         downloadID=downloadManager.enqueue(request);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(uri);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -582,6 +595,7 @@ public class chatmain extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     @Override
@@ -644,4 +658,6 @@ public class chatmain extends AppCompatActivity {
             }
         }
     };
+
+
 }
