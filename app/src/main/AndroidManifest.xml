@@ -53,8 +53,13 @@
         <activity
             android:name=".info"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".wallchat"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".aff_acc"
             android:screenOrientation="portrait" />
         <activity
             android:name=".admin_app"

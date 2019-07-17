@@ -83,6 +83,9 @@ public class info extends AppCompatActivity {
                             case R.id.two:
                                 startActivity(new Intent(info.this, administration.class));
                                 break;
+                            case R.id.three:
+                                startActivity(new Intent(info.this,aff_acc.class));
+                                break;
                             case R.id.four:
                                 startActivity(new Intent(info.this, chairman_address.class));
                                 break;
