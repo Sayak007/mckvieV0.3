@@ -33,16 +33,17 @@
                 android:textColor="#000"
                 android:textSize="35dp"
                 android:textStyle="bold"
-                android:text="Affiliations and Accreditations :-"/>
+                android:text="AFFILIATIONS AND ACCREDITATIONS"/>
+
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:textColor="#000"
-                android:textStyle="bold"
                 android:layout_gravity="left"
-                android:text="MCKVIE is :-\nAll Courses ( B.Tech, M.Tech, and MCA )are All India Council for Technical Education (AICTE)\nApproved
-\nDetails of NBA Accreditated Courses :\n"/>
+                android:layout_marginTop="17dp"
+                android:text="MCKVIE is :\n⬤   All Courses ( B.Tech, M.Tech, and MCA )are All India Council for Technical Education (AICTE)\nApproved \n\n\n⬤   Details of NBA Accreditated Courses :\n"
+                android:textColor="#000"
+                android:textSize="15dp"
+                android:textStyle="bold" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +52,7 @@
                 android:id="@+id/clk1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Click here"
+                android:text="◦ Click here"
                 android:textColor="#0000cd"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -68,7 +69,7 @@
                     android:id="@+id/clk2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -84,7 +85,7 @@
                     android:id="@+id/clk3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -99,7 +100,7 @@
                 <TextView
                     android:id="@+id/clk4"
                     android:layout_width="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -116,7 +117,7 @@
                     android:id="@+id/clk5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -129,7 +130,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:textColor="#000"
-                android:text="Affiliated to Maulana Abul Kalam Azad University of Technology (formerly WBUT) :-\n"
+                android:layout_marginTop="30dp"
+                android:text="⬤   Affiliated to Maulana Abul Kalam Azad University of Technology (formerly WBUT) :\n"
                 android:textStyle="bold"
                 android:textSize="15dp"/>
             <LinearLayout
@@ -140,7 +142,7 @@
                     android:id="@+id/clk6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -157,7 +159,7 @@
                     android:id="@+id/clk7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -173,7 +175,7 @@
                     android:id="@+id/clk8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -188,7 +190,7 @@
                 <TextView
                     android:id="@+id/clk9"
                     android:layout_width="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -205,7 +207,7 @@
                     android:id="@+id/clk10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click here"
+                    android:text="◦ Click here"
                     android:textColor="#0000cd" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -218,10 +220,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="30dp"
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:textSize="15dp"
-                android:text="ISO 9001:2015 certified"/>
+                android:text="⬤   ISO 9001:2015 certified"/>
 
         </LinearLayout>
     </ScrollView>
