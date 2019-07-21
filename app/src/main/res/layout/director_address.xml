@@ -29,9 +29,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coustard"
                 android:text="Director's Address :"
                 android:textSize="40sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000000"
                 android:textStyle="bold" />
             <ImageView
                 android:layout_width="match_parent"
@@ -41,6 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
+                android:textColor="#000000"
                 android:text="It gives me immense pleasure to welcome you to MCKV Institute of Engineering, which is ISO 9001:2008 certified and recipient of the prestigious World Bank Aid for Technical Education Quality Improvement Programme (TEQIP-II). Also MHRD has bestowed us in conducting interactive theory and practical classes with the renowned Professors of IIT through Remote Class Room connected via Satellite Communication system.
 
 At MCKVIE, you get a world to explore and the mantra is – “Dream big, study hard, enjoy and utilise 4 years to leave a mark.” Yes, MCKVIE goes that extra mile to ensure that students enjoy these four pivotal years as they sail through the highs and lows of the student life. When you choose from the array of courses offered here, you are set to embrace the passion of your life. MCKVIE is equally resourceful in all aspects-state of the art infrastructure, renowned and top class faculties, perfect ambience and so on. To enhance moral values among the young generations, MCKVIE is having Vivekananda Centre for Positive Thinking which is one of five in India. Also in order to instil a sense of service to the society, the Rotaract Club is providing opportunities to the students to serve the under privileged sections of society. After all, it is not just about educating young minds; it is empowering the future of a nation.

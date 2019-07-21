@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/activity_background"
     android:layout_height="match_parent">
 
     <include
@@ -38,8 +37,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000000"
                 android:text="Odd Semester Student Feedback 2019"
-                android:fontFamily="@font/coustard"
                 android:textSize="35sp" />
 
             <TextView
@@ -48,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Instruction:"
-                android:fontFamily="@font/coustard"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000000"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="0dp"
@@ -59,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textColor="#000000"
                 android:text="1.Provide Username and password as follows:"
                 android:textSize="15dp"
                 tools:layout_editor_absoluteX="16dp"
@@ -69,6 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
+                android:textColor="#000000"
                 android:text="Username=Roll No. and password=Date of Birth"
                 android:textSize="15dp"
                 android:textStyle="bold"
@@ -82,6 +85,7 @@
                 android:paddingLeft="10dp"
                 android:text="Example:username:BTECH/ME/10/001 OR MCA /11/033"
                 android:textSize="15dp"
+                android:textColor="#000000"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="377dp" />
 
@@ -93,6 +97,7 @@
                 android:paddingLeft="10dp"
                 android:text="\t\t\t\tPassword:01/01/1990(dd/mm/yyyy)"
                 android:textSize="15dp"
+                android:textColor="#000000"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="392dp" />
 
@@ -104,7 +109,8 @@
                 android:text="2. Note that by clicking the next button you complete the feedback for a particular staff member.There is no option to edit the feedback."
                 android:textSize="15dp"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="415dp" />
+                tools:layout_editor_absoluteY="415dp"
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/textView89"
@@ -113,6 +119,7 @@
                 android:padding="10dp"
                 android:text="3. Click here for Student Feedback."
                 android:textSize="15dp"
+                android:textColor="#000000"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="494dp" />
 
@@ -124,6 +131,7 @@
                 android:paddingLeft="10dp"
                 android:text="4. For any difficulty kindly contact Prof.(Dr.) Arghya Sarkar through Email id:"
                 android:textSize="15dp"
+                android:textColor="#000000"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="494dp" />
 
@@ -145,6 +153,7 @@
                 android:paddingLeft="10dp"
                 android:text="Please provide your phone no. in the Email."
                 android:textSize="15dp"
+                android:textColor="#000000"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="494dp" />
 
@@ -155,6 +164,7 @@
                 android:paddingLeft="10dp"
                 android:text="\t\t\t\t\u2022Submission of Feedback is Mandatory."
                 android:textSize="15dp"
+                android:textColor="#000000"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="494dp" />

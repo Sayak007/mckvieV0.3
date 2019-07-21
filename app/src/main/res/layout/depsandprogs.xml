@@ -40,6 +40,8 @@
                     android:layout_below="@+id/backim"
                     android:layout_marginTop="0dp"
                     android:padding="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="#000000"
                     android:text="DEPARTMENTS AND PROGRAMS"
                     android:textSize="30dp"
                     android:textStyle="bold" />
@@ -57,6 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv1"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="UNDERGRADUATE PROGRAMS"
                     android:textSize="23dp"
                     android:textColor="#000"
@@ -138,6 +141,7 @@
                     android:layout_below="@+id/me"
                     android:text="POSTGRADUATE PROGRAMS"
                     android:textSize="23dp"
+                    android:fontFamily="sans-serif-condensed"
                     android:textColor="#000"
                     android:textStyle="bold"
                     android:paddingLeft="10dp"
@@ -176,6 +180,7 @@
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:textColor="#000"
+                    android:fontFamily="sans-serif-condensed"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"/>
 
