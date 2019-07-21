@@ -26,21 +26,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="AFFILIATIONS AND ACCREDITATIONS :"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
                 android:textSize="35dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:text="Affiliations and Accreditations :-"/>
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
+                android:textColor="#000"
                 android:textStyle="bold"
                 android:layout_gravity="left"
-                android:text="MCKVIE is :\n	• All Courses ( B.Tech, M.Tech, and MCA )are All India Council for Technical Education (AICTE)\nApproved
-\n\n• Details of NBA Accreditated Courses :\n"/>
+                android:text="MCKVIE is :-\nAll Courses ( B.Tech, M.Tech, and MCA )are All India Council for Technical Education (AICTE)\nApproved
+\nDetails of NBA Accreditated Courses :\n"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,11 +51,12 @@
                 android:id="@+id/clk1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="◦ Click here"
+                android:text="Click here"
                 android:textColor="#0000cd"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_toRightOf="@+id/clk1"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:text=" for the document of NBA accreditation for EE and ME (w.e.f. 08-06-2018)"/>
         </LinearLayout>
@@ -65,11 +68,12 @@
                     android:id="@+id/clk2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text="for the document of NBA accreditation for CSE and ECE from Academic Year 2019-2020 T0 2021-2022 (i.e upto 30-06-2022)"/>
             </LinearLayout>
             <LinearLayout
@@ -80,11 +84,12 @@
                     android:id="@+id/clk3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text=" for the document of extension of NBA accreditation for CSE (w.e.f. 20-06-2018)"/>
             </LinearLayout>
             <LinearLayout
@@ -94,12 +99,13 @@
                 <TextView
                     android:id="@+id/clk4"
                     android:layout_width="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text="for the documents of NBA accreditation for ECE and CSE"/>
             </LinearLayout>
             <LinearLayout
@@ -110,20 +116,22 @@
                     android:id="@+id/clk5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" ◦Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text=" Extension of Accreditation Status for ECE Department"/>
             </LinearLayout>
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• Affiliated to Maulana Abul Kalam Azad University of Technology (formerly WBUT) :\n"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
+                android:text="Affiliated to Maulana Abul Kalam Azad University of Technology (formerly WBUT) :-\n"
                 android:textStyle="bold"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
+                android:textSize="15dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -132,12 +140,13 @@
                     android:id="@+id/clk6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_toRightOf="@+id/clk1"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text=" for the document of B.Tech- , M.Tech-  and MCA affiliation (2019-2020)"/>
             </LinearLayout>
             <LinearLayout
@@ -148,11 +157,12 @@
                     android:id="@+id/clk7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text=" for the document of B.Tech affiliation (2018-19)"/>
             </LinearLayout>
             <LinearLayout
@@ -163,11 +173,12 @@
                     android:id="@+id/clk8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text=" for the document of MCA affiliation (2018-19)"/>
             </LinearLayout>
             <LinearLayout
@@ -177,12 +188,13 @@
                 <TextView
                     android:id="@+id/clk9"
                     android:layout_width="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text=" for the document of M.Tech affiliation (2018-19)"/>
             </LinearLayout>
             <LinearLayout
@@ -193,17 +205,20 @@
                     android:id="@+id/clk10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="◦ Click here"
+                    android:text="Click here"
                     android:textColor="#0000cd" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text=" for the document of B.Tech affiliation (2017-18)"/>
             </LinearLayout>
             <TextView
                 android:paddingTop="2mm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
                 android:textStyle="bold"
                 android:textSize="15dp"
                 android:text="ISO 9001:2015 certified"/>

@@ -36,7 +36,8 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="SIGN UP"
-                android:fontFamily="@font/coustard"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
                 android:textAlignment="center"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -199,6 +200,7 @@
                     android:id="@+id/department"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000"
                     android:text="Departments:"
                     android:layout_marginLeft="5dp"
                     android:textSize="16sp"

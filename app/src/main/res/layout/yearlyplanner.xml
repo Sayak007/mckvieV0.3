@@ -20,7 +20,7 @@
         android:layout_below="@+id/toolbar"
         android:text="YEARLY PLANNER"
         android:textColor="#000"
-        android:fontFamily="sans-serif-condensed-light"
+        android:fontFamily="sans-serif-condensed"
         android:textSize="30sp"
         android:textStyle="bold"
         android:paddingVertical="10dp"

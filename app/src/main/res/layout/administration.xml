@@ -32,6 +32,8 @@
                 android:paddingBottom="15dp"
                 android:text="Administration:"
                 android:textSize="40dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
                 android:textStyle="bold" />
     <LinearLayout
         android:id="@+id/ll1"
@@ -51,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mr. S S Kejriwal(Chairman)"
+            android:textColor="#000"
             android:paddingTop="25dp"
             android:paddingLeft="10dp"/>
     </LinearLayout>
@@ -69,6 +72,7 @@
                 android:id="@+id/admin2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#000"
                 android:text="Mr. Kishan Kejriwal(Managing Trustee)"
                 android:paddingTop="25dp"
                 android:paddingLeft="10dp"/>
@@ -86,6 +90,7 @@
                     android:background="@drawable/parasar3"/>
                 <TextView
                     android:id="@+id/admin3"
+                    android:textColor="#000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Parasar Bandyopadhyay(Director)"
@@ -106,6 +111,7 @@
                 <TextView
                     android:id="@+id/admin4"
                     android:layout_width="wrap_content"
+                    android:textColor="#000"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) B. Chattopadhyay(Principal and Dean(Academics))"
                     android:paddingTop="25dp"
@@ -124,6 +130,7 @@
                     android:background="@drawable/debapriya_de_5"/>
                 <TextView
                     android:id="@+id/admin5"
+                    android:textColor="#000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Debapriya De(Dean (Research and Consultancy))"
@@ -143,6 +150,7 @@
                     android:background="@drawable/arun_kr_jalan6"/>
                 <TextView
                     android:id="@+id/admin6"
+                    android:textColor="#000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Arun Kumar Jalan(Dean (Student Affairs))"
@@ -166,6 +174,7 @@
                     android:layout_height="wrap_content"
                     android:text="Prof. (Dr.) Ananta Kumar Das(Registrar)"
                     android:paddingTop="25dp"
+                    android:textColor="#000"
                     android:paddingLeft="10dp"/>
             </LinearLayout>
         </LinearLayout>

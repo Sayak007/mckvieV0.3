@@ -52,7 +52,8 @@
                 android:paddingLeft="8dp"
                 android:text="@string/admission_1"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView111"
@@ -74,7 +75,7 @@
                 android:text="\u25CF Prospectus"
                 android:textColor="#0048ff"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                 />
 
             <TextView
                 android:id="@+id/admission_2"
@@ -85,7 +86,7 @@
                 android:text="\u25CF Institution Leaflet"
                 android:textColor="#0048ff"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                 />
 
             <TextView
                 android:id="@+id/admission_3"
@@ -96,7 +97,7 @@
                 android:text="\u25CF SPECTRUM (Information Pull Out)"
                 android:textColor="#0048ff"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -105,7 +106,8 @@
                 android:paddingLeft="8dp"
                 android:text="@string/admission_3"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingRight="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -125,7 +127,8 @@
                 android:paddingTop="8dp"
                 android:text="@string/admission_4"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingRight="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,12 +147,14 @@
                 android:paddingTop="8dp"
                 android:text="@string/admission_5"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingRight="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:paddingRight="8dp"
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:text="\u2022 West Bengal Joint Entrance Examination called in short JEM" />
@@ -158,6 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:paddingRight="8dp"
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:text="\u2022 Joint Entrance Examination (Main) called in short JEE- MAIN" />
@@ -166,6 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:paddingRight="8dp"
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:text="\u2022 West Bengal Joint Entrance Lateral Entry Test called in short JELET" />
@@ -177,7 +184,8 @@
                 android:paddingTop="8dp"
                 android:text="@string/admission_6"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingRight="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -186,13 +194,15 @@
                 android:paddingTop="8dp"
                 android:text="@string/admission_7"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingRight="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:text="MCA"
                 android:textColor="#000"
                 android:textSize="16sp"
@@ -201,6 +211,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingRight="8dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="8dp"
                 android:text="@string/admission_8"
@@ -211,6 +222,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:paddingRight="8dp"
                 android:paddingLeft="8dp"
                 android:text="M.Tech"
                 android:textColor="#000"
@@ -220,6 +232,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingRight="8dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="8dp"
                 android:text="@string/admission_9"

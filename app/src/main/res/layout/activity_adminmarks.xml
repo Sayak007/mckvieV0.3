@@ -11,7 +11,7 @@
         android:id="@+id/spinner2"
         android:layout_width="150dp"
         android:layout_height="30dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/textView106"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,6 +61,8 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Department"
@@ -72,6 +74,8 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Semester"
@@ -84,6 +88,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed"
         android:text="Paper"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView115" />
@@ -343,8 +349,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-condensed"
                 android:text="ROLL NO."
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -353,7 +360,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MARKS"
-                android:textStyle="bold"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-condensed"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.56"
                 app:layout_constraintStart_toEndOf="@+id/textView121"
@@ -371,6 +379,8 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Year"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView107" />
 
@@ -382,6 +392,8 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Class Test"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView113" />
 

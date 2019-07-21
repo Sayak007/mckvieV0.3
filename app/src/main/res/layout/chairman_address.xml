@@ -25,14 +25,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coustard"
-                android:text="Chairman's Address :"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:text="Chairman's Address : "
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="40sp"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,16 +40,19 @@
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:textSize="17dp"
-                android:text="During the last few decades of the last century the private sector has played a vital role in the field of education, especially in engineering and technology, throughout the world and particularly in India. MCKV Institute of Engineering strongly believes in providing a distinctive and relevant combination of academic skills and technical experience. This is a combination that is designed to provide a foundation for a lifetime of professional and personal development.
+                android:text="\t\tDuring the last few decades of the last century the private sector has played a vital role in the field of education, especially in engineering and technology, throughout the world and particularly in India. MCKV Institute of Engineering strongly believes in providing a distinctive and relevant combination of academic skills and technical experience. This is a combination that is designed to provide a foundation for a lifetime of professional and personal development.\n
 
-MCKVIE is dedicated to act as the nurturing ground for young professionals who seek to make their mark in life. This is a collaborative process involving close interaction with the teacher and the taught.
+\t\t\tMCKVIE is dedicated to act as the nurturing ground for young professionals who seek to make their mark in life. This is a collaborative process involving close interaction with the teacher and the taught.
 The institute provides state-of-the-art infrastructure to facilitate optimum resource allocation to each student for imparting technical education.
 
 We at MCKVIE look forward to a relationship where the learning quotient rises above the mere imparting of academic knowledge and leads to holistic growth of the young mind.\n"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="210dp"
+                android:textColor="#000000"
                 android:text="-S S Kejriwal"
                 android:textSize="25dp"
                 android:textStyle="bold"/>

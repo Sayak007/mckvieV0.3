@@ -26,7 +26,8 @@
                     android:layout_height="wrap_content"
                     android:text="Syllabus"
                     android:textSize="40dp"
-                    android:fontFamily="@font/coustard"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="#000"
                     android:layout_marginLeft="13dp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
@@ -36,6 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
+                android:textColor="#000"
                 android:text="MCKV Institute of Engineering is affiliated to West Bengal University of Technology (WBUT) and thus follows the syllabus as prescribed by WBUT for all the courses of B. Tech, M. Tech and MCA."
                 android:textAlignment="textStart"
                 android:layout_marginLeft="13dp"
@@ -47,9 +49,9 @@
                 android:layout_height="match_parent"
                 android:text="  UG BTECH Courses:"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
                 android:textAlignment="textStart"
-                android:textColor="#669999"
-                android:fontFamily="@font/coustard"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -60,13 +62,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="  First Year Syllabus "
-                android:textColor="#004d4d"
+                android:textColor="#000"
                 android:textAlignment="viewStart"
+                android:fontFamily="@font/coustard"
                 android:textAllCaps="false"
                 android:textSize="18sp"
                 android:layout_marginLeft="9dp"
                 android:padding="5dp"
-                android:fontFamily="@font/coustard"/>
+                />
 
             <TextView
                 android:padding="5dp"
@@ -78,7 +81,7 @@
                 android:layout_height="40dp"
                 android:text="  CSE upto 4th year Syllabus"
                 android:textAlignment="viewStart"
-                android:textColor="#004d4d"
+                android:textColor="#000000"
                 android:textAllCaps="false"
                 android:textSize="18sp"
                 android:fontFamily="@font/coustard"/>
