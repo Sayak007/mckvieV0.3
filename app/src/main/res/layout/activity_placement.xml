@@ -101,15 +101,16 @@
                 android:paddingLeft="8dp"
                 android:paddingVertical="2dp"
                 android:text="\u2022 Technical, aptitude and psychometric tests in line with industry norms" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:paddingLeft="8dp"
                 android:paddingVertical="2dp"
-                android:text="\u2022 ndividual and Group counselling to make them aware of their strengths and weaknesses and to take corrective actions wherever necessary" />
+                android:paddingLeft="8dp"
+                android:text="\u2022 Individual and Group counselling to make them aware of their strengths and weaknesses and to take corrective actions wherever necessary"
+                android:textColor="#000"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"

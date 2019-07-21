@@ -71,12 +71,12 @@
 
             <TextView
                 android:id="@+id/textView59"
-                android:paddingLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
                 android:layout_marginLeft="30sp"
-                android:text="\u2022 Automobiole Engineering"
+                android:paddingLeft="10dp"
+                android:text="\u2022 Automobile Engineering"
                 android:textColor="#0000cd"
                 app:layout_constraintBottom_toTopOf="@+id/textView60"
                 tools:layout_editor_absoluteX="65dp" />
