@@ -57,12 +57,13 @@
 
         <TextView
             android:id="@+id/textView107"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/coustard"
-            android:gravity="center"
+            android:gravity="left"
+            android:paddingTop="4dp"
             android:text="Semester"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView101" />
@@ -82,12 +83,13 @@
 
         <TextView
             android:id="@+id/textView112"
-            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
+            android:layout_width="80dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/coustard"
-            android:gravity="center"
+            android:gravity="left"
+            android:paddingTop="4dp"
             android:text="CT"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView107" />
@@ -96,7 +98,7 @@
             android:id="@+id/spinner5"
             android:layout_width="150dp"
             android:layout_height="30dp"
-            android:layout_marginStart="72dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toEndOf="@+id/textView112"
             app:layout_constraintTop_toBottomOf="@+id/spinner3" />
