@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_marginTop="17dp"
-                android:text="MCKVIE is :\n⬤   All Courses ( B.Tech, M.Tech, and MCA )are All India Council for Technical Education (AICTE)\nApproved \n\n\n⬤   Details of NBA Accreditated Courses :\n"
+                android:text="MCKVIE is :\n⬤   All Courses ( B.Tech, M.Tech, and MCA )are All India Council for Technical Education (AICTE)Approved \n\n\n⬤   Details of NBA Accreditated Courses :\n"
                 android:textColor="#000"
                 android:textSize="15dp"
                 android:textStyle="bold" />
