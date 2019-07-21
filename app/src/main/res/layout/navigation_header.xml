@@ -50,7 +50,7 @@
             android:layout_marginHorizontal="12dp"
             android:layout_marginStart="16dp"
 
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -59,7 +59,7 @@
             android:id="@+id/logout_image"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="44dp"
             android:layout_marginEnd="12dp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,12 +71,20 @@
             android:layout_width="93dp"
             android:layout_height="43dp"
             android:layout_marginTop="36dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:clickable="true"
             android:text="SIGN IN"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch"
+        tools:layout_editor_absoluteX="469dp"
+        tools:layout_editor_absoluteY="-78dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

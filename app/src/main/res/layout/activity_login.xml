@@ -7,6 +7,22 @@
     android:fitsSystemWindows="true"
     tools:context="com.techclub.mckvie.LoginActivity">
 
+    <Button
+        android:id="@+id/signup"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="SIGN UP"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView117"
+        app:layout_constraintVertical_bias="0.026" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -14,9 +30,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/coustard"
+        android:fontFamily="sans-serif-condensed"
         android:text="SIGN IN"
-        android:textSize="30sp"
+        android:textColor="#000"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,12 +92,11 @@
     <Button
         android:id="@+id/signinbtn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="100dp"
+        android:layout_width="105dp"
         android:layout_height="50dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="8dp"
-        android:background="#4db6ac"
         android:text="SIGN IN"
         android:textColor="#ffffff"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -92,13 +108,14 @@
         style="@android:style/Widget.Holo.Light.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
         android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signinbtn" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -114,15 +131,17 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/signup"
+        android:id="@+id/textView117"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="176dp"
-        android:text="Don't have an account? Sign Up here"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Don't have an account?"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signinbtn" />
 
