@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/activity_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include
@@ -40,12 +39,15 @@
                     app:srcCompat="@drawable/noragging_pic1" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
+                    android:padding="5dp"
+                    android:fontFamily="sans-serif-condensed-medium"
                     android:text="No Ragging"
-                    android:textColor="#4db6ac"
-                    android:textSize="30dp"
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:background="#0398fc"
+                    android:textSize="32sp"
                     android:textStyle="bold" />
 
 
@@ -56,7 +58,7 @@
                     android:padding="10dp"
                     android:text="@string/anti_ragging"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
@@ -66,7 +68,7 @@
                     android:padding="10dp"
                     android:text="@string/anti_ragging1"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
@@ -75,6 +77,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="West Bengal Anti Ragging Act:"
                     android:textSize="18sp"
+                    android:textColor="#000"
                     android:textStyle="bold" />
 
                 <TextView
@@ -84,7 +87,7 @@
                     android:padding="10dp"
                     android:text="@string/anti_ragging2"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
@@ -93,6 +96,7 @@
                     android:layout_height="match_parent"
                     android:padding="10dp"
                     android:text="Section 3"
+                    android:textColor="#000"
                     android:textAlignment="textStart"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -102,6 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="10dp"
+                    android:textColor="#000"
                     android:text="(1): Ragging within an educational institution is hereby prohibited."
                     android:textAlignment="textStart"
                     android:textSize="18sp"
@@ -112,6 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="10dp"
+                    android:textColor="#000"
                     android:text="(2): No person shall participate in, abet, or propagate, ragging in any educational institution."
                     android:textAlignment="textStart"
                     android:textSize="18sp"
@@ -123,9 +129,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="10dp"
+                    android:textColor="#000"
                     android:text="@string/antiragging"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
                     android:textSize="18sp" />
 
                 <TextView
@@ -135,7 +141,7 @@
                     android:padding="10dp"
                     android:text="Section 4:"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -146,7 +152,7 @@
                     android:padding="10dp"
                     android:text="@string/anti_ragging3"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
@@ -156,7 +162,7 @@
                     android:padding="10dp"
                     android:text="Section 5:"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -167,7 +173,7 @@
                     android:padding="10dp"
                     android:text="@string/anti_ragging4"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
@@ -177,7 +183,7 @@
                     android:padding="10dp"
                     android:text="Section 6:"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -188,7 +194,7 @@
                     android:padding="10dp"
                     android:text="@string/anti_ragging5"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
@@ -198,7 +204,7 @@
                     android:padding="10dp"
                     android:text="@string/anti_ragging6"
                     android:textAlignment="textStart"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
@@ -211,6 +217,7 @@
                     android:text="Click here to download anti-ragging committee pdf"
                     android:textAlignment="viewStart"
                     android:textSize="18sp"
+                    android:textColor="#000"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -218,8 +225,5 @@
 
             </LinearLayout>
         </ScrollView>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

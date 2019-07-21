@@ -11,51 +11,68 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/navigation_action" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/chairman_address"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/textView118"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0398fc"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="Chairman's Address "
+        android:textColor="#000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_marginTop="55dp"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
+
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView118">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Chairman's Address : "
-                android:fontFamily="sans-serif-condensed"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:textSize="40sp"/>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/chairman_address"/>
+
+
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:textSize="17dp"
                 android:text="\t\tDuring the last few decades of the last century the private sector has played a vital role in the field of education, especially in engineering and technology, throughout the world and particularly in India. MCKV Institute of Engineering strongly believes in providing a distinctive and relevant combination of academic skills and technical experience. This is a combination that is designed to provide a foundation for a lifetime of professional and personal development.\n
 
 \t\t\tMCKVIE is dedicated to act as the nurturing ground for young professionals who seek to make their mark in life. This is a collaborative process involving close interaction with the teacher and the taught.
 The institute provides state-of-the-art infrastructure to facilitate optimum resource allocation to each student for imparting technical education.
 
-We at MCKVIE look forward to a relationship where the learning quotient rises above the mere imparting of academic knowledge and leads to holistic growth of the young mind.\n"/>
+We at MCKVIE look forward to a relationship where the learning quotient rises above the mere imparting of academic knowledge and leads to holistic growth of the young mind.\n"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="210dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="right"
+                android:text="- S S Kejriwal"
                 android:textColor="#000000"
-                android:text="-S S Kejriwal"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textSize="24dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

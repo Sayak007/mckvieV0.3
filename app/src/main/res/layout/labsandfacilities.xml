@@ -40,11 +40,15 @@
 
                 <TextView
                     android:id="@+id/header"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/backim"
                     android:layout_marginTop="0dp"
-                    android:padding="10dp"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textColor="#000"
+                    android:background="#0398fc"
                     android:text="LABS AND FACILITIES"
                     android:textSize="30dp"
                     android:textStyle="bold" />

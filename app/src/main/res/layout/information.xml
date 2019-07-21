@@ -44,16 +44,22 @@
                 <TextView
                     android:id="@+id/abt"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="47dp"
                     android:layout_below="@id/imageview4"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
-                    android:padding="10dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toStartOf="@+id/more"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:focusable="true"
+                    android:textColor="#000"
                     android:text="ABOUT"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="1dp"
-                    android:focusable="true"/>
+                    android:paddingLeft="8dp"
+                    android:background="#0398fc"
+                    android:textSize="32sp"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -63,6 +69,7 @@
                     android:layout_marginTop="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:textColor="#000"
                     android:paddingBottom="10dp"
                     android:text="For more than 18 years, MCKVIE has been known for its spirit of excellence that transforms students into intellectuals, where faculty work with the students to engineer solutions and encourage exploration across disciplines. Critical thinking and networking is the main focus – on campus, off campus and after graduation."
                     android:textSize="15dp"
@@ -75,7 +82,7 @@
                     android:layout_below="@id/imageview4"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="0dp"
-                    android:layout_marginEnd="7dp"
+                    android:background="#0398fc"
                     android:src="@drawable/ic_view_headline_black_24dp" />
 
                 <ImageView
@@ -115,6 +122,7 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="1dp"
                     android:layout_marginEnd="0dp"
+                    android:textColor="#000"
                     android:layout_toEndOf="@+id/im1"
                     android:layout_toRightOf="@+id/im1"
                     android:paddingLeft="5dp"
@@ -132,7 +140,7 @@
                     android:layout_toEndOf="@+id/im1"
                     android:paddingLeft="10dp"
                     android:text="Visit Us"
-                    android:textColor="@color/design_default_color_primary" />
+                    android:textColor="#030ffc" />
 
                 <ImageView
                     android:layout_width="150dp"
@@ -168,6 +176,7 @@
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
                     android:paddingRight="5dp"
+                    android:textColor="#000"
                     android:text="MCKVIE is a community whose members benefit from lifelong connections to their college and to one another." />
 
                 <TextView
@@ -180,8 +189,8 @@
                     android:layout_marginTop="4dp"
                     android:layout_toEndOf="@+id/im2"
                     android:paddingLeft="5dp"
-                    android:text="Read the Chairman's Address"
-                    android:textColor="@color/design_default_color_primary" />
+                    android:textColor="#030ffc"
+                    android:text="Read the Chairman's Address" />
 
                 <ImageView
                     android:layout_width="150dp"
@@ -216,6 +225,7 @@
                     android:layout_toEndOf="@+id/im2"
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
+                    android:textColor="#000"
                     android:paddingRight="5dp"
                     android:text="The communications division works hard to keep you informed about the latest news and happenings." />
 
@@ -226,10 +236,11 @@
                     android:layout_below="@+id/textView151"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="6dp"
+                    android:textColor="#030ffc"
                     android:layout_toEndOf="@+id/im2"
                     android:paddingLeft="5dp"
                     android:text="Read more about campus news"
-                    android:textColor="@color/design_default_color_primary" />
+                    />
 
             </RelativeLayout>
 

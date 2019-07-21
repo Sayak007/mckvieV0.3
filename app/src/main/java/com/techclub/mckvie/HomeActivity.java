@@ -664,6 +664,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(myIntent);
                 break;
 
+            case R.id.events:
+                myIntent = new Intent(HomeActivity.this, NoticeActivity.class);
+                myIntent.putExtra("flag", 4);
+                startActivity(myIntent);
+                break;
+
             case R.id.help:
                 Intent brow = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/pxxjiYtZQKKzp9zy7"));
                 brow.putExtra("flag",5);

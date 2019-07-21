@@ -15,16 +15,16 @@
 
     <TextView
         android:id="@+id/tv"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:text="YEARLY PLANNER"
+        android:background="#0398fc"
         android:textColor="#000"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:paddingVertical="10dp"
-        android:paddingStart="16dp"/>
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:paddingVertical="5dp" />
 
     <TextView
         android:id="@+id/tv1"

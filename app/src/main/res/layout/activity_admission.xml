@@ -35,13 +35,13 @@
 
             <TextView
                 android:id="@+id/textView105"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif-condensed-light"
-                android:paddingLeft="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:fontFamily="sans-serif-condensed-medium"
                 android:text="Admissions"
+                android:gravity="center"
                 android:textColor="#000"
+                android:background="#0398fc"
                 android:textSize="32dp"
                 android:textStyle="bold" />
 

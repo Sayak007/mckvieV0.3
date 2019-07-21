@@ -11,36 +11,51 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/navigation_action" />
+
+    <TextView
+        android:id="@+id/textView120"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:background="#0398fc"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="Principal's Address"
+        android:textColor="#000"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="124dp"
+        android:layout_height="140dp"
+        android:background="@drawable/principal_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_marginTop="55dp"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView120">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/coustard"
-                android:text="Principal's Address :"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/principal_address"/>
+
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17dp"
                 android:text="From the time immemorial 'the wheel of fire' at the centre of our being has been turning impersonally and inflaming our otherwise indolent spirit and bursting forth into creativity. The wheel and the fire are the greatest technological discovery of Human being which is important and have relevance even today. Wheel to transmit motion from one part to another in Engineering and fire to captivate energy, without energy nothing works.
 
 The continuous up gradation of facilities at MCKVIE, coupled with highly qualified and experienced faculty, has brought the Institute to the forefront in the educational scenario in the State of West Bengal.
@@ -57,13 +72,16 @@ Continuous development, continuous evolution and up gradation is the Mantra of t
 
 I wish all the supports from all our stake holders as well as the honorary ambassadors i.e., the Alumni of the college.
 
-Welcome you all to MCKV Institute of Engineering and my very best wishes to the aspirant engineers. I am hopeful that the coming years of your study at our Institute will prove to be the most fruitful and glorious part of your career.\n"/>
+Welcome you all to MCKV Institute of Engineering and my very best wishes to the aspirant engineers. I am hopeful that the coming years of your study at our Institute will prove to be the most fruitful and glorious part of your career.\n"
+                android:textColor="#000"
+                android:textSize="17dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="-Prof. B. Chattopadhyay"
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

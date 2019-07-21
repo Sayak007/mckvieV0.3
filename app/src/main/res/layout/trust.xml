@@ -11,43 +11,56 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/navigation_action" />
+
+    <TextView
+        android:id="@+id/textView123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="The Trust"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="#0398fc"
+        android:textSize="32sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_marginTop="55dp"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView123">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/coustard"
-                android:text="The Trust"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17dp"
+                android:textColor="#000"
                 android:text="Sri Chhaganlal Kejriwal established Mirzamal Chhaganlal Kejriwala Charity Trust in the year 1976 which has been in the forefront of Social welfare programmes. Since its inception, the Trust has been active in the fields of education and health. This Trust established KEJRIWAL HOSPITAL in 1980 in Rajasthan.
 
 Sri S.S. Kejriwal is the chief patron of the Trust.  Sri K.K. Kejriwal, Mrs. Sangita Kejriwal and Sri Abhay Kejriwal are the other members of the Trust.
 
-The Trust formed the MCKV Group of Institutions for which Chairman is Sri Shyam Sundar Kejriwal and Vice Chairman is Sri Kishan Kr. Kejriwal. Presently, the MCKV Group managing the following Institutions:\n"/>
+The Trust formed the MCKV Group of Institutions for which Chairman is Sri Shyam Sundar Kejriwal and Vice Chairman is Sri Kishan Kr. Kejriwal. Presently, the MCKV Group managing the following Institutions:\n"
+                android:textSize="17dp" />
+
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="MC Kejriwal Vidyapeeth since 1998.\nMCKV Institute of Engineering since 1999.\nMadhusthali Vidyapeeth, Co-Ed English Medium Residential School since 2006.\nMCKV Health and Medicare Pvt. Ltd.  since 2007.\nMadhusthali Institute of Teacher Training, a Co-Ed B.Ed College since 2014.\n"/>
+                android:textColor="#000"
+                android:text="MC Kejriwal Vidyapeeth since 1998.\nMCKV Institute of Engineering since 1999.\nMadhusthali Vidyapeeth, Co-Ed English Medium Residential School since 2006.\nMCKV Health and Medicare Pvt. Ltd.  since 2007.\nMadhusthali Institute of Teacher Training, a Co-Ed B.Ed College since 2014.\n"
+                android:textStyle="bold" />
 
 
         </LinearLayout>

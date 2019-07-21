@@ -13,16 +13,17 @@
 
     <TextView
         android:id="@+id/tv"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:text="HOLIDAY LIST"
         android:textColor="#000"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="#0398fc"
+        android:textSize="32sp"
+        android:gravity="center"
         android:textStyle="bold"
-        android:paddingVertical="10dp"
-        android:paddingStart="16dp"/>
+        android:paddingVertical="5dp" />
 
     <TextView
         android:id="@+id/tv1"

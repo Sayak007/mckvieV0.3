@@ -13,17 +13,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="#0398fc"
+        android:textColor="#000"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Vision and Mission"
         android:textAllCaps="true"
-        android:textSize="30dp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:padding="10dp"/>
+        android:padding="5dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vision:"
+        android:textColor="#000"
         android:paddingLeft="10dp"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -33,12 +38,14 @@
         android:layout_height="wrap_content"
         android:text="To be a sustainable center of academic excellence and advanced research at national level producing students recognized for their academic competence, attitudes and dedication."
         android:paddingLeft="10dp"
+        android:textColor="#000"
         android:paddingRight="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mission:"
+        android:textColor="#000"
         android:layout_marginTop="20dp"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -47,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
+        android:textColor="#000"
         android:paddingRight="5dp"
         android:text="	•  To create a vibrant learning environment in the Campus.\n	•  To develop and enhance teaching – learning quality.\n	•  To have highly qualified faculty.\n	•  To support application oriented research and encourage entrepreneurship."/>
 
