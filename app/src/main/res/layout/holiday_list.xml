@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/navigation_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:text="HOLIDAY LIST"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:paddingEnd="16dp"
+        android:layout_marginRight="8dp"
+        android:textColor="#0061FF"
+        android:layout_toEndOf="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/pdfim" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/pdfim" />
+
+    <TextView
+        android:id="@+id/yp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="13dp"
+        android:textSize="15dp"
+        android:paddingEnd="16dp"
+        android:textColor="#0061FF"
+        android:layout_toEndOf="@+id/imageView5" />
+
+
+</RelativeLayout>
