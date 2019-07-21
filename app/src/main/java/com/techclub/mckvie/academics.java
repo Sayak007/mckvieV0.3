@@ -30,6 +30,8 @@ public class academics extends AppCompatActivity {
         final ImageView more =(ImageView)findViewById(R.id.more);
         TextView depsandpgs = (TextView) findViewById(R.id.dept);
         TextView labs = (TextView) findViewById(R.id.labs);
+        TextView campusnews = (TextView) findViewById(R.id.campusnews);
+
 
         labs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +44,15 @@ public class academics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(academics.this, depsandprogs.class));
+            }
+        });
+
+        campusnews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(academics.this, webview.class);
+                intent.putExtra("id", "https://www.mckvie.edu.in/blog/");
+                startActivity(intent);
             }
         });
 

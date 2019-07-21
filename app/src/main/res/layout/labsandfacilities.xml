@@ -46,7 +46,6 @@
                     android:layout_marginTop="0dp"
                     android:padding="10dp"
                     android:text="LABS AND FACILITIES"
-                    android:textColor="#669999"
                     android:textSize="30dp"
                     android:textStyle="bold" />
 

@@ -25,13 +25,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Director's Address : -"
-                android:textStyle="bold"
+                android:fontFamily="@font/coustard"
+                android:text="Director's Address :"
                 android:textSize="40sp"
-                android:fontFamily="@font/coustard"/>
+                android:textStyle="bold" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

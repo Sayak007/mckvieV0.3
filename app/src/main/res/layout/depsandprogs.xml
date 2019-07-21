@@ -41,7 +41,6 @@
                     android:layout_marginTop="0dp"
                     android:padding="10dp"
                     android:text="DEPARTMENTS AND PROGRAMS"
-                    android:textColor="#669999"
                     android:textSize="30dp"
                     android:textStyle="bold" />
                 <TextView

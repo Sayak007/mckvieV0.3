@@ -25,13 +25,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="The Trust: -"
-                android:textStyle="bold"
+                android:fontFamily="@font/coustard"
+                android:text="The Trust"
                 android:textSize="40sp"
-                android:fontFamily="@font/coustard"/>
+                android:textStyle="bold" />
 
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="wrap_content"

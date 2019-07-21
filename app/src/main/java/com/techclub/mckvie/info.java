@@ -64,6 +64,15 @@ public class info extends AppCompatActivity {
             }
         });
 
+       campusnews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(info.this, webview.class);
+                intent.putExtra("id", "https://www.mckvie.edu.in/blog/");
+                startActivity(intent);
+            }
+        });
+
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +110,16 @@ public class info extends AppCompatActivity {
                             case R.id.eight:
                                 startActivity(new Intent(info.this,governing_body.class));
                                 break;
+                            case R.id.eleven:
+                                startActivity(new Intent(info.this,holiday_list.class));
+                                break;
 
+                            case R.id.nine:
+                                startActivity(new Intent(info.this,visionandmission.class));
+                                break;
+                            case R.id.ten:
+                                startActivity(new Intent(info.this,qualitypolicy.class));
+                                break;
 
                         }
 

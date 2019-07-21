@@ -49,7 +49,6 @@
                     android:layout_marginTop="0dp"
                     android:padding="10dp"
                     android:text="ABOUT"
-                    android:textColor="#669999"
                     android:textSize="30sp"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="0dp"

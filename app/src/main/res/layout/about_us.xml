@@ -114,7 +114,7 @@
                     android:paddingTop="5dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="5dp"
-                    android:text="SayakNOOB@gmail.com"
+                    android:text="contactus@gmail.com"
                     android:textColor="#0000cd"
                     android:textSize="15sp"
                     android:layout_gravity="left"
