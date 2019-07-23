@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
+import android.content.ClipboardManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -30,12 +31,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.text.Layout;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
+import android.text.method.LinkMovementMethod;
 import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.Menu;
@@ -454,6 +457,36 @@ public class chatmain extends AppCompatActivity {
                         messageText1.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
                         messageText2.setText(model.getMessageText());
 
+                        messageText2.setOnClickListener(new View.OnClickListener() {
+                            int i = 0;
+                            @Override
+                            public void onClick(View v) {
+                                // TODO Auto-generated method stub
+                                i++;
+                                Handler handler = new Handler();
+                                Runnable r = new Runnable() {
+
+                                    @Override
+                                    public void run() {
+                                        i = 0;
+                                    }
+                                };
+
+                                if (i == 1) {
+                                    //Single click
+                                    messageText2.setMovementMethod(LinkMovementMethod.getInstance());
+                                    handler.postDelayed(r, 250);
+
+                                } else if (i == 2) {
+                                    ClipboardManager cm = (ClipboardManager)chatmain.this.getSystemService(Context.CLIPBOARD_SERVICE);
+                                    cm.setText(messageText2.getText());
+                                    Toast.makeText(chatmain.this, "Copied to clipboard", Toast.LENGTH_SHORT).show();
+                                }
+
+
+                            }
+                        });
+
                         int i = model.getMessageUser().indexOf("@");
                         messageUser2.setText(model.getMessageUser().substring(0, i));
                         messageTime2.setText(DateFormat.format("dd/MMM (HH:mm)", model.getMessageTime()));
@@ -563,6 +596,35 @@ public class chatmain extends AppCompatActivity {
                         messageText1.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
                         messageText2.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
                         messageText1.setText(model.getMessageText());
+                        messageText1.setOnClickListener(new View.OnClickListener() {
+                            int i = 0;
+                            @Override
+                            public void onClick(View v) {
+                                // TODO Auto-generated method stub
+                                i++;
+                                Handler handler = new Handler();
+                                Runnable r = new Runnable() {
+
+                                    @Override
+                                    public void run() {
+                                        i = 0;
+                                    }
+                                };
+
+                                if (i == 1) {
+                                    //Single click
+                                    messageText1.setMovementMethod(LinkMovementMethod.getInstance());
+                                    handler.postDelayed(r, 250);
+
+                                } else if (i == 2) {
+                                    ClipboardManager cm = (ClipboardManager)chatmain.this.getSystemService(Context.CLIPBOARD_SERVICE);
+                                    cm.setText(messageText1.getText());
+                                    Toast.makeText(chatmain.this, "Copied to clipboard", Toast.LENGTH_SHORT).show();
+                                }
+
+
+                            }
+                        });
 
                         prof2.setVisibility(View.INVISIBLE);
                         int i = model.getMessageUser().indexOf("@");
@@ -655,6 +717,7 @@ public class chatmain extends AppCompatActivity {
             //Checking if the received broadcast is for our enqueued download by matching download id
             if (downloadID == id) {
                 Toast.makeText(chatmain.this, "Download Completed.Open from the notifications.", Toast.LENGTH_LONG).show();
+
             }
         }
     };
