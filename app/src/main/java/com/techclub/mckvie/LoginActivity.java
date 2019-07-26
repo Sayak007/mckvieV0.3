@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -193,6 +195,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+
+        Button sign_in = findViewById(R.id.signinbtn);
+
         switch(view.getId()) {
             case R.id.signinbtn:
 
@@ -202,6 +207,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 final SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putInt("background_resource", R.drawable.walldef);
                 editor.apply();
+
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(sign_in.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
                 break;
         }

@@ -60,10 +60,6 @@
     </item>
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_settings"
-            android:title="Settings"
-            android:icon="@mipmap/settings_black"/>
 
         <item android:id="@+id/help"
             android:title="Help and Feedback"
@@ -76,9 +72,6 @@
         <item android:id="@+id/share"
             android:title="Share App"
             android:icon="@mipmap/baseline_share_black_18dp" />
-
-        <item android:id="@+id/null1"
-            android:title="" />
 
     </group>
 

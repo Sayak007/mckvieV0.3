@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,13 +53,13 @@ public class ProfileActivity extends AppCompatActivity {
         ImageView mImageView = (ImageView) findViewById(R.id.imageView);
         final TextView textView = (TextView) findViewById(R.id.testTextVIew);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
-        final TextView textViewname = (TextView) findViewById(R.id.textView94);
-        final TextView textViewemail = (TextView) findViewById(R.id.textView96);
-        final TextView textViewuid = (TextView) findViewById(R.id.textView98);
-        final TextView textViewdept = (TextView) findViewById(R.id.textView6);
-        final TextView textViewroll = findViewById(R.id.textView7);
-        final TextView textViewyear = findViewById(R.id.textView9);
-        final TextView textViewphn = findViewById(R.id.textView11);
+        final TextInputLayout textViewname =  findViewById(R.id.textView94);
+        final TextInputLayout textViewemail =  findViewById(R.id.textView96);
+        final TextInputLayout textViewuid =  findViewById(R.id.textView98);
+        final TextInputLayout textViewdept =  findViewById(R.id.textView6);
+        final TextInputLayout textViewroll = findViewById(R.id.textView7);
+        final TextInputLayout textViewyear = findViewById(R.id.textView9);
+        final TextInputLayout textViewphn = findViewById(R.id.textView11);
 
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -106,13 +108,13 @@ public class ProfileActivity extends AppCompatActivity {
                     String phn = dataSnapshot.child("phn").getValue(String.class);
                     String roll = dataSnapshot.child("roll").getValue(String.class);
                     String batch = dataSnapshot.child("batch").getValue(String.class);
-                    textViewname.setText(name);
-                    textViewemail.setText(email);
-                    textViewuid.setText(uid);
-                    textViewdept.setText(dept);
-                    textViewphn.setText(phn);
-                    textViewroll.setText(roll);
-                    textViewyear.setText(batch);
+                    textViewname.getEditText().setText(name);
+                    textViewemail.getEditText().setText(email);
+                    textViewuid.getEditText().setText(uid);
+                    textViewdept.getEditText().setText(dept);
+                    textViewphn.getEditText().setText(phn);
+                    textViewroll.getEditText().setText(roll);
+                    textViewyear.getEditText().setText(batch);
                 }
 
                 @Override
