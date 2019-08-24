@@ -5,7 +5,12 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.res.AssetManager;
+import android.inputmethodservice.Keyboard;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,13 +23,27 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 
 public class admin_app extends AppCompatActivity {
 
+    public static final int PICKFILE_RESULT_CODE = 1;
 
+    private Uri fileUri;
+    public String filePath;
     object object1;
     String msg1 = "10000";
     int c = 10000;
@@ -110,10 +129,80 @@ public class admin_app extends AppCompatActivity {
         Insertmarks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(admin_app.this,AdminMarksActivity.class);
-                startActivity(myIntent);
+
+                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+                chooseFile.setType("*/*");
+                chooseFile = Intent.createChooser(chooseFile, "Choose a file");
+                startActivityForResult(chooseFile, PICKFILE_RESULT_CODE);
+
+                readExcelFileFromAssets(filePath);
             }
         });
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case PICKFILE_RESULT_CODE:
+                if (resultCode == -1) {
+                    fileUri = data.getData();
+                    filePath = fileUri.getPath();
+                    Toast.makeText(this, filePath, Toast.LENGTH_LONG).show();
+
+                }
+                break;
+        }
+    }
+
+    public void readExcelFileFromAssets(String filePath) {
+
+
+        Log.d("Nirvik","Sayak Noob");
+        try {
+            InputStream myInput;
+            // initialize asset manager
+            AssetManager assetManager = getAssets();
+            //  open excel sheet
+
+            myInput = assetManager.open(filePath);
+
+            // Create a POI File System object
+            POIFSFileSystem myFileSystem = new POIFSFileSystem(myInput);
+            // Create a workbook using the File System
+            HSSFWorkbook myWorkBook = new HSSFWorkbook(myFileSystem);
+            // Get the first sheet from workbook
+            HSSFSheet mySheet = myWorkBook.getSheetAt(0);
+            // We now need something to iterate through the cells.
+            Iterator<Row> rowIterator = mySheet.rowIterator();
+            //Iterator<Keyboard.Row> rowIter = mySheet.rowIterator();
+            int rowno =0;
+            while (rowIterator.hasNext()) {
+
+                //Log.e(TAG, " row no "+ rowno );
+                HSSFRow myRow = (HSSFRow) rowIterator.next();
+                if(rowno !=0) {
+                    Iterator<Cell> cellIter = myRow.cellIterator();
+                    int colno =0;
+                    String sno="", date="", det="";
+                    while (cellIter.hasNext()) {
+                        HSSFCell myCell = (HSSFCell) cellIter.next();
+                        if (colno==0){
+                            sno = myCell.toString();
+                        }else if (colno==1){
+                            date = myCell.toString();
+                        }else if (colno==2){
+                            det = myCell.toString();
+                        }
+                        colno++;
+
+                    }
+                    Log.d("row", sno + " -- "+ date+ "  -- "+ det+"");
+
+                }
+                rowno++;
+            }
+        } catch (Exception e) {
+            Log.e("Error", "error "+ e.toString());
+        }
     }
 
     private void getvalues(){
