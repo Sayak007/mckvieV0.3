@@ -1,5 +1,6 @@
 package com.techclub.mckvie;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import androidx.annotation.NonNull;
@@ -32,7 +33,11 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -41,6 +46,7 @@ import java.util.Iterator;
 public class admin_app extends AppCompatActivity {
 
     public static final int PICKFILE_RESULT_CODE = 1;
+    public static final int PICK_FILE_REQUEST=2;
 
     private Uri fileUri;
     public String filePath;
@@ -133,39 +139,40 @@ public class admin_app extends AppCompatActivity {
                 Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
                 chooseFile.setType("*/*");
                 chooseFile = Intent.createChooser(chooseFile, "Choose a file");
-                startActivityForResult(chooseFile, PICKFILE_RESULT_CODE);
-
-                readExcelFileFromAssets(filePath);
+                startActivityForResult(chooseFile, PICK_FILE_REQUEST);
             }
         });
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case PICKFILE_RESULT_CODE:
+            case PICK_FILE_REQUEST:
                 if (resultCode == -1) {
                     fileUri = data.getData();
                     filePath = fileUri.getPath();
                     Toast.makeText(this, filePath, Toast.LENGTH_LONG).show();
-
+                    readExcelFileFromAssets(filePath);
                 }
                 break;
         }
     }
 
-    public void readExcelFileFromAssets(String filePath) {
-
-
+    public void readExcelFileFromAssets( String filePath) {
+        Log.d("NOOB",filePath);
         Log.d("Nirvik","Sayak Noob");
         try {
-            InputStream myInput;
             // initialize asset manager
-            AssetManager assetManager = getAssets();
+            //AssetManager assetManager = getAssets();
             //  open excel sheet
 
-            myInput = assetManager.open(filePath);
+            //InputStream myInput = assetManager.open(filePath);
+
+            File file = new File(filePath);
+            FileInputStream myInput = new FileInputStream(file);
+
 
             // Create a POI File System object
+
             POIFSFileSystem myFileSystem = new POIFSFileSystem(myInput);
             // Create a workbook using the File System
             HSSFWorkbook myWorkBook = new HSSFWorkbook(myFileSystem);
@@ -176,7 +183,6 @@ public class admin_app extends AppCompatActivity {
             //Iterator<Keyboard.Row> rowIter = mySheet.rowIterator();
             int rowno =0;
             while (rowIterator.hasNext()) {
-
                 //Log.e(TAG, " row no "+ rowno );
                 HSSFRow myRow = (HSSFRow) rowIterator.next();
                 if(rowno !=0) {

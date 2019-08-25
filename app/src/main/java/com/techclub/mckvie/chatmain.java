@@ -188,6 +188,7 @@ public class chatmain extends AppCompatActivity {
         }
         if(item.getItemId()==R.id.wall){
             startActivity(new Intent(chatmain.this,wallchat.class));
+            Toast.makeText(chatmain.this, "UNDER TESTING", Toast.LENGTH_LONG).show();
         }
         switch (item.getItemId()) {
             case android.R.id.home:
