@@ -1,22 +1,47 @@
 package com.techclub.mckvie;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Iterator;
+
 public class AdminMarksActivity extends AppCompatActivity {
 
     private String dept,sem,year,ct;
+    public static final int PICK_FILE_REQUEST=2;
+    private static final int READ_REQUEST_CODE = 42;
+    private Uri fileUri;
+    public String filePath;
+    EditText paper;
+    private String roll,marks;
+    DatabaseReference mDatabase;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,35 +52,11 @@ public class AdminMarksActivity extends AppCompatActivity {
         Spinner spinner4 = findViewById(R.id.spinner6);
         Spinner spinner5 = findViewById(R.id.spinner7);
 
-        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Marks/");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Marks/");
 
-        Button submitButton = findViewById(R.id.button2);
+        //Button submitButton = findViewById(R.id.button2);
 
-        final EditText rn1 = findViewById(R.id.rn1);
-        final EditText rn2 = findViewById(R.id.rn2);
-        final EditText rn3 = findViewById(R.id.rn3);
-        final EditText rn4 = findViewById(R.id.rn4);
-        final EditText rn5 = findViewById(R.id.rn5);
-        final EditText rn6 = findViewById(R.id.rn6);
-        final EditText rn7 = findViewById(R.id.rn7);
-        final EditText rn8 = findViewById(R.id.rn8);
-        final EditText rn9 = findViewById(R.id.rn9);
-        final EditText rn10 = findViewById(R.id.rn10);
-        final EditText rn11 = findViewById(R.id.rn11);
-
-        final EditText m1 = findViewById(R.id.marks1);
-        final EditText m2 = findViewById(R.id.marks2);
-        final EditText m3 = findViewById(R.id.marks3);
-        final EditText m4 = findViewById(R.id.marks4);
-        final EditText m5 = findViewById(R.id.marks5);
-        final EditText m6 = findViewById(R.id.marks6);
-        final EditText m7 = findViewById(R.id.marks7);
-        final EditText m8 = findViewById(R.id.marks8);
-        final EditText m9 = findViewById(R.id.marks9);
-        final EditText m10 = findViewById(R.id.marks10);
-        final EditText m11 = findViewById(R.id.marks11);
-
-        final EditText paper = findViewById(R.id.paper);
+        paper = findViewById(R.id.paper);
 
         ArrayAdapter<String> myAdapter5 = new ArrayAdapter<>(AdminMarksActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ct));
@@ -165,7 +166,7 @@ public class AdminMarksActivity extends AppCompatActivity {
             }
         });
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
+        /*submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -176,7 +177,8 @@ public class AdminMarksActivity extends AppCompatActivity {
                 }
 
 
-                if(!rn1.getText().toString().isEmpty() && !m1.getText().toString().isEmpty()) {
+
+                /*if(!rn1.getText().toString().isEmpty() && !m1.getText().toString().isEmpty()) {
                     mDatabase.child(dept+year+sem+ct+rn1.getText().toString()+"/"+paper.getText().toString()).setValue(m1.getText().toString());
                 }
                 if(!rn2.getText().toString().isEmpty() && !m2.getText().toString().isEmpty()) {
@@ -210,6 +212,80 @@ public class AdminMarksActivity extends AppCompatActivity {
                     mDatabase.child(dept+year+sem+ct+rn11.getText().toString()+"/"+paper.getText().toString()).setValue(m11.getText().toString());
                 }
             }
-        });
+        });*/
+    }
+
+    public void chooseFile(View view)
+    {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("*/*");
+        startActivityForResult(intent, READ_REQUEST_CODE);
+    }
+
+    public void uploadFile(View view)
+    {
+        if (paper.getText().toString().isEmpty()) {
+            paper.setError("Enter a Valid Paper Code");
+            paper.requestFocus();
+            return;
+        }
+
+        try {
+            File file = new File(filePath);
+            FileInputStream myInput = new FileInputStream(file);
+
+            // Create a POI File System object
+            POIFSFileSystem myFileSystem = new POIFSFileSystem(myInput);
+            // Create a workbook using the File System
+            HSSFWorkbook myWorkBook = new HSSFWorkbook(myFileSystem);
+            // Get the first sheet from workbook
+            HSSFSheet mySheet = myWorkBook.getSheetAt(0);
+            // We now need something to iterate through the cells.
+            Iterator<Row> rowIterator = mySheet.rowIterator();
+            //Iterator<Keyboard.Row> rowIter = mySheet.rowIterator();
+            int rowno =0;
+            String temp;
+            while (rowIterator.hasNext()) {
+                Log.d("row", " row no "+ rowno );
+                HSSFRow myRow = (HSSFRow) rowIterator.next();
+                if(rowno > 4) {
+                    Iterator<Cell> cellIter = myRow.cellIterator();
+                    int colno =0;
+                    while (cellIter.hasNext()) {
+                        HSSFCell myCell = (HSSFCell) cellIter.next();
+                        if (colno==0){
+                            temp = myCell.toString();
+                            roll = temp.substring(0,temp.indexOf("."));
+                        }else if (colno==1) {
+                            temp = myCell.toString();
+                            marks = temp.substring(0,temp.indexOf("."));
+                        }
+                        colno++;
+
+                    }
+                    mDatabase.child(dept+year+sem+ct+roll+"/"+paper.getText().toString()).setValue(marks);
+                    Log.d("row", dept+year+sem+ct+roll+"/"+paper.getText().toString());
+                }
+                rowno++;
+            }
+        } catch (Exception e) {
+            Log.e("Error", "error "+ e.toString());
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+
+            if (data != null) {
+                fileUri = data.getData();
+                String Path = fileUri.getPath();
+                filePath = Path.substring(Path.indexOf("/storage"));
+                Toast.makeText(this, filePath , Toast.LENGTH_LONG).show();
+
+                //filePath.substring(filePath.indexOf("/storage"));
+            }
+        }
     }
 }

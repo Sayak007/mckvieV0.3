@@ -136,79 +136,11 @@ public class admin_app extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
-                chooseFile.setType("*/*");
-                chooseFile = Intent.createChooser(chooseFile, "Choose a file");
-                startActivityForResult(chooseFile, PICK_FILE_REQUEST);
+                Intent intent = new Intent(admin_app.this, AdminMarksActivity.class);
+                startActivity(intent);
+
             }
         });
-    }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case PICK_FILE_REQUEST:
-                if (resultCode == -1) {
-                    fileUri = data.getData();
-                    filePath = fileUri.getPath();
-                    Toast.makeText(this, filePath, Toast.LENGTH_LONG).show();
-                    readExcelFileFromAssets(filePath);
-                }
-                break;
-        }
-    }
-
-    public void readExcelFileFromAssets( String filePath) {
-        Log.d("NOOB",filePath);
-        Log.d("Nirvik","Sayak Noob");
-        try {
-            // initialize asset manager
-            //AssetManager assetManager = getAssets();
-            //  open excel sheet
-
-            //InputStream myInput = assetManager.open(filePath);
-
-            File file = new File(filePath);
-            FileInputStream myInput = new FileInputStream(file);
-
-
-            // Create a POI File System object
-
-            POIFSFileSystem myFileSystem = new POIFSFileSystem(myInput);
-            // Create a workbook using the File System
-            HSSFWorkbook myWorkBook = new HSSFWorkbook(myFileSystem);
-            // Get the first sheet from workbook
-            HSSFSheet mySheet = myWorkBook.getSheetAt(0);
-            // We now need something to iterate through the cells.
-            Iterator<Row> rowIterator = mySheet.rowIterator();
-            //Iterator<Keyboard.Row> rowIter = mySheet.rowIterator();
-            int rowno =0;
-            while (rowIterator.hasNext()) {
-                //Log.e(TAG, " row no "+ rowno );
-                HSSFRow myRow = (HSSFRow) rowIterator.next();
-                if(rowno !=0) {
-                    Iterator<Cell> cellIter = myRow.cellIterator();
-                    int colno =0;
-                    String sno="", date="", det="";
-                    while (cellIter.hasNext()) {
-                        HSSFCell myCell = (HSSFCell) cellIter.next();
-                        if (colno==0){
-                            sno = myCell.toString();
-                        }else if (colno==1){
-                            date = myCell.toString();
-                        }else if (colno==2){
-                            det = myCell.toString();
-                        }
-                        colno++;
-
-                    }
-                    Log.d("row", sno + " -- "+ date+ "  -- "+ det+"");
-
-                }
-                rowno++;
-            }
-        } catch (Exception e) {
-            Log.e("Error", "error "+ e.toString());
-        }
     }
 
     private void getvalues(){
