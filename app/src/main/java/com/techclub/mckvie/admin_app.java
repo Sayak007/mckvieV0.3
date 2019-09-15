@@ -136,7 +136,7 @@ public class admin_app extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(admin_app.this, AdminMarksActivity.class);
+                Intent intent = new Intent(admin_app.this, Testing.class);
                 startActivity(intent);
 
             }
