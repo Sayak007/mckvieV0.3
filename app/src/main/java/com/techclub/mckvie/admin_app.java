@@ -1,5 +1,7 @@
 package com.techclub.mckvie;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -62,6 +64,8 @@ public class admin_app extends AppCompatActivity {
 
         Button Insert = findViewById(R.id.insert1);
         Button Insertmarks = findViewById(R.id.insert2);
+        Button Website1 = findViewById(R.id.website1);
+        Button Website2 = findViewById(R.id.website2);
 
         Query ref2 = FirebaseDatabase.getInstance().getReference().child("Notices/all").orderByKey().limitToFirst(1);
         ref2.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -139,6 +143,25 @@ public class admin_app extends AppCompatActivity {
                 Intent intent = new Intent(admin_app.this, Testing.class);
                 startActivity(intent);
 
+            }
+        });
+
+        Website1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.google.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+        Website2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("simple text","http://www.google.com");
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(admin_app.this,"Website url is copied to clipboard",Toast.LENGTH_LONG).show();
             }
         });
     }

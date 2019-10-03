@@ -50,6 +50,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation 'me.biubiubiu.justifytext:library:1.1'
     implementation "org.apache.poi:poi:3.17"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.8.5"
 }
 
 apply plugin: 'com.google.gms.google-services'

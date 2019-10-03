@@ -95,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         final String id = editTextId.getEditText().getText().toString().trim();
         final String roll = editTextRoll.getEditText().getText().toString().trim();
         final String phn = editTextPhn.getEditText().getText().toString().trim();
-        final String year = editTextBatch.getEditText().getText().toString().trim();
+        final String batch = editTextBatch.getEditText().getText().toString().trim();
         final String confirm_pass = editTextConfirmPassword.getEditText().getText().toString().trim();
         final String admin = "false";
 
@@ -171,14 +171,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             editTextRoll.setError(null);
         }
 
-        if (year.isEmpty()) {
+        if (batch.isEmpty()) {
             editTextBatch.setError("Batch Year is required");
             return;
         } else {
             editTextBatch.setError(null);
         }
 
-        if (year.length() != 4) {
+        if (batch.length() != 4) {
             editTextBatch.setError("Invalid Input");
             return;
         } else {
@@ -216,7 +216,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                     dept,
                                     roll,
                                     phn,
-                                    year
+                                    batch
                             );
 
                             FirebaseDatabase.getInstance().getReference("Users")

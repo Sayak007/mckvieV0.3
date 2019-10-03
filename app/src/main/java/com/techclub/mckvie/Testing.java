@@ -19,9 +19,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.MapLikeType;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.common.reflect.TypeToken;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -33,8 +38,12 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import static com.techclub.mckvie.admin_app.PICK_FILE_REQUEST;
 
@@ -49,6 +58,7 @@ public class Testing extends AppCompatActivity {
     ConstraintLayout con1;
     Button Cancel;
     EditText paper;
+    List list;
     private String str[][]=new String[100][100];
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -58,6 +68,7 @@ public class Testing extends AppCompatActivity {
         Spinner spinner3 = findViewById(R.id.spinner3);
         Spinner spinner4 = findViewById(R.id.spinner6);
         Spinner spinner5 = findViewById(R.id.spinner7);
+        list = new ArrayList();
 
         final Button chooseFile = (Button) findViewById(R.id.button4);
         con1 = (ConstraintLayout)findViewById(R.id.rl1);
@@ -227,7 +238,7 @@ public class Testing extends AppCompatActivity {
         }
     }
 
-    public  void uploadFile(String fp){
+    public  void uploadFile( String fp){
         try {
             File file = new File(fp);
             FileInputStream myInput = new FileInputStream(file);
@@ -237,35 +248,76 @@ public class Testing extends AppCompatActivity {
             //System.out.println(mySheet.getRow(1).getCell(0));
             int rowno = 0,crr=0,ccc=0;
             String temp;
+            MarksUpload mp=new MarksUpload();
             while (rowIterator.hasNext()) {
+
                 Log.d("row", " row no " + rowno);
                 HSSFRow myRow = (HSSFRow) rowIterator.next();
                 Iterator<Cell> cellIter = myRow.cellIterator();
                 int colno = 0;
                 while (cellIter.hasNext()) {
                     HSSFCell myCell = (HSSFCell) cellIter.next();
-                    ccc=colno;
                     if (colno == 0) {
                         temp = myCell.toString();
                         roll = temp.substring(0, temp.indexOf("."));
-                        str[crr][ccc]=roll;
                     } else if (colno == 1) {
                         temp = myCell.toString();
                         marks = temp.substring(0, temp.indexOf("."));
-                        str[crr][ccc]=marks;
                     }
                     colno++;
                     if(colno==2)
                         break;
                 }
-                FirebaseDatabase.getInstance().getReference().child("Marks/"+dept+year+sem+ct+roll+"/"+paper.getText().toString()).setValue(marks);
+                Log.d("Str array:",str[crr][0]+str[crr][1]);
+                /*FirebaseDatabase.getInstance().getReference().child("Marks/"+dept+year+sem+ct+roll+"/"+paper.getText().toString()).setValue(marks).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("Success",roll);
+                    }
+                });*/
+                mp.setDept(dept);
+                mp.setyear(year);
+                mp.setSem(sem);
+                mp.setCt(ct);
+                mp.setRoll(roll);
+                mp.setPaper(paper.getText().toString());
+                mp.setMarks(marks);
+                list.add(mp);
+                //FirebaseDatabase.getInstance().getReference().child("Marks").setValue(mp);
                 rowno++;
-                crr++;
-                if(rowno==5)
-                    break;
             }
+            myInput.close();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    String jsonString = convertObjects2JsonString(list);
+                    Log.d("JSON",jsonString);
+                    Type collectionType = new TypeToken<List<MarksUpload>>(){}.getType();
+                    List<MarksUpload> mu = (List<MarksUpload>) new Gson().fromJson( jsonString , collectionType);
+                    //MarksUpload myPOJO = gson.fromJson(jsonString, MarksUpload.class);
+                    FirebaseDatabase.getInstance().getReference().child("Marks").setValue(mu);
+                    //Map<String, Object> jsonMap = new Gson().fromJson(jsonString, new TypeToken<HashMap<String, Object>>() {}.getType());
+                    //FirebaseDatabase.getInstance().getReference().child("Marks").setValue(jsonMap);
+                }
+            });
+
         } catch (Exception e) {
             Log.e("Error", "error " + e.toString());
         }
+
+
+    }
+
+    private static String convertObjects2JsonString(List list) {
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = "";
+
+        try {
+            jsonString = mapper.writeValueAsString(list);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return jsonString;
     }
 }
