@@ -149,7 +149,7 @@ public class admin_app extends AppCompatActivity {
         Website1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.google.com");
+                Uri uri = Uri.parse("https://mckvie-a1ca1.firebaseapp.com/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -159,7 +159,7 @@ public class admin_app extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("simple text","http://www.google.com");
+                ClipData clip = ClipData.newPlainText("simple text","https://mckvie-a1ca1.firebaseapp.com/");
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(admin_app.this,"Website url is copied to clipboard",Toast.LENGTH_LONG).show();
             }
