@@ -48,16 +48,17 @@
         android:layout_gravity="center"
         android:textSize="20dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Notices"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#000000"
-        android:fontFamily="sans-serif-condensed"/>
+        <TextView
+            android:id="@+id/selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Add Notices ▼"
+            android:textColor="@color/blue"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
     <EditText
         android:id="@+id/title1"

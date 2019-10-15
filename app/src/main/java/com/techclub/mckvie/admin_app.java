@@ -14,9 +14,12 @@ import android.inputmethodservice.Keyboard;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -52,6 +55,7 @@ public class admin_app extends AppCompatActivity {
 
     private Uri fileUri;
     public String filePath;
+    public String fbpath;
     object object1;
     String msg1 = "10000";
     int c = 10000;
@@ -66,26 +70,60 @@ public class admin_app extends AppCompatActivity {
         Button Insertmarks = findViewById(R.id.insert2);
         Button Website1 = findViewById(R.id.website1);
         Button Website2 = findViewById(R.id.website2);
+        final TextView selector = findViewById(R.id.selector);
 
-        Query ref2 = FirebaseDatabase.getInstance().getReference().child("Notices/all").orderByKey().limitToFirst(1);
-        ref2.addListenerForSingleValueEvent(new ValueEventListener() {
+        fbpath = "all";
+        ref(fbpath);
+
+        selector.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    msg1 = child.getKey();
-                }
-            }
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(admin_app.this, selector);
+                //Inflating the Popup using xml file
+                popup.getMenuInflater()
+                        .inflate(R.menu.upload, popup.getMenu());
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //registering popup with OnMenuItemClickListener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.up1:
+                                fbpath = "all";
+                                ref(fbpath);
+                                selector.setText("Add Notices ▼");
+                                break;
+                            case R.id.up3:
+                                fbpath = "Events";
+                                ref(fbpath);
+                                selector.setText("Add Events ▼");
+                                break;
 
+                            case R.id.up2:
+                                fbpath = "News";
+                                ref(fbpath);
+                                selector.setText("Add News ▼");
+                                break;
+                        }
+                        Toast.makeText(
+                                admin_app.this,
+                                "You Clicked : " + item.getTitle(),
+                                Toast.LENGTH_SHORT
+                        ).show();
+                        return true;
+                    }
+                });
+
+                popup.show(); //showing popup menu
             }
         });
+
+
         object1 = new object();
 
         Insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final AlertDialog.Builder builder = new AlertDialog.Builder(admin_app.this);
                 builder.setMessage("Are you sure to upload?");
                 builder.setCancelable(true);
@@ -108,15 +146,14 @@ public class admin_app extends AppCompatActivity {
                 builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                         if (Integer.parseInt(msg1) != 0)
                             c = Integer.parseInt(msg1);
                         c = c - 1;
-                        FirebaseDatabase.getInstance().getReference("Notices/all").addValueEventListener(new ValueEventListener() {
+                        FirebaseDatabase.getInstance().getReference("Notices/"+fbpath).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 getvalues();
-                                FirebaseDatabase.getInstance().getReference("Notices/all").child(Integer.toString(c)).setValue(object1);
+                                FirebaseDatabase.getInstance().getReference("Notices/"+fbpath).child(Integer.toString(c)).setValue(object1);
                                 Toast.makeText(admin_app.this, "Notice Inserted", Toast.LENGTH_SHORT).show();
                             }
 
@@ -162,6 +199,23 @@ public class admin_app extends AppCompatActivity {
                 ClipData clip = ClipData.newPlainText("simple text","https://mckvie-a1ca1.firebaseapp.com/");
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(admin_app.this,"Website url is copied to clipboard",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void ref(String fbpath){
+        Query ref2 = FirebaseDatabase.getInstance().getReference().child("Notices/"+fbpath).orderByKey().limitToFirst(1);
+        ref2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    msg1 = child.getKey();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
