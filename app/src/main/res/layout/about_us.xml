@@ -19,7 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#0398fc"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center_horizontal"
         android:text="ABOUT US "
@@ -51,9 +50,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Follow us on :"
+                android:text="Visit Website :"
                 android:textColor="#000000"
-                android:textSize="30sp" />
+                android:textSize="25dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -62,26 +61,12 @@
 
                 <ImageView
                     android:id="@+id/fb_icon"
-                    android:layout_width="35dp"
-                    android:layout_height="37dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_marginRight="10dp"
                     android:clickable="true"
-                    android:src="@drawable/fb" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:height="40dp"
-                    android:text="OR"
-                    android:textSize="26dp" />
-
-                <ImageView
-                    android:id="@+id/twitter_icon"
-                    android:layout_width="35dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:clickable="true"
-                    android:src="@drawable/twitter" />
+                    android:src="@drawable/mckvie_logo"
+                    />
             </LinearLayout>
 
             <TextView
@@ -127,7 +112,7 @@
                     android:paddingTop="5dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="5dp"
-                    android:text="tclubmckvie@gmail.com"
+                    android:text="mckvieapp2017@gmail.com"
                     android:textColor="#0000cd"
                     android:textSize="15sp"
                     tools:layout_editor_absoluteX="16dp"

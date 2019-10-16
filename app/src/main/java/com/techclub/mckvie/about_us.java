@@ -44,20 +44,12 @@ public class about_us extends AppCompatActivity {
         TextView hhhhh = (TextView) findViewById(R.id.hhhhh);
         TextView emaill = (TextView) findViewById(R.id.emaill);
         ImageView fb = (ImageView) findViewById(R.id.fb_icon);
-        ImageView twitter = (ImageView) findViewById(R.id.twitter_icon);
         final TextView devs =(TextView)findViewById(R.id.devs);
 
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent brow = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com"));
-                startActivity(brow);
-            }
-        });
-        twitter.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent brow = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com"));
+                Intent brow = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.mckvie.edu.in"));
                 startActivity(brow);
             }
         });
@@ -128,7 +120,7 @@ public class about_us extends AppCompatActivity {
             if (x.getId() == R.id.emaill) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setData(Uri.parse("mailto:"));
-                String[] to = {"tclubmckvie@gmail.com"};
+                String[] to = {"mckvieapp2017@gmail.com"};
                 intent.putExtra(Intent.EXTRA_EMAIL, to);
                 intent.setType("message/rfc822");
                 Intent chooser = Intent.createChooser(intent, "Send Email");
