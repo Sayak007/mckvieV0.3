@@ -20,9 +20,5 @@
         android:id="@+id/dfour"
         android:title="SOUMIK KUMAR BASU"
         android:icon="@drawable/soumik"/>
-    <item
-        android:id="@+id/dfive"
-        android:title="RIDDHINATH GANGULY"
-        android:icon="@drawable/riddhinath"/>
 
 </menu>

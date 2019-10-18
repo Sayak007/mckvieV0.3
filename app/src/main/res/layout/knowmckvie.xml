@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.0"
-        android:paddingHorizontal="8dp">
+        android:paddingHorizontal="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,12 +48,14 @@
 
             <TextView
                 android:id="@+id/textView56"
-                android:paddingLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
-                android:text="Courses Offered"
+                android:paddingLeft="10dp"
+                android:text="Courses Offered:"
                 android:textColor="#000000"
+                android:textSize="25dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textView57"
                 tools:layout_editor_absoluteX="1dp" />
 
@@ -64,6 +66,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
                 android:text="4 years B.Tech in:"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textView59"
                 tools:layout_editor_absoluteX="31dp" />
 
@@ -147,6 +151,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
                 android:text="2 Years M.Tech in"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textView64"
                 tools:layout_editor_absoluteX="31dp" />
 

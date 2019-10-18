@@ -187,7 +187,7 @@ public class chatmain extends AppCompatActivity {
             }
         }
         if(item.getItemId()==R.id.wall){
-            startActivity(new Intent(chatmain.this,wallchat.class));
+            //startActivity(new Intent(chatmain.this,wallchat.class));
             Toast.makeText(chatmain.this, "UNDER TESTING", Toast.LENGTH_LONG).show();
         }
         switch (item.getItemId()) {
@@ -212,10 +212,10 @@ public class chatmain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatmain);
 
-        View myview = (RelativeLayout)findViewById(R.id.activity_chat);
+        /*View myview = (RelativeLayout)findViewById(R.id.activity_chat);
         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
         int bg = sharedPref.getInt("background_resource",R.drawable.walldef); // the second parameter will be fallback if the preference is not found
-        myview.setBackgroundResource(bg);
+        myview.setBackgroundResource(bg);*/
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("chats");
@@ -411,7 +411,7 @@ public class chatmain extends AppCompatActivity {
                         prof2.setVisibility(View.VISIBLE);
                         messageText2.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
                         Resources res = getApplicationContext().getResources();
-                        Drawable myImage1 = ResourcesCompat.getDrawable(res, R.drawable.pdf_download_icon, null);
+                        Drawable myImage1 = ResourcesCompat.getDrawable(res, R.drawable.chatpdf, null);
                         messageText2.setCompoundDrawablesWithIntrinsicBounds(null, myImage1, null, null);
 
                         int i = model.getMessageUser().indexOf("@");
@@ -553,7 +553,7 @@ public class chatmain extends AppCompatActivity {
                         messageTime.setText(DateFormat.format("dd/MMM (HH:mm)", model.getMessageTime()));
 
                         Resources res = getApplicationContext().getResources();
-                        Drawable myImage1 = ResourcesCompat.getDrawable(res, R.drawable.pdf_download_icon, null);
+                        Drawable myImage1 = ResourcesCompat.getDrawable(res, R.drawable.chatpdf, null);
                         messageText1.setCompoundDrawablesWithIntrinsicBounds(null, myImage1, null, null);
                         messageText1.setText("Tap to download...");
 

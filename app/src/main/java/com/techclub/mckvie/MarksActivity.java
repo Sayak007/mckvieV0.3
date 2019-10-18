@@ -71,9 +71,13 @@ public class MarksActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) {
-                    ct = "ct1/";
+                    ct = "ca1/";
                 } else if (i == 1) {
-                    ct = "ct2/";
+                    ct = "ca2/";
+                } else if (i == 2) {
+                    ct = "ca3/";
+                } else if (i == 3) {
+                    ct = "ca4/";
                 }
             }
 

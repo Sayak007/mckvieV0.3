@@ -100,12 +100,6 @@ public class about_us extends AppCompatActivity {
                                 myDialog3.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 myDialog3.show();
                                 break;
-                            case R.id.dfive:
-                                final Dialog myDialog4 = new Dialog(about_us.this);
-                                myDialog4.setContentView(R.layout.devsprofileriddhinath);
-                                myDialog4.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                myDialog4.show();
-                                break;
 
                         }
                         return true;
