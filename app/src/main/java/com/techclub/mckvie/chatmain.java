@@ -119,7 +119,7 @@ public class chatmain extends AppCompatActivity {
     EmojIconActions emojIconActions;
     TextView typing;
     ImageView attachments;
-    String m;
+    String m,pname;
     Integer flag = 0,flog = 0;
     private static final int CHOOSE_IMAGE = 101;
     ImageView camera, documents;
@@ -187,6 +187,7 @@ public class chatmain extends AppCompatActivity {
             }
         }
         if(item.getItemId()==R.id.wall){
+//BACKGROUND CHANGE BUTTON
             //startActivity(new Intent(chatmain.this,wallchat.class));
             Toast.makeText(chatmain.this, "UNDER TESTING", Toast.LENGTH_LONG).show();
         }
@@ -211,7 +212,7 @@ public class chatmain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatmain);
-
+//BACKGROUND CHANGING FUNCTIONALITY
         /*View myview = (RelativeLayout)findViewById(R.id.activity_chat);
         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
         int bg = sharedPref.getInt("background_resource",R.drawable.walldef); // the second parameter will be fallback if the preference is not found

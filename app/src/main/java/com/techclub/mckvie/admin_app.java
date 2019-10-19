@@ -176,9 +176,10 @@ public class admin_app extends AppCompatActivity {
         Insertmarks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(admin_app.this, Testing.class);
-                startActivity(intent);
+//APP MARKS UPLOAD BY EXCEL
+                /*Intent intent = new Intent(admin_app.this, Testing.class);
+                startActivity(intent);*/
+                Toast.makeText(admin_app.this, "UNDER TESTING", Toast.LENGTH_LONG).show();
 
             }
         });

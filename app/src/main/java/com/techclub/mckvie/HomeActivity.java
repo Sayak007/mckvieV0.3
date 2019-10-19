@@ -434,8 +434,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         attendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, webview.class);
-                intent.putExtra("id", "https://bit.ly/2JWAZpU");
+                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://bit.ly/2JWAZpU"));
                 startActivity(intent);
             }
         });

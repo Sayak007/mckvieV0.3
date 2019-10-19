@@ -147,7 +147,7 @@ public class MarksActivity extends AppCompatActivity {
 
                                     String value = dataSnapshot.getValue().toString();
                                     String name = dataSnapshot.getKey();
-                                    mMarks.add(name+":      "+value);
+                                    mMarks.add(name+" :      "+value);
                                     arrayAdapter.notifyDataSetChanged();
 
                                 }

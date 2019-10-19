@@ -87,11 +87,11 @@
         <TextView
             android:id="@+id/textView112"
             android:layout_width="80dp"
-            android:layout_height="30dp"
+            android:layout_height="65dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:gravity="left"
-            android:text="Class Test"
+            android:text="Continuous Assessment"
             android:textStyle="bold"
             android:paddingTop="5dp"
             android:fontFamily="sans-serif-condensed"

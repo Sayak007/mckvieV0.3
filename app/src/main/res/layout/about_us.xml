@@ -91,7 +91,7 @@
                     android:paddingTop="5dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="5dp"
-                    android:text="Our Gmail:"
+                    android:text="Email:"
                     android:textColor="#000000"
                     android:textSize="15sp"
                     tools:layout_editor_absoluteX="16dp"
@@ -123,7 +123,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
-                android:text="Product Version: 0.3 Alpha\nWorks with Android Version 4.3 and above"
+                android:text="Product Version: mckvieV0.3 \nWorks with Android Version 4.3 and above"
                 android:textColor="#000000"
                 tools:layout_editor_absoluteX="176dp"
                 tools:layout_editor_absoluteY="412dp" />
