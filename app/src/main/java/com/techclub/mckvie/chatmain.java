@@ -1,6 +1,7 @@
 package com.techclub.mckvie;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.DownloadManager;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
@@ -16,12 +17,16 @@ import android.database.Cursor;
 import android.drm.DrmManagerClient;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.github.library.bubbleview.BubbleImageView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -41,6 +46,8 @@ import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ImageSpan;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -50,6 +57,8 @@ import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.text.format.DateFormat;
@@ -73,6 +82,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
@@ -258,12 +268,25 @@ public class chatmain extends AppCompatActivity {
                 m = emojiconEditText.getText().toString();
                 m = m.trim();
                 if (!m.equals("")) {
-                    FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m,
-                            FirebaseAuth.getInstance().getCurrentUser().getEmail(), "text", FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                    ref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            String name = dataSnapshot.child("name").getValue(String.class);
+                            FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m, name, "text", FirebaseAuth.getInstance().getCurrentUser().getEmail(),FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
                     emojiconEditText.setText("");
                     emojiconEditText.requestFocus();
                 } else {
-                    Toast.makeText(chatmain.this, "Enter text...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(chatmain.this, "Enter text", Toast.LENGTH_SHORT).show();
                     emojiconEditText.setText("");
                     emojiconEditText.requestFocus();
                 }
@@ -355,7 +378,7 @@ public class chatmain extends AppCompatActivity {
                 prof2 = (ImageView) v.findViewById(R.id.prof2);
                 final String msg_type = model.getMessageType();
 
-                if (model.getMessageUser().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+                if (model.getUid().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
                     if (msg_type.equals("image")) {
                         messageText2.setVisibility(View.VISIBLE);
                         messageText1.setVisibility(View.INVISIBLE);
@@ -369,11 +392,14 @@ public class chatmain extends AppCompatActivity {
                         Resources res = getApplicationContext().getResources();
                         Drawable myImage = ResourcesCompat.getDrawable(res, R.drawable.chatim, null);
                         messageText2.setCompoundDrawablesWithIntrinsicBounds(null, myImage, null, null);
-
-                        int i = model.getMessageUser().indexOf("@");
-                        messageUser2.setText(model.getMessageUser().substring(0, i));
+                        if(model.getMessageUser().contains(" ")) {
+                            int i = model.getMessageUser().indexOf(" ");
+                            messageUser2.setText(model.getMessageUser().substring(0, i));
+                        }else{
+                            messageUser2.setText(model.getMessageUser());
+                        }
                         messageTime2.setText(DateFormat.format("dd/MMM (HH:mm)", model.getMessageTime()));
-                        messageText2.setText("Tap to download...");
+                        messageText2.setText("Tap to download");
 
 
                         messageText2.setOnClickListener(new View.OnClickListener() {
@@ -415,10 +441,14 @@ public class chatmain extends AppCompatActivity {
                         Drawable myImage1 = ResourcesCompat.getDrawable(res, R.drawable.chatpdf, null);
                         messageText2.setCompoundDrawablesWithIntrinsicBounds(null, myImage1, null, null);
 
-                        int i = model.getMessageUser().indexOf("@");
-                        messageUser2.setText(model.getMessageUser().substring(0, i));
+                        if(model.getMessageUser().contains(" ")) {
+                            int i = model.getMessageUser().indexOf(" ");
+                            messageUser2.setText(model.getMessageUser().substring(0, i));
+                        }else{
+                            messageUser2.setText(model.getMessageUser());
+                        }
                         messageTime2.setText(DateFormat.format("dd/MMM (HH:mm)", model.getMessageTime()));
-                        messageText2.setText("Tap to download...");
+                        messageText2.setText("Tap to download");
 
 
                         messageText2.setOnClickListener(new View.OnClickListener() {
@@ -489,8 +519,12 @@ public class chatmain extends AppCompatActivity {
                             }
                         });
 
-                        int i = model.getMessageUser().indexOf("@");
-                        messageUser2.setText(model.getMessageUser().substring(0, i));
+                        if(model.getMessageUser().contains(" ")) {
+                            int i = model.getMessageUser().indexOf(" ");
+                            messageUser2.setText(model.getMessageUser().substring(0, i));
+                        }else{
+                            messageUser2.setText(model.getMessageUser());
+                        }
                         messageTime2.setText(DateFormat.format("dd/MMM (HH:mm)", model.getMessageTime()));
                         prof2.setVisibility(View.VISIBLE);
                     }
@@ -503,14 +537,18 @@ public class chatmain extends AppCompatActivity {
                         messageTime2.setVisibility(View.INVISIBLE);
                         messageTime.setVisibility(View.VISIBLE);
                         prof2.setVisibility(View.INVISIBLE);
-                        int i = model.getMessageUser().indexOf("@");
-                        messageUser.setText(model.getMessageUser().substring(0, i));
+                        if(model.getMessageUser().contains(" ")) {
+                            int i = model.getMessageUser().indexOf(" ");
+                            messageUser.setText(model.getMessageUser().substring(0, i));
+                        }else{
+                            messageUser.setText(model.getMessageUser());
+                        }
                         messageTime.setText(DateFormat.format("dd/MMM (HH:mm)", model.getMessageTime()));
 
                         Resources res = getApplicationContext().getResources();
                         Drawable myImage = ResourcesCompat.getDrawable(res, R.drawable.chatim, null);
                         messageText1.setCompoundDrawablesWithIntrinsicBounds(null, myImage, null, null);
-                        messageText1.setText("Tap to download...");
+                        messageText1.setText("Tap to download");
 
                         int[] androidColors = getResources().getIntArray(R.array.androidcolors);
                         int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
@@ -549,14 +587,18 @@ public class chatmain extends AppCompatActivity {
                         messageTime2.setVisibility(View.INVISIBLE);
                         messageTime.setVisibility(View.VISIBLE);
                         prof2.setVisibility(View.INVISIBLE);
-                        int i = model.getMessageUser().indexOf("@");
-                        messageUser.setText(model.getMessageUser().substring(0, i));
+                        if(model.getMessageUser().contains(" ")) {
+                            int i = model.getMessageUser().indexOf(" ");
+                            messageUser.setText(model.getMessageUser().substring(0, i));
+                        }else{
+                            messageUser.setText(model.getMessageUser());
+                        }
                         messageTime.setText(DateFormat.format("dd/MMM (HH:mm)", model.getMessageTime()));
 
                         Resources res = getApplicationContext().getResources();
                         Drawable myImage1 = ResourcesCompat.getDrawable(res, R.drawable.chatpdf, null);
                         messageText1.setCompoundDrawablesWithIntrinsicBounds(null, myImage1, null, null);
-                        messageText1.setText("Tap to download...");
+                        messageText1.setText("Tap to download");
 
                         int[] androidColors = getResources().getIntArray(R.array.androidcolors);
                         int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
@@ -629,13 +671,29 @@ public class chatmain extends AppCompatActivity {
                         });
 
                         prof2.setVisibility(View.INVISIBLE);
-                        int i = model.getMessageUser().indexOf("@");
-                        messageUser.setText(model.getMessageUser().substring(0, i));
+                        if(model.getMessageUser().contains(" ")) {
+                            int i = model.getMessageUser().indexOf(" ");
+                            messageUser.setText(model.getMessageUser().substring(0, i));
+                        }else{
+                            messageUser.setText(model.getMessageUser());
+                        }
                         messageTime.setText(DateFormat.format("dd/MMM(HH:mm)", model.getMessageTime()));
                         int[] androidColors = getResources().getIntArray(R.array.androidcolors);
                         int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
                         messageUser.setTextColor(randomAndroidColor);
                         prof1.setVisibility(View.VISIBLE);
+                        /*prof1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        inflateLayout(model.getMessageUser(),model.getUid(),model.getUserId());
+                                    }
+                                }).start();
+
+                            }
+                        });*/
                     }
                 }
             }
@@ -676,8 +734,23 @@ public class chatmain extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         if (!m1.equals("")) {
-                            FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m1,
-                                    FirebaseAuth.getInstance().getCurrentUser().getEmail(), "image", FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                            //FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m1,
+                              //      FirebaseAuth.getInstance().getCurrentUser().getEmail(), "image", FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                            ref.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    String name = dataSnapshot.child("name").getValue(String.class);
+                                    FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m1,
+                                            name, "image", FirebaseAuth.getInstance().getCurrentUser().getEmail(),FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
                             emojiconEditText.setText("");
                             emojiconEditText.requestFocus();
                         }
@@ -697,8 +770,24 @@ public class chatmain extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         if (!m1.equals("")) {
-                            FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m1,
-                                    FirebaseAuth.getInstance().getCurrentUser().getEmail(), "pdf", FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                            //FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m1,
+                             //       FirebaseAuth.getInstance().getCurrentUser().getEmail(), "pdf", FirebaseAuth.getInstance().getCurrentUser().getUid()));
+
+                            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                            ref.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    String name = dataSnapshot.child("name").getValue(String.class);
+                                    FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(new ChatMessage(m1,
+                                            name, "pdf", FirebaseAuth.getInstance().getCurrentUser().getEmail(),FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
                             emojiconEditText.setText("");
                             emojiconEditText.requestFocus();
                         }
@@ -723,6 +812,52 @@ public class chatmain extends AppCompatActivity {
             }
         }
     };
+
+   /* public void inflateLayout(String user,String email,String userId){
+        final Dialog myDialog = new Dialog(chatmain.this);
+        myDialog.setContentView(R.layout.chat_profile);
+
+        TextView name = myDialog.findViewById(R.id.namecp);
+        TextView emailid = myDialog.findViewById(R.id.emailcp);
+        final ProgressBar progressBar =myDialog.findViewById(R.id.pB);
+        //ImageView pf = myDialog.findViewById(R.id.imagecp);
+        name.setText(user);
+        emailid.setText(email);
+        progressBar.setVisibility(View.VISIBLE);
+
+        try {
+
+            final StorageReference filePath = mStorage.child("CameraPhotos").child(userId);
+            final File localFile = File.createTempFile("chat_pf", "bmp");
+
+            filePath.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Log.d("LF",filePath.toString());
+                    Bitmap bmp = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    ImageView pf = myDialog.findViewById(R.id.imagecp);
+                    pf.setImageBitmap(bmp);
+                    progressBar.setVisibility(View.GONE);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(Exception exception) {
+                    Toast.makeText(chatmain.this, exception.getMessage(), Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    // progress percentage
+                    double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    } */
 
 
 }

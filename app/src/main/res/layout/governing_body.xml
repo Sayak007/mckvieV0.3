@@ -11,16 +11,27 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/navigation_action" />
+    <TextView
+        android:id="@+id/gov"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="GOVERNING BODY"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:background="#0398fc"
+        android:gravity="center"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_marginTop="55dp"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:layout_marginHorizontal="2dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/gov">
 
 
 
@@ -29,21 +40,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="GOVERNING BODY"
-            android:textSize="35dp"
-            android:textStyle="bold" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Details of the Members of the Governing Body :-\n\nChairpersons :-"
+                android:text="Details of the Members of the Governing Body :\n\nChairpersons :"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -159,9 +164,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Member of the Trust / Society / Management :-"
+                android:text="Member of the Trust / Society / Management :"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -360,9 +366,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nominees of the AICTE / UGC :-"
+                android:text="Nominees of the AICTE / UGC :"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -489,9 +496,10 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector â€
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nominees of the State Government:-"
+                android:text="Nominees of the State Government:"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -616,9 +624,10 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector â€
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="One Nominee of the University to which the Institution is affiliated:-"
+                android:text="One Nominee of the University to which the Institution is affiliated:"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -707,9 +716,10 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector â€
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Educationists/Technologist/Industrialists:-"
+                android:text="Educationists/Technologist/Industrialists:"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -908,9 +918,10 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector â€
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Two Faculty Members of the Institution:-"
+                android:text="Two Faculty Members of the Institution:"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -1035,9 +1046,10 @@ Eastern Regional Office, AICTE, College of Leather Technology Campus,\nSector â€
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Head of the Institution, Ex-Officio:-"
+                android:text="Head of the Institution, Ex-Officio:"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <TableLayout
                 android:layout_width="match_parent"

@@ -6,14 +6,15 @@ public class ChatMessage {
     private String messageText;
     private String messageUser;
     private String messageType;
-    private String uid;
+    private String uid,userId;
     private long messageTime;
 
-    public ChatMessage(String messageText, String messageUser, String messageType, String uid) {
+    public ChatMessage(String messageText, String messageUser, String messageType, String uid,String userId) {
         this.messageText = messageText;
         this.messageUser = messageUser;
         this.messageType = messageType;
         this.uid = uid;
+        this.userId = userId;
 
         messageTime = new Date().getTime();
     }
@@ -56,4 +57,8 @@ public class ChatMessage {
     public void setUid(){this.uid = uid;};
 
     public String getUid() {return uid;};
+
+    public void setUserId(){this.userId = userId;};
+
+    public String getUserId() {return userId;};
 }
