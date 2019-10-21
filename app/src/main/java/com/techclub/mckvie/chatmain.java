@@ -682,18 +682,12 @@ public class chatmain extends AppCompatActivity {
                         int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
                         messageUser.setTextColor(randomAndroidColor);
                         prof1.setVisibility(View.VISIBLE);
-                        /*prof1.setOnClickListener(new View.OnClickListener() {
+                        prof1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                new Thread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        inflateLayout(model.getMessageUser(),model.getUid(),model.getUserId());
-                                    }
-                                }).start();
-
+                                inflateLayout(model.getMessageUser(),model.getUid(),model.getUserId());
                             }
-                        });*/
+                        });
                     }
                 }
             }
@@ -784,7 +778,7 @@ public class chatmain extends AppCompatActivity {
                                 }
 
                                 @Override
-                                public void onCancelled(DatabaseError databaseError) {
+                                public void onCancelled(DatabaseError databaseEorrr) {
 
                                 }
                             });
@@ -813,16 +807,35 @@ public class chatmain extends AppCompatActivity {
         }
     };
 
-   /* public void inflateLayout(String user,String email,String userId){
+    public void inflateLayout(String user,String email,String userId){
         final Dialog myDialog = new Dialog(chatmain.this);
         myDialog.setContentView(R.layout.chat_profile);
 
         TextView name = myDialog.findViewById(R.id.namecp);
-        TextView emailid = myDialog.findViewById(R.id.emailcp);
+        final TextView emailid = myDialog.findViewById(R.id.emailcp);
         final ProgressBar progressBar =myDialog.findViewById(R.id.pB);
-        //ImageView pf = myDialog.findViewById(R.id.imagecp);
+        ImageView pf = myDialog.findViewById(R.id.imagecp);
         name.setText(user);
-        emailid.setText(email);
+        //emailid.setText(email);
+
+        FirebaseDatabase mdatabase1 = FirebaseDatabase.getInstance();
+        DatabaseReference ref1 = mdatabase1.getReference("Users/" + userId);
+
+        ref1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String dept = dataSnapshot.child("dept").getValue(String.class);
+                String roll = dataSnapshot.child("roll").getValue(String.class);
+                String batch = dataSnapshot.child("batch").getValue(String.class);
+                emailid.setText(dept+"/"+batch+"/"+roll);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         progressBar.setVisibility(View.VISIBLE);
 
         try {
@@ -857,7 +870,7 @@ public class chatmain extends AppCompatActivity {
         }
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
-    } */
+    }
 
 
 }
