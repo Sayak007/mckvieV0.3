@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/popup"
-    android:paddingBottom="20dp">
+    android:paddingBottom="20dp"
+    android:paddingHorizontal="5dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imagecp"
@@ -36,9 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:textAllCaps="true"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"/>
     <TextView
@@ -46,7 +48,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="20dp"
+        android:textAllCaps="true"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:paddingRight="20dp"

@@ -578,6 +578,12 @@ public class chatmain extends AppCompatActivity {
                             }
                         });
                         prof1.setVisibility(View.VISIBLE);
+                        prof1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                inflateLayout(model.getMessageUser(),model.getUid(),model.getUserId());
+                            }
+                        });
                     }
                     if (msg_type.equals("pdf")) {
                         messageText2.setVisibility(View.GONE);
@@ -628,6 +634,12 @@ public class chatmain extends AppCompatActivity {
                             }
                         });
                         prof1.setVisibility(View.VISIBLE);
+                        prof1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                inflateLayout(model.getMessageUser(),model.getUid(),model.getUserId());
+                            }
+                        });
                     }
 
                     if (msg_type.equals("text")) {
@@ -706,7 +718,7 @@ public class chatmain extends AppCompatActivity {
                 final int lastItem = firstVisibleItem + visibleItemCount;
                 if (lastItem == totalItemCount) {
                     //load more data
-                    adapter.startListening();
+                        adapter.startListening();
 
                 }
             }
@@ -814,7 +826,7 @@ public class chatmain extends AppCompatActivity {
         TextView name = myDialog.findViewById(R.id.namecp);
         final TextView emailid = myDialog.findViewById(R.id.emailcp);
         final ProgressBar progressBar =myDialog.findViewById(R.id.pB);
-        ImageView pf = myDialog.findViewById(R.id.imagecp);
+        //ImageView pf = myDialog.findViewById(R.id.imagecp);
         name.setText(user);
         //emailid.setText(email);
 
@@ -827,7 +839,8 @@ public class chatmain extends AppCompatActivity {
                 String dept = dataSnapshot.child("dept").getValue(String.class);
                 String roll = dataSnapshot.child("roll").getValue(String.class);
                 String batch = dataSnapshot.child("batch").getValue(String.class);
-                emailid.setText(dept+"/"+batch+"/"+roll);
+                if(!roll.equals("00"))
+                    emailid.setText(dept+"/"+batch+"/"+roll);
             }
 
             @Override
