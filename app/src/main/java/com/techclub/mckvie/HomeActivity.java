@@ -693,7 +693,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.share:
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody="App Link Here";
+                String shareBody="https://drive.google.com/open?id=1YY5A-Ews58jHASfAfx_qEJfW-uiYNrI2";
                 String shareSubject="Share This App";
                 sharingIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT,shareSubject);

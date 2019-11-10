@@ -60,6 +60,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/extend_layout"
                 android:background="#4db6ac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -380,6 +381,8 @@
             </RelativeLayout>
 
         </LinearLayout>
+
+
 
 
     <com.google.android.material.navigation.NavigationView

@@ -67,7 +67,7 @@ public class admin_app extends AppCompatActivity {
 
 
         Button Insert = findViewById(R.id.insert1);
-        Button Insertmarks = findViewById(R.id.insert2);
+       // Button Insertmarks = findViewById(R.id.insert2);
         Button Website1 = findViewById(R.id.website1);
         Button Website2 = findViewById(R.id.website2);
         final TextView selector = findViewById(R.id.selector);
@@ -173,16 +173,16 @@ public class admin_app extends AppCompatActivity {
 
 
 
-        Insertmarks.setOnClickListener(new View.OnClickListener() {
+        /*Insertmarks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //APP MARKS UPLOAD BY EXCEL
-                /*Intent intent = new Intent(admin_app.this, Testing.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(admin_app.this, Testing.class);
+                startActivity(intent);
                 Toast.makeText(admin_app.this, "UNDER TESTING", Toast.LENGTH_LONG).show();
 
             }
-        });
+        });*/
 
         Website1.setOnClickListener(new View.OnClickListener() {
             @Override
