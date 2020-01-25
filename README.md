@@ -54,7 +54,7 @@ and more...
 
 **Google Firebase used for all database related works**
 
-##CREDITS:
+## CREDITS:
 * Hriddhi Mondal
 * Sayak Das
 * Nirvik Ranjan Das
