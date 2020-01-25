@@ -53,3 +53,9 @@ and more...
 * Chat Section lets to chat with anyone on any query. Features like Change wallpaper, enable/disable notification and sign out are there in the top right three dots menu. One can also send pdfs and images and emojis for a better way to communicate. 
 
 **Google Firebase used for all database related works**
+
+##CREDITS:
+* Hriddhi Mondal
+* Sayak Das
+* Nirvik Ranjan Das
+* Soumik Kumar Basu
